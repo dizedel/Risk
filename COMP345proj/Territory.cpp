@@ -34,24 +34,24 @@ string Territory::getContinent() {
 	return continent;
 }
 
-void Territory::setName(string nameX){
-	name = nameX;
+void Territory::setName(string n){
+	name = n;
 }
 
-void Territory::setX(int val) {
-	coordX = val;
+void Territory::setX(int x) {
+	coordX = x;
 }
 
-void Territory::setY(int val) {
-	coordY = val;
+void Territory::setY(int y) {
+	coordY = y;
 }
 
-void Territory::setContinent(string cont) {
-	continent = cont;
+void Territory::setContinent(string c) {
+	continent = c;
 }
 
-void Territory::addNeighbor(string terr) {
-	neighbors.push_back(terr);
+void Territory::addNeighbor(string t) {
+	neighbors.push_back(t);
 }
 
 vector<string> Territory::getNeighbors() {
