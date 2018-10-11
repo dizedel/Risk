@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Territory.h"
+#include "include/territory.h"
 
 using namespace std;
 
