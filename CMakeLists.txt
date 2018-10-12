@@ -7,11 +7,16 @@ include_directories(include)
 
 add_executable(Risk
         src/Continent.cpp
+        src/Dice.cpp
         src/Main.cpp
         src/Map.cpp
         src/MapLoader.cpp
         src/stdafx.cpp
         src/Territory.cpp
+<<<<<<< HEAD
         src/Card.cpp
         src/Deck.cpp
         src/Hand.cpp)
+=======
+        src/Player.cpp include/Player.h)
+>>>>>>> origin/Restructuring
