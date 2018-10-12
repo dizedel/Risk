@@ -7,8 +7,10 @@ include_directories(include)
 
 add_executable(Risk
         src/Continent.cpp
+        src/Dice.cpp
         src/Main.cpp
         src/Map.cpp
         src/MapLoader.cpp
         src/stdafx.cpp
-        src/Territory.cpp)
+        src/Territory.cpp
+        )
