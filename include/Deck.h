@@ -8,7 +8,7 @@ class Deck
 private:
 	std::vector<Card> cards;
 public:
-	Deck(std::vector<Card>);
+	Deck(int);
 	~Deck();
 	Card draw();
 	const vector<Card> &getCards() const;

@@ -3,9 +3,18 @@
 #include <time.h>
 #include <vector>
 
-Deck::Deck(std::vector<Card> cardsInDeck)
+Deck::Deck(int numOfCards)
 {
-	Deck::cards = cardsInDeck;
+	for (int i = 1; i <= numOfCards; i++)
+	{
+		if (i % 3 == 0)
+			cards.push_back(Card("infantry"));
+		else if (i % 2 == 0)
+			cards.push_back(Card("artillery"));
+		else if (i % 1 == 0)
+			cards.push_back(Card("cavalry"));
+	}
+
 }
 
 

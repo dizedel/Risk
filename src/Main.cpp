@@ -26,19 +26,28 @@ int main() {
 
 	int numOfCards = 100; // to be replaced with number of continents
 
-	vector<Card> cards;
+	Deck deck(numOfCards);
 
-	for (int i = 1; i <= numOfCards; i++)
-	{
-		if (i % 3 == 0)
-			cards.push_back(Card("infantry"));
-		else if (i % 2 == 0)
-			cards.push_back(Card("artillery"));
-		else if (i % 1 == 0)
-			cards.push_back(Card("cavalry"));
-	}
+	int infantry = 0;
+	int artillery = 0;
+	int cavalry = 0;
 
-	Deck deck{cards};
+	for (int i = 0; i < deck.getCards().size(); i++)
+    {
+	    if (deck.getCards()[i].getType() == "infantry")
+	        infantry++;
+	    if (deck.getCards()[i].getType() == "artillery")
+	        artillery++;
+	    if (deck.getCards()[i].getType() == "cavalry")
+	        cavalry++;
+    }
+
+    cout << "DECK CONTENTS"<< endl;
+	cout << "Infantry: " << infantry << endl;
+	cout << "Artillery: " << artillery << endl;
+	cout << "Cavalry: " << cavalry << endl;
+	cout << "This deck contains " << deck.getCards().size() << " cards." << endl;
+	cout << "---------------" << endl;
 
 	cout << "*************** \n DICE DEMO \n***************\n";
     dice.rolls();
