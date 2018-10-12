@@ -27,7 +27,7 @@ int Territory::getX() {
 }
 
 int Territory::getY() {
-    return coordX;
+    return coordY;
 }
 
 string Territory::getContinent() {

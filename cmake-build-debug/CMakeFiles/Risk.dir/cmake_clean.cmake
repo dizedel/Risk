@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Risk.dir/src/Continent.cpp.obj"
+  "CMakeFiles/Risk.dir/src/Dice.cpp.obj"
   "CMakeFiles/Risk.dir/src/Main.cpp.obj"
   "CMakeFiles/Risk.dir/src/Map.cpp.obj"
   "CMakeFiles/Risk.dir/src/MapLoader.cpp.obj"
+  "CMakeFiles/Risk.dir/src/Player.cpp.obj"
   "CMakeFiles/Risk.dir/src/stdafx.cpp.obj"
   "CMakeFiles/Risk.dir/src/Territory.cpp.obj"
   "Risk.pdb"

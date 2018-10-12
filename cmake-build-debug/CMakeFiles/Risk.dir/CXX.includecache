@@ -6,55 +6,15 @@
 
 #IncludeRegexTransform: 
 
-../include/Continent.h
-string
--
-Territory.h
-../include/Territory.h
-
-../include/Map.h
-Continent.h
-../include/Continent.h
-string
--
-vector
--
-
-../include/MapLoader.h
-string
--
-vector
--
-Map.h
-../include/Map.h
-fstream
--
-
 ../include/Territory.h
 string
 -
 vector
 -
 
-C:/Users/pamel/Documents/Github/Risk/src/Continent.cpp
-Continent.h
-C:/Users/pamel/Documents/Github/Risk/src/Continent.h
-
-C:/Users/pamel/Documents/Github/Risk/src/Main.cpp
-iostream
--
-MapLoader.h
-C:/Users/pamel/Documents/Github/Risk/src/MapLoader.h
-
-C:/Users/pamel/Documents/Github/Risk/src/Map.cpp
-Map.h
-C:/Users/pamel/Documents/Github/Risk/src/Map.h
+C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Territory.cpp
 stdafx.h
-C:/Users/pamel/Documents/Github/Risk/src/stdafx.h
-
-C:/Users/pamel/Documents/Github/Risk/src/Territory.cpp
-stdafx.h
-C:/Users/pamel/Documents/Github/Risk/src/stdafx.h
+C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/stdafx.h
 Territory.h
-C:/Users/pamel/Documents/Github/Risk/src/Territory.h
+C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Territory.h
 

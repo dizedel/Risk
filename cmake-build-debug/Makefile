@@ -49,10 +49,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\pamel\Documents\Github\Risk
+CMAKE_SOURCE_DIR = "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\pamel\Documents\Github\Risk\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -81,9 +81,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\pamel\Documents\Github\Risk\cmake-build-debug\CMakeFiles C:\Users\pamel\Documents\Github\Risk\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\CMakeFiles" "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\pamel\Documents\Github\Risk\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ src\Continent.s: src\Continent.cpp.s
 src\Continent.cpp.s:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Continent.cpp.s
 .PHONY : src\Continent.cpp.s
+
+src\Dice.obj: src\Dice.cpp.obj
+
+.PHONY : src\Dice.obj
+
+# target to build an object file
+src\Dice.cpp.obj:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Dice.cpp.obj
+.PHONY : src\Dice.cpp.obj
+
+src\Dice.i: src\Dice.cpp.i
+
+.PHONY : src\Dice.i
+
+# target to preprocess a source file
+src\Dice.cpp.i:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Dice.cpp.i
+.PHONY : src\Dice.cpp.i
+
+src\Dice.s: src\Dice.cpp.s
+
+.PHONY : src\Dice.s
+
+# target to generate assembly for a file
+src\Dice.cpp.s:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Dice.cpp.s
+.PHONY : src\Dice.cpp.s
 
 src\Main.obj: src\Main.cpp.obj
 
@@ -232,6 +259,33 @@ src\MapLoader.cpp.s:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\MapLoader.cpp.s
 .PHONY : src\MapLoader.cpp.s
 
+src\Player.obj: src\Player.cpp.obj
+
+.PHONY : src\Player.obj
+
+# target to build an object file
+src\Player.cpp.obj:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Player.cpp.obj
+.PHONY : src\Player.cpp.obj
+
+src\Player.i: src\Player.cpp.i
+
+.PHONY : src\Player.i
+
+# target to preprocess a source file
+src\Player.cpp.i:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Player.cpp.i
+.PHONY : src\Player.cpp.i
+
+src\Player.s: src\Player.cpp.s
+
+.PHONY : src\Player.s
+
+# target to generate assembly for a file
+src\Player.cpp.s:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Player.cpp.s
+.PHONY : src\Player.cpp.s
+
 src\Territory.obj: src\Territory.cpp.obj
 
 .PHONY : src\Territory.obj
@@ -298,6 +352,9 @@ help:
 	@echo ... src/Continent.obj
 	@echo ... src/Continent.i
 	@echo ... src/Continent.s
+	@echo ... src/Dice.obj
+	@echo ... src/Dice.i
+	@echo ... src/Dice.s
 	@echo ... src/Main.obj
 	@echo ... src/Main.i
 	@echo ... src/Main.s
@@ -307,6 +364,9 @@ help:
 	@echo ... src/MapLoader.obj
 	@echo ... src/MapLoader.i
 	@echo ... src/MapLoader.s
+	@echo ... src/Player.obj
+	@echo ... src/Player.i
+	@echo ... src/Player.s
 	@echo ... src/Territory.obj
 	@echo ... src/Territory.i
 	@echo ... src/Territory.s

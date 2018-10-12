@@ -1,3 +1,3 @@
-C:/Users/pamel/Documents/Github/Risk/cmake-build-debug/CMakeFiles/Risk.dir
-C:/Users/pamel/Documents/Github/Risk/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/pamel/Documents/Github/Risk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/CMakeFiles/Risk.dir
+C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/CMakeFiles/rebuild_cache.dir

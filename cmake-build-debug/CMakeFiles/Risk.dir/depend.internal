@@ -4,20 +4,29 @@
 CMakeFiles/Risk.dir/src/Continent.cpp.obj
  ../include/Continent.h
  ../include/Territory.h
- C:/Users/pamel/Documents/Github/Risk/src/Continent.cpp
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Continent.cpp
+CMakeFiles/Risk.dir/src/Dice.cpp.obj
+ ../include/Dice.h
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Dice.cpp
 CMakeFiles/Risk.dir/src/Main.cpp.obj
  ../include/Continent.h
+ ../include/Dice.h
  ../include/Map.h
  ../include/MapLoader.h
  ../include/Territory.h
- C:/Users/pamel/Documents/Github/Risk/src/Main.cpp
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Main.cpp
 CMakeFiles/Risk.dir/src/Map.cpp.obj
  ../include/Continent.h
  ../include/Map.h
  ../include/Territory.h
- C:/Users/pamel/Documents/Github/Risk/src/Map.cpp
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Map.cpp
 CMakeFiles/Risk.dir/src/MapLoader.cpp.obj
+CMakeFiles/Risk.dir/src/Player.cpp.obj
+ ../include/Dice.h
+ ../include/Player.h
+ ../include/Territory.h
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Player.cpp
 CMakeFiles/Risk.dir/src/Territory.cpp.obj
  ../include/Territory.h
- C:/Users/pamel/Documents/Github/Risk/src/Territory.cpp
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Territory.cpp
 CMakeFiles/Risk.dir/src/stdafx.cpp.obj
