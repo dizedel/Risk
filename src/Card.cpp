@@ -1,22 +1,16 @@
 #include "../include/Card.h"
 
 
-Card::Card(Type typeOfCard)
-{
-	type = typeOfCard;
-
-}
+Card::Card(const string &type) : type(type) {}
 
 Card::~Card()
 {
 }
 
-void Card::setType(Type typeOfCard)
-{
-	type = typeOfCard;
+const string &Card::getType() const {
+	return type;
 }
 
-Card::Type Card::getType()
-{
-	return type;
+void Card::setType(const string &type) {
+	Card::type = type;
 }

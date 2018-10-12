@@ -5,14 +5,13 @@ using namespace std;
 class Card
 {
 private:
-	enum Type { infantry, artillery, cavalry };
-	Type type;
+	string type;
 
 public:
-	Card(Type);
+	Card(const string &type);
 	~Card();
-	void setType(Type);
-	Type getType();
+	const string &getType() const;
+	void setType(const string &type);
 
 };
 

@@ -25,6 +25,8 @@ vector
 -
 
 ../include/Hand.h
+Deck.h
+../include/Deck.h
 Card.h
 ../include/Card.h
 vector
@@ -67,6 +69,8 @@ vector
 -
 
 C:/Users/nicho/Documents/Risk/include/Hand.h
+Deck.h
+C:/Users/nicho/Documents/Risk/include/Deck.h
 Card.h
 C:/Users/nicho/Documents/Risk/include/Card.h
 vector
@@ -75,10 +79,6 @@ vector
 C:/Users/nicho/Documents/Risk/src/Card.cpp
 ../include/Card.h
 C:/Users/nicho/Documents/Risk/include/Card.h
-
-C:/Users/nicho/Documents/Risk/src/Continent.cpp
-Continent.h
-C:/Users/nicho/Documents/Risk/src/Continent.h
 
 C:/Users/nicho/Documents/Risk/src/Deck.cpp
 ../include/Deck.h
@@ -93,6 +93,8 @@ vector
 C:/Users/nicho/Documents/Risk/src/Hand.cpp
 ../include/Hand.h
 C:/Users/nicho/Documents/Risk/include/Hand.h
+../include/Deck.h
+C:/Users/nicho/Documents/Risk/include/Deck.h
 vector
 -
 
@@ -107,16 +109,6 @@ Deck.h
 C:/Users/nicho/Documents/Risk/src/Deck.h
 Hand.h
 C:/Users/nicho/Documents/Risk/src/Hand.h
-
-C:/Users/nicho/Documents/Risk/src/Map.cpp
-Map.h
-C:/Users/nicho/Documents/Risk/src/Map.h
-stdafx.h
-C:/Users/nicho/Documents/Risk/src/stdafx.h
-
-C:/Users/nicho/Documents/Risk/src/Territory.cpp
-stdafx.h
-C:/Users/nicho/Documents/Risk/src/stdafx.h
-Territory.h
-C:/Users/nicho/Documents/Risk/src/Territory.h
+vector
+-
 

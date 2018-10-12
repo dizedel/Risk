@@ -11,5 +11,7 @@ public:
 	Deck(std::vector<Card>);
 	~Deck();
 	Card draw();
+	const vector<Card> &getCards() const;
+	void setCards(const vector<Card> &cards);
 };
 

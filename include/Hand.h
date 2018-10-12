@@ -1,7 +1,9 @@
 #pragma once
 
+#include "Deck.h"
 #include "Card.h"
 #include <vector>
+
 class Hand
 {
 private:
@@ -9,6 +11,9 @@ private:
 public:
 	Hand();
 	~Hand();
-	void exchange();
+	int exchange(int);
+	const vector<Card> &getCards() const;
+	void setCards(const vector<Card> &cards);
+
 };
 

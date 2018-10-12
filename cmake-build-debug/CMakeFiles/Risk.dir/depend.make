@@ -13,6 +13,7 @@ CMakeFiles\Risk.dir\src\Deck.cpp.obj: ..\include\Deck.h
 CMakeFiles\Risk.dir\src\Deck.cpp.obj: ..\src\Deck.cpp
 
 CMakeFiles\Risk.dir\src\Hand.cpp.obj: ..\include\Card.h
+CMakeFiles\Risk.dir\src\Hand.cpp.obj: ..\include\Deck.h
 CMakeFiles\Risk.dir\src\Hand.cpp.obj: ..\include\Hand.h
 CMakeFiles\Risk.dir\src\Hand.cpp.obj: ..\src\Hand.cpp
 

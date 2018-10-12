@@ -5,7 +5,7 @@
 
 Deck::Deck(std::vector<Card> cardsInDeck)
 {
-	cards = cardsInDeck;
+	Deck::cards = cardsInDeck;
 }
 
 
@@ -21,4 +21,14 @@ Card Deck::draw()
 	Card toDraw = cards[randomIndex];
 	cards.erase(cards.begin() + randomIndex);
 	return toDraw;
+}
+
+const vector<Card> &Deck::getCards() const
+{
+	return cards;
+}
+
+void Deck::setCards(const vector<Card> &cards)
+{
+	Deck::cards = cards;
 }
