@@ -22,14 +22,14 @@ class Player {
 
         string getName();
         Dice getDice();
+        Hand getHand();
         vector<Territory> getCountries();
 
         void setName(string);
         void setCountries(vector<Territory>);
-        //void setCards(vector<Card>);
+        void setHand(Hand);
         void addArmies(int);
         void addTerritories(Territory);
-        //void addCard(Card);
 
         void giveArmiesForTerritory();
 

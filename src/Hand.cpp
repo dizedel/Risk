@@ -39,3 +39,11 @@ void Hand::setCards(const vector<Card> &cards)
 {
     Hand::cards = cards;
 }
+
+string Hand::toString() {
+    string str="";
+    for (int i=0; i<cards.size(); i++){
+      str += cards.at(i).getType() + "\n";
+    };
+    return str;
+}
