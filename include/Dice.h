@@ -7,12 +7,16 @@
 
 class Dice {
 
-public:
-    int OneRoll();
-    int askNumOfDice();
-    int *rolls();
-    void rollPercentage(int x);
-    void displayPercentage();
-};
+    public:
+        int OneRoll();
+        int askNumOfDice();
+        int *rolls();
+        void rollPercentage(int x);
+        void displayPercentage();
+    private:
+
+    };
+
+
 
 #endif //UNTITLED_DICE_H

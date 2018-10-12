@@ -1,4 +1,5 @@
 #include "Continent.h"
+#include "Territory.h"
 using namespace std;
 
 Continent::Continent() {
