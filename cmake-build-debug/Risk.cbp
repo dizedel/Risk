@@ -93,6 +93,9 @@
 		<Unit filename="C:/Users/nicho/Documents/Risk/src/Deck.cpp">
 			<Option target="Risk"/>
 		</Unit>
+		<Unit filename="C:/Users/nicho/Documents/Risk/src/Dice.cpp">
+			<Option target="Risk"/>
+		</Unit>
 		<Unit filename="C:/Users/nicho/Documents/Risk/src/Hand.cpp">
 			<Option target="Risk"/>
 		</Unit>
@@ -103,6 +106,9 @@
 			<Option target="Risk"/>
 		</Unit>
 		<Unit filename="C:/Users/nicho/Documents/Risk/src/MapLoader.cpp">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Users/nicho/Documents/Risk/src/Player.cpp">
 			<Option target="Risk"/>
 		</Unit>
 		<Unit filename="C:/Users/nicho/Documents/Risk/src/Territory.cpp">

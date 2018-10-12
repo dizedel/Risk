@@ -205,6 +205,33 @@ src\Deck.cpp.s:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Deck.cpp.s
 .PHONY : src\Deck.cpp.s
 
+src\Dice.obj: src\Dice.cpp.obj
+
+.PHONY : src\Dice.obj
+
+# target to build an object file
+src\Dice.cpp.obj:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Dice.cpp.obj
+.PHONY : src\Dice.cpp.obj
+
+src\Dice.i: src\Dice.cpp.i
+
+.PHONY : src\Dice.i
+
+# target to preprocess a source file
+src\Dice.cpp.i:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Dice.cpp.i
+.PHONY : src\Dice.cpp.i
+
+src\Dice.s: src\Dice.cpp.s
+
+.PHONY : src\Dice.s
+
+# target to generate assembly for a file
+src\Dice.cpp.s:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Dice.cpp.s
+.PHONY : src\Dice.cpp.s
+
 src\Hand.obj: src\Hand.cpp.obj
 
 .PHONY : src\Hand.obj
@@ -313,6 +340,33 @@ src\MapLoader.cpp.s:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\MapLoader.cpp.s
 .PHONY : src\MapLoader.cpp.s
 
+src\Player.obj: src\Player.cpp.obj
+
+.PHONY : src\Player.obj
+
+# target to build an object file
+src\Player.cpp.obj:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Player.cpp.obj
+.PHONY : src\Player.cpp.obj
+
+src\Player.i: src\Player.cpp.i
+
+.PHONY : src\Player.i
+
+# target to preprocess a source file
+src\Player.cpp.i:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Player.cpp.i
+.PHONY : src\Player.cpp.i
+
+src\Player.s: src\Player.cpp.s
+
+.PHONY : src\Player.s
+
+# target to generate assembly for a file
+src\Player.cpp.s:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Player.cpp.s
+.PHONY : src\Player.cpp.s
+
 src\Territory.obj: src\Territory.cpp.obj
 
 .PHONY : src\Territory.obj
@@ -385,6 +439,9 @@ help:
 	@echo ... src/Deck.obj
 	@echo ... src/Deck.i
 	@echo ... src/Deck.s
+	@echo ... src/Dice.obj
+	@echo ... src/Dice.i
+	@echo ... src/Dice.s
 	@echo ... src/Hand.obj
 	@echo ... src/Hand.i
 	@echo ... src/Hand.s
@@ -397,6 +454,9 @@ help:
 	@echo ... src/MapLoader.obj
 	@echo ... src/MapLoader.i
 	@echo ... src/MapLoader.s
+	@echo ... src/Player.obj
+	@echo ... src/Player.i
+	@echo ... src/Player.s
 	@echo ... src/Territory.obj
 	@echo ... src/Territory.i
 	@echo ... src/Territory.s

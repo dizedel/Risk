@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Risk.dir/src/Continent.cpp.obj"
+  "CMakeFiles/Risk.dir/src/Dice.cpp.obj"
   "CMakeFiles/Risk.dir/src/Main.cpp.obj"
   "CMakeFiles/Risk.dir/src/Map.cpp.obj"
   "CMakeFiles/Risk.dir/src/MapLoader.cpp.obj"
@@ -8,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Risk.dir/src/Card.cpp.obj"
   "CMakeFiles/Risk.dir/src/Deck.cpp.obj"
   "CMakeFiles/Risk.dir/src/Hand.cpp.obj"
+  "CMakeFiles/Risk.dir/src/Player.cpp.obj"
   "Risk.pdb"
   "Risk.exe"
   "Risk.exe.manifest"
