@@ -1,8 +1,9 @@
 #include "../include/Deck.h"
 #include "../include/Card.h"
 #include <time.h>
+#include <vector>
 
-Deck::Deck(Card cardsInDeck[])
+Deck::Deck(std::vector<Card> cardsInDeck)
 {
 	cards = cardsInDeck;
 }
@@ -16,30 +17,8 @@ Card Deck::draw()
 {
 	srand(time(NULL));
 
-	int randomIndex = rand() % cardsRemaining();
+	int randomIndex = rand() % cards.size();
 	Card toDraw = cards[randomIndex];
-
-	if (cardsRemaining() > 0)
-	{
-		Card temp = cards[cardsRemaining() - 1];
-		cards[randomIndex] = temp;
-		cards[cardsRemaining() - 1] = NULL;
-	}
-
+	cards.erase(cards.begin() + randomIndex);
 	return toDraw;
-}
-
-int Deck::cardsRemaining()
-{
-	int cardsRemaining;
-	int i = 0;
-
-	while (cards[i] != NULL)
-	{
-		i++;
-	}
-
-	cardsRemaining = i;
-
-	return cardsRemaining;
 }

@@ -5,7 +5,7 @@ using namespace std;
 class Card
 {
 private:
-	enum Type = { infantry, artillery, cavalry };
+	enum Type { infantry, artillery, cavalry };
 	Type type;
 
 public:

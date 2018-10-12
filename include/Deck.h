@@ -2,15 +2,14 @@
 
 #include "Deck.h"
 #include "Card.h"
-
+#include <vector>
 class Deck
 {
 private:
-	Card cards[];
+	std::vector<Card> cards;
 public:
-	Deck(Card[]);
+	Deck(std::vector<Card>);
 	~Deck();
 	Card draw();
-	int cardsRemaining();
 };
 

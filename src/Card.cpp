@@ -1,6 +1,4 @@
 #include "../include/Card.h"
-#include <string>
-using namespace std;
 
 
 Card::Card(Type typeOfCard)
@@ -18,7 +16,7 @@ void Card::setType(Type typeOfCard)
 	type = typeOfCard;
 }
 
-Type Card::getType()
+Card::Type Card::getType()
 {
 	return type;
 }

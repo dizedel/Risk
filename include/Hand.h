@@ -1,13 +1,13 @@
 #pragma once
 
 #include "Card.h"
-
+#include <vector>
 class Hand
 {
 private:
-	Card cardsInHand[];
+	std::vector<Card> cards;
 public:
-	Hand(Card[]);
+	Hand();
 	~Hand();
 	void exchange();
 };
