@@ -1,17 +1,23 @@
 #include <iostream>
 #include "MapLoader.h"
+<<<<<<< HEAD
 #include "Card.h"
 #include "Deck.h"
 #include "Hand.h"
 #include <vector>
+=======
+#include "Dice.h"
+>>>>>>> origin/Restructuring
 
 using namespace std;
 
 int main() {
-	
+
+    Dice dice;
 	MapLoader loader;
 	string mapFileName;
 
+	cout << "*************** \n MAP LOADER DEMO \n***************\n";
 	cout << "Enter the map's file name: ";
 	getline(cin, mapFileName);
 	cout << "Attempting to load " << mapFileName;
@@ -19,6 +25,8 @@ int main() {
 	cout << endl;
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 	int numOfCards = 100; // to be replaced with number of continents
 
 	vector<Card> cards;
@@ -34,8 +42,20 @@ int main() {
 	}
 
 	Deck deck{cards};
+=======
+=======
+>>>>>>> Fix dice code format and start player
+	cout << "*************** \n DICE DEMO \n***************\n";
+    dice.rolls();
+    dice.rolls();
+    dice.displayPercentage();
+<<<<<<< HEAD
+>>>>>>> origin/Restructuring
+=======
+>>>>>>> Fix dice code format and start player
 
 	system("pause");
+
 
 	return 0;
 }
