@@ -26,7 +26,6 @@ int main() {
 
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 	int numOfCards = 100; // to be replaced with number of continents
 
 	vector<Card> cards;
@@ -43,16 +42,11 @@ int main() {
 
 	Deck deck{cards};
 =======
-=======
->>>>>>> Fix dice code format and start player
 	cout << "*************** \n DICE DEMO \n***************\n";
     dice.rolls();
     dice.rolls();
     dice.displayPercentage();
-<<<<<<< HEAD
 >>>>>>> origin/Restructuring
-=======
->>>>>>> Fix dice code format and start player
 
 	system("pause");
 
