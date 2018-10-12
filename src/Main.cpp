@@ -10,6 +10,7 @@ int main() {
 	MapLoader loader;
 	string mapFileName;
 
+	cout << "*************** \n MAP LOADER DEMO \n***************\n";
 	cout << "Enter the map's file name: ";
 	getline(cin, mapFileName);
 	cout << "Attempting to load " << mapFileName;
@@ -17,9 +18,10 @@ int main() {
 	cout << endl;
 
 
-    dice.Rolls();
-    dice.Rolls();
-    dice.DisplayPercentage();
+	cout << "*************** \n DICE DEMO \n***************\n";
+    dice.rolls();
+    dice.rolls();
+    dice.displayPercentage();
 
 	system("pause");
 

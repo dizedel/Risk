@@ -21,7 +21,7 @@ int Dice::OneRoll() {
     return a;
 }
 
-int Dice::NumberOfDice() {
+int Dice::askNumOfDice() {
     int nOfDice = 1;
 
     cout << "How many dice would you like to roll? (1 to 3)" << endl;
@@ -35,15 +35,15 @@ int Dice::NumberOfDice() {
     return nOfDice;
 }
 
-int *Dice::Rolls() {
-    int a = NumberOfDice();
+int *Dice::rolls() {
+    int a = askNumOfDice();
     int counter = 0;
     int *RollArray = new int[a];
     totalRolls += a;
 
     while(counter < a){
         RollArray[counter] = OneRoll();
-        RollPercentage(RollArray[counter]);
+        rollPercentage(RollArray[counter]);
         if(RollArray[counter] < 1 || RollArray[counter] > 6){
             cout << "Error, the dice returned a number outside of the range." <<endl;
         }
@@ -53,7 +53,7 @@ int *Dice::Rolls() {
     return RollArray;
 }
 
-void Dice::DisplayPercentage() {
+void Dice::displayPercentage() {
     for(int i=0; i<6; i++){
         double temp = (double(diceRollPercentage[i])/totalRolls)*100;
         cout << "The dice has rolled " << i+1 << " : " << temp << "%" << endl;
@@ -61,7 +61,7 @@ void Dice::DisplayPercentage() {
     cout <<endl;
 }
 
-void Dice::RollPercentage(int x){
+void Dice::rollPercentage(int x){
     diceRollPercentage[x-1]++;
 }
 
