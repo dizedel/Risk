@@ -9,7 +9,7 @@
 #include <vector>
 #include "Territory.h"
 #include "Dice.h"
-//#include "Hand.h"
+#include "Hand.h"
 
 using namespace std;
 
@@ -33,7 +33,8 @@ class Player {
 
         void giveArmiesForTerritory();
 
-        void reinforce(int, string);
+        int hasCountry(string);
+        void reinforce();
         void attack(int, string);
         void fortify(int, string);
 
@@ -42,7 +43,7 @@ class Player {
         int numOfExchanges;                     //number of times the player has exchanged his cards for armies
         int armies;
         vector<Territory> countries;
-        //Hand hand;
+        Hand hand;
         Dice dice;
 
 };

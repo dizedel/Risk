@@ -27,6 +27,14 @@ void Player::addArmies(int numOfArmies) {
    armies+=numOfArmies;
 }
 
+int Player::hasCountry(string countryName){
+    for (int i = 0; i < countries.size(); i++) {
+        if (countries.at(i).getName() == countryName){
+            return i;
+        }
+    }
+    return -1;
+}
 
 void Player::giveArmiesForTerritory(){
    //TODO: round down
@@ -43,24 +51,28 @@ void Player::giveArmiesForTerritory(){
    return false;*/
 }
 
-void Player::reinforce(int numOfArmies, string country) {
+/***********************************************************
+ *              REINFORCEMENT
+ * *********************************************************
+ */
+void Player::reinforce() {
    string txtline;
    bool answered = false;
 
    giveArmiesForTerritory();
 
    //-----------------EXCHANGE CARDS------------------------
-   cout << "Do you wish to exchange your cards?";
+   cout << "Do you wish to exchange your cards? \n";
    getline(cin, txtline);
    while (!answered){
       if (txtline=="yes"){
-         /*int cardArmies = hand.exchange();
-          * if (cardArmies != 0){
-            armies+=hand.exchange();
-            cout >> "You have exchanged your cards for " + cardArmies + " armies."
-          }*/
+         int cardArmies = hand.exchange();
+          if (cardArmies != 0){
+            armies+=cardArmies;
+            cout << "\n You have exchanged your cards for " << cardArmies << " armies.";
+          }
          else{
-            cout << "You have no cards that can be exchanged."
+            cout << "You have no cards that can be exchanged.";
          }
          answered = true;
       }
@@ -68,23 +80,61 @@ void Player::reinforce(int numOfArmies, string country) {
          cout << "No cards will be exchanged this turn";
          answered = true;
       }
+      else{
+          cout<< "Not a valid answer.";
+      }
    }
    answered = false;
 
-   //-----------------EXCHANGE CARDS------------------------
+   //-----------------ADD ARMIES TO COUNTRIES------------------------
 
+   //TODO: Receive  armies for entire continents
+   if(armies>= 3) {
+       while (!answered && armies >= 3) {
+           cout << "Which countries do you wish to reinforce? Enter 'Done' if you do not wish to";
+           getline(cin, txtline);
+           if (txtline == "Done") {
+               answered = true;
+               break;
+           } else if (hasCountry(txtline)) {
+               int numOfArmies = 0;
+               while (true) {
+                   cout << "How many armies do you wish to place?";
+                   cin >> numOfArmies;
+                   if (numOfArmies < 3) {
+                       cout << "You need to place more than 3 armies per country";
+                   } else {
+                       countries.at(hasCountry(txtline)).addArmies(numOfArmies);
+                       break;
+                   }
+               }
 
-
-
+           } else {
+               cout << "You do not have this country";
+           }
+       }
+   }
+   else{
+       cout<< "You do not have enough armies to reinforce at the moment";
+   }
 }
+
+/***********************************************************
+ *                       ATTACK
+ * *********************************************************
+ */
 
 void Player::attack(int numOfArmies, string country){
-
-   armies-=numOfArmies;
+    //TODO: Implement Attack function
 }
 
+
+/***********************************************************
+ *                   FORTIFICATION
+ * *********************************************************
+ */
 void Player::fortify(int numOfArmies, string country){
-   armies-=numOfArmies;
+    //TODO: Implement fortification function
 }
 
 

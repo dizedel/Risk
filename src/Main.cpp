@@ -4,6 +4,7 @@
 #include "Deck.h"
 #include "Hand.h"
 #include <vector>
+#include <Player.h>
 #include "Dice.h"
 
 using namespace std;
@@ -53,7 +54,9 @@ int main() {
     dice.rolls();
     dice.rolls();
     dice.displayPercentage();
-    
+
+    cout << "****************\n PLAYER DEMO \n*************\n";
+    //TODO:Player DEMO
 	system("pause");
 
 
