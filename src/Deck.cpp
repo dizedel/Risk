@@ -1,5 +1,5 @@
-#include "Deck.h"
-#include "Card.h"
+#include "../include/Deck.h"
+#include "../include/Card.h"
 #include <time.h>
 
 Deck::Deck(Card cardsInDeck[])

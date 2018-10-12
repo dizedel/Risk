@@ -49,10 +49,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\pamel\Documents\Github\Risk
+CMAKE_SOURCE_DIR = C:\Users\nicho\Documents\Risk
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\pamel\Documents\Github\Risk\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\nicho\Documents\Risk\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -81,9 +81,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\pamel\Documents\Github\Risk\cmake-build-debug\CMakeFiles C:\Users\pamel\Documents\Github\Risk\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\pamel\Documents\Github\Risk\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -124,6 +124,33 @@ Risk\fast:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\build
 .PHONY : Risk\fast
 
+src\Card.obj: src\Card.cpp.obj
+
+.PHONY : src\Card.obj
+
+# target to build an object file
+src\Card.cpp.obj:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Card.cpp.obj
+.PHONY : src\Card.cpp.obj
+
+src\Card.i: src\Card.cpp.i
+
+.PHONY : src\Card.i
+
+# target to preprocess a source file
+src\Card.cpp.i:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Card.cpp.i
+.PHONY : src\Card.cpp.i
+
+src\Card.s: src\Card.cpp.s
+
+.PHONY : src\Card.s
+
+# target to generate assembly for a file
+src\Card.cpp.s:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Card.cpp.s
+.PHONY : src\Card.cpp.s
+
 src\Continent.obj: src\Continent.cpp.obj
 
 .PHONY : src\Continent.obj
@@ -150,6 +177,60 @@ src\Continent.s: src\Continent.cpp.s
 src\Continent.cpp.s:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Continent.cpp.s
 .PHONY : src\Continent.cpp.s
+
+src\Deck.obj: src\Deck.cpp.obj
+
+.PHONY : src\Deck.obj
+
+# target to build an object file
+src\Deck.cpp.obj:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Deck.cpp.obj
+.PHONY : src\Deck.cpp.obj
+
+src\Deck.i: src\Deck.cpp.i
+
+.PHONY : src\Deck.i
+
+# target to preprocess a source file
+src\Deck.cpp.i:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Deck.cpp.i
+.PHONY : src\Deck.cpp.i
+
+src\Deck.s: src\Deck.cpp.s
+
+.PHONY : src\Deck.s
+
+# target to generate assembly for a file
+src\Deck.cpp.s:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Deck.cpp.s
+.PHONY : src\Deck.cpp.s
+
+src\Hand.obj: src\Hand.cpp.obj
+
+.PHONY : src\Hand.obj
+
+# target to build an object file
+src\Hand.cpp.obj:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Hand.cpp.obj
+.PHONY : src\Hand.cpp.obj
+
+src\Hand.i: src\Hand.cpp.i
+
+.PHONY : src\Hand.i
+
+# target to preprocess a source file
+src\Hand.cpp.i:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Hand.cpp.i
+.PHONY : src\Hand.cpp.i
+
+src\Hand.s: src\Hand.cpp.s
+
+.PHONY : src\Hand.s
+
+# target to generate assembly for a file
+src\Hand.cpp.s:
+	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Hand.cpp.s
+.PHONY : src\Hand.cpp.s
 
 src\Main.obj: src\Main.cpp.obj
 
@@ -295,9 +376,18 @@ help:
 	@echo ... Risk
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... src/Card.obj
+	@echo ... src/Card.i
+	@echo ... src/Card.s
 	@echo ... src/Continent.obj
 	@echo ... src/Continent.i
 	@echo ... src/Continent.s
+	@echo ... src/Deck.obj
+	@echo ... src/Deck.i
+	@echo ... src/Deck.s
+	@echo ... src/Hand.obj
+	@echo ... src/Hand.i
+	@echo ... src/Hand.s
 	@echo ... src/Main.obj
 	@echo ... src/Main.i
 	@echo ... src/Main.s
