@@ -9,10 +9,10 @@ class Dice {
 
 public:
     int OneRoll();
-    int NumberOfDice();
-    int *Rolls();
-    void RollPercentage(int x);
-    void DisplayPercentage();
+    int askNumOfDice();
+    int *rolls();
+    void rollPercentage(int x);
+    void displayPercentage();
 };
 
 #endif //UNTITLED_DICE_H
