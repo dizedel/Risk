@@ -94,7 +94,7 @@ int main() {
     dice.rolls();
     dice.rolls();
     dice.displayPercentage();
-
+    
 	system("pause");
 
 
