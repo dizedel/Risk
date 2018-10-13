@@ -12,21 +12,8 @@ Hand::~Hand()
 {
 }
 
-int Hand::exchange(int index)
+int Hand::exchange()
 {
-    if (this->getCards()[index].getType() == "infantry") {
-        cards.erase(cards.begin() + index);
-        return 1;
-    }
-    if (this->getCards()[index].getType() == "cavalry"){
-        cards.erase(cards.begin() + index);
-        return 5;
-    }
-    if (this->getCards()[index].getType() == "artillery"){
-        cards.erase(cards.begin() + index);
-        return 10;
-    }
-
     return 0;
 }
 
@@ -38,4 +25,10 @@ const vector<Card> &Hand::getCards() const
 void Hand::setCards(const vector<Card> &cards)
 {
     Hand::cards = cards;
+}
+
+void Hand::addCardToHand(Deck &deck)
+{
+   if(cards.size() < 5)
+       Hand::cards.push_back(deck.draw());
 }

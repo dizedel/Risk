@@ -11,7 +11,8 @@ private:
 public:
 	Hand();
 	~Hand();
-	int exchange(int);
+	int exchange();
+	void addCardToHand(Deck&);
 	const vector<Card> &getCards() const;
 	void setCards(const vector<Card> &cards);
 

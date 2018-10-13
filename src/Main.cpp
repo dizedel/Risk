@@ -10,6 +10,12 @@ using namespace std;
 
 int main() {
 
+    int numOfCards;
+    int infantry = 0;
+    int artillery = 0;
+    int cavalry = 0;
+    Hand hand;
+
     Dice dice;
 	MapLoader loader;
 	string mapFileName;
@@ -22,15 +28,12 @@ int main() {
 	cout << endl;
 
 
-    cout << "*************** \n CARDS, DECK, HAND DEMO \n***************\n";
+    cout << "************************* \n CARDS, DECK, HAND DEMO \n*************************\n";
 
-	int numOfCards = 100; // to be replaced with number of continents
+	numOfCards = 100; // to be replaced with number of continents
 
 	Deck deck(numOfCards);
 
-	int infantry = 0;
-	int artillery = 0;
-	int cavalry = 0;
 
 	for (int i = 0; i < deck.getCards().size(); i++)
     {
@@ -48,6 +51,44 @@ int main() {
 	cout << "Cavalry: " << cavalry << endl;
 	cout << "This deck contains " << deck.getCards().size() << " cards." << endl;
 	cout << "---------------" << endl;
+
+    infantry = 0;
+    artillery = 0;
+    cavalry = 0;
+
+
+    hand.addCardToHand(deck);
+    hand.addCardToHand(deck);
+    hand.addCardToHand(deck);
+    hand.addCardToHand(deck);
+    hand.addCardToHand(deck);
+
+    for (int i = 0; i < deck.getCards().size(); i++)
+    {
+        if (deck.getCards()[i].getType() == "infantry")
+            infantry++;
+        if (deck.getCards()[i].getType() == "artillery")
+            artillery++;
+        if (deck.getCards()[i].getType() == "cavalry")
+            cavalry++;
+    }
+
+    cout << "5 cards were drawn at random." << endl;
+    cout << "NEW DECK CONTENTS"<< endl;
+    cout << "Infantry: " << infantry << endl;
+    cout << "Artillery: " << artillery << endl;
+    cout << "Cavalry: " << cavalry << endl;
+    cout << "This deck contains " << deck.getCards().size() << " cards." << endl;
+    cout << "---------------" << endl;
+
+
+    cout << "HAND CONTENTS" << endl;
+
+
+    for (int i = 0; i < hand.getCards().size(); i++)
+    {
+        cout << "Card at index " << i << ": " << "Type: " << hand.getCards()[i].getType() << endl;
+    }
 
 	cout << "*************** \n DICE DEMO \n***************\n";
     dice.rolls();
