@@ -22,6 +22,7 @@ class Map {
 		string getScroll();
 		string getWarn();
 		vector<Continent> getContinents();
+		int getTerritoryCount();
 
 		void setAuthor(string);
 		void setImage(string);
@@ -29,6 +30,7 @@ class Map {
 		void setScroll(string);
 		void setWarn(string);
 		void addContinents(Continent);
+		void setTerritoryCount(int);
 
 	private:
 		string author;
@@ -36,6 +38,7 @@ class Map {
 		string wrap;
 		string scroll;
 		string warn;
+		int territoryCount;
 
 };
 #endif
