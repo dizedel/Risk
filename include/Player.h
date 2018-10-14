@@ -10,6 +10,7 @@
 #include "Territory.h"
 #include "Dice.h"
 #include "Hand.h"
+#include "Map.h"
 
 using namespace std;
 
@@ -28,8 +29,10 @@ class Player {
         void setName(string);
         void setCountries(vector<Territory>);
         void setHand(Hand);
+
+        void addCountry(string);
         void addArmies(int);
-        void addTerritories(Territory);
+        bool addTerritory(string , Map);
 
         void giveArmiesForTerritory();
 
@@ -37,6 +40,8 @@ class Player {
         void reinforce();
         void attack(int, string);
         void fortify(int, string);
+
+        string displayCountries();
 
     private:
         string playerName;                      //player's name as an identifier

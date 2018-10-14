@@ -5,14 +5,35 @@
 #include "Territory.h"
 #include <vector>
 #include <iostream>
+#include <Map.h>
 
 using namespace std;
+Player::Player() {
+
+}
+
+Player::Player(string name) {
+    playerName = name;
+    Hand h;
+    Dice d;
+    hand = h;
+    dice = d;
+}
+
+Player::~Player()
+{
+}
+
 
 string Player::getName(){
-   return playerName;
+   return Player::playerName;
 }
 vector<Territory> Player::getCountries(){
    return countries;
+}
+
+Dice Player::getDice() {
+    return dice;
 }
 
 void Player::setName(string name) {
@@ -27,6 +48,10 @@ void Player::addArmies(int numOfArmies) {
    armies+=numOfArmies;
 }
 
+bool Player::addTerritory(string countryName, Map map) {
+    return false;
+}
+
 int Player::hasCountry(string countryName){
     for (int i = 0; i < countries.size(); i++) {
         if (countries.at(i).getName() == countryName){
@@ -36,19 +61,19 @@ int Player::hasCountry(string countryName){
     return -1;
 }
 
+string Player::displayCountries() {
+    string str = "";
+    for (int i =0; i<countries.size(); i++){
+        str += countries.at(i).getName();
+        str += "\n";
+    }
+    return str;
+}
+
 void Player::giveArmiesForTerritory(){
-   //TODO: round down
-   armies += countries.size()/3;
-   //TODO: give armies for entire continent
-   //Search if the person posesses the country selected.
-   /*for(int i=0; i<countries.size(); i++){
-      if (countries[i].getName()==country){
-         countries[i].addArmies(numOfArmies);
-         armies-=numOfArmies;
-         return true;
-      }
-   }
-   return false;*/
+    //Todo: round down
+    armies += countries.size()/3;
+    //TODO: give armies for entire continent
 }
 
 /***********************************************************

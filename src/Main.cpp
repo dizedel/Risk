@@ -55,9 +55,31 @@ int main() {
     dice.rolls();
     dice.displayPercentage();
 
-    cout << "****************\n PLAYER DEMO \n*************\n";
-    //TODO:Player DEMO
-	system("pause");
+
+
+	cout << "****************\n PLAYER DEMO \n*************\n";
+	Player p1("Tom");
+	cout<< "Playername:" << p1.getName() << "\n";
+
+	/* This part is not yet connected to the "Maps" This is just to show that the
+	    off the player's capability of having territories in their posession.
+	 */
+	 cout << p1.displayCountries();
+	Territory canada;
+	Territory usa;
+	canada.setName("Canada");
+	usa.setName("USA");
+	vector<Territory> countries{canada,usa};
+	p1.setCountries(countries);
+    cout << p1.displayCountries();
+
+
+    /*
+     *
+     * */
+    system("pause");
+
+
 
 
 	return 0;
