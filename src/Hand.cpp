@@ -20,10 +20,6 @@ int Hand::exchange()
     int artillery = 0;
     int cavalry = 0;
 
-    bool infantryFlag = true;
-    bool artilleryFlag = true;
-    bool cavalryFlag = true;
-
     for (int i = 0; i < cards.size(); i++)
     {
         if (cards[i].getType() == "infantry")
@@ -38,72 +34,78 @@ int Hand::exchange()
     {
         if (infantry >= 3 || artillery >= 3 || cavalry >= 3)
         {
-            int cardsToDiscard = 3;
-
-            if (infantry < 3)
-                infantryFlag = false;
-
-            if (artillery < 3)
-                artilleryFlag = false;
-
-            if (cavalry < 3)
-                cavalryFlag = false;
-
-            for (int i = 0; i < cards.size(); i++)
+            if (infantry >= 3)
             {
-                if (cardsToDiscard == 0)
-                    break;
-
-                if (infantryFlag && cards[i].getType() == "infantry")
+                for (int k = 0; k < 3; k++)
                 {
-                    cards.erase(cards.begin() + i);
-                    cardsToDiscard--;
-                    i = 0;
+                    for (int i = 0; i < cards.size(); i++)
+                    {
+                        if (cards[i].getType() == "infantry")
+                        {
+                            cards.erase(cards.begin() + i);
+                            break;
+                        }
+                    }
                 }
+            }
 
-                else if (artilleryFlag && cards[i].getType() == "artillery")
+            if (artillery >= 3)
+            {
+                for (int k = 0; k < 3; k++)
                 {
-                    cards.erase(cards.begin() + i);
-                    cardsToDiscard--;
-                    i = 0;
+                    for (int i = 0; i < cards.size(); i++)
+                    {
+                        if (cards[i].getType() == "artillery")
+                        {
+                            cards.erase(cards.begin() + i);
+                            break;
+                        }
+                    }
                 }
+            }
 
-                else if (cavalryFlag && cards[i].getType() == "cavalry")
+            if (cavalry >= 3)
+            {
+                for (int k = 0; k < 3; k++)
                 {
-                    cards.erase(cards.begin() + i);
-                    cardsToDiscard--;
-                    i = 0;
+                    for (int i = 0; i < cards.size(); i++)
+                    {
+                        if (cards[i].getType() == "cavalry")
+                        {
+                            cards.erase(cards.begin() + i);
+                            break;
+                        }
+                    }
                 }
             }
         }
 
         else
         {
-            infantryFlag = true;
-            artilleryFlag = true;
-            cavalryFlag = true;
-
             for (int i = 0; i < cards.size(); i++)
             {
-                if (infantryFlag && cards[i].getType() == "infantry")
+                if (cards[i].getType() == "infantry")
                 {
                     cards.erase(cards.begin() + i);
-                    infantryFlag = false;
-                    i = 0;
+                    break;
                 }
+            }
 
-                else if (artilleryFlag && cards[i].getType() == "artillery")
+            for (int j = 0; j < cards.size(); j++)
+            {
+                if (cards[j].getType() == "artillery")
                 {
-                    cards.erase(cards.begin() + i);
-                    artilleryFlag = false;
-                    i = 0;
+                    cards.erase(cards.begin() + j);
+                    break;
                 }
+            }
 
-                else if (cavalryFlag && cards[i].getType() == "cavalry")
+            for (int k = 0; k < cards.size(); k++)
+            {
+                if (cards[k].getType() == "cavalry")
                 {
-                    cards.erase(cards.begin() + i);
-                    cavalryFlag = false;
-                    i = 0;
+                    cards.erase(cards.begin() + k);
+                    break;
                 }
             }
         }
