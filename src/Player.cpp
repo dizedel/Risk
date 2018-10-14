@@ -91,7 +91,7 @@ void Player::reinforce() {
    getline(cin, txtline);
    while (!answered){
       if (txtline=="yes"){
-         int cardArmies = hand.exchange(0); //This is a test value and needs to be fixed once the exchange function is fixed
+         int cardArmies = hand.exchange(); //This is a test value and needs to be fixed once the exchange function is fixed
           if (cardArmies != 0){
             armies+=cardArmies;
             cout << "\n You have exchanged your cards for " << cardArmies << " armies.";
