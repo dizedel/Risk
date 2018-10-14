@@ -12,6 +12,7 @@ public:
 	~Card();
 	const string &getType() const;
 	void setType(const string &type);
+	void getType(string);
 
 };
 

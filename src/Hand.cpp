@@ -167,6 +167,7 @@ void Hand::setCards(const vector<Card> &cards)
     Hand::cards = cards;
 }
 
+<<<<<<< HEAD
 void Hand::addCardToHand(Deck &deck)
 {
    if(cards.size() < 5)
@@ -181,3 +182,12 @@ int Hand::getExchangedHands() const {
     return exchangedHands;
 }
 
+=======
+string Hand::toString() {
+    string str="";
+    for (int i=0; i<cards.size(); i++){
+      str += cards.at(i).getType() + "\n";
+    };
+    return str;
+}
+>>>>>>> 9d00f61af3ca94593a2e67a8a96a6d90ef2d39e9
