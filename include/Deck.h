@@ -3,10 +3,13 @@
 #include "Deck.h"
 #include "Card.h"
 #include <vector>
+
+using namespace std;
+
 class Deck
 {
 private:
-	std::vector<Card> cards;
+	vector<Card> cards;
 public:
 	Deck(int);
 	~Deck();

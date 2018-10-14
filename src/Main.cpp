@@ -30,7 +30,7 @@ int main() {
 
     cout << "************************* \n CARDS, DECK, HAND DEMO \n*************************\n";
 
-	numOfCards = 100; // to be replaced with number of continents
+	numOfCards = 50; // to be replaced with number of continents
 
 	Deck deck(numOfCards);
 
@@ -52,51 +52,51 @@ int main() {
 	cout << "This deck contains " << deck.getCards().size() << " cards." << endl;
 	cout << "---------------" << endl;
 
-    infantry = 0;
-    artillery = 0;
-    cavalry = 0;
+	while (deck.getCards().size() > 0)
+	{
+        infantry = 0;
+        artillery = 0;
+        cavalry = 0;
 
 
-    hand.addCardToHand(deck);
-    hand.addCardToHand(deck);
-    hand.addCardToHand(deck);
-    hand.addCardToHand(deck);
-    hand.addCardToHand(deck);
-
-    for (int i = 0; i < deck.getCards().size(); i++)
-    {
-        if (deck.getCards()[i].getType() == "infantry")
-            infantry++;
-        if (deck.getCards()[i].getType() == "artillery")
-            artillery++;
-        if (deck.getCards()[i].getType() == "cavalry")
-            cavalry++;
-    }
-
-    cout << "5 cards were drawn at random." << endl;
-    cout << "NEW DECK CONTENTS"<< endl;
-    cout << "Infantry: " << infantry << endl;
-    cout << "Artillery: " << artillery << endl;
-    cout << "Cavalry: " << cavalry << endl;
-    cout << "This deck contains " << deck.getCards().size() << " cards." << endl;
-    cout << "---------------" << endl;
+        while (hand.getCards().size() < 5 && deck.getCards().size() > 0)
+            hand.addCardToHand(deck);
 
 
-    cout << "HAND CONTENTS" << endl;
+        for (int i = 0; i < deck.getCards().size(); i++) {
+            if (deck.getCards()[i].getType() == "infantry")
+                infantry++;
+            if (deck.getCards()[i].getType() == "artillery")
+                artillery++;
+            if (deck.getCards()[i].getType() == "cavalry")
+                cavalry++;
+        }
 
-    for (int i = 0; i < hand.getCards().size(); i++)
-    {
-        cout << "Card at index " << i << ": " << "Type: " << hand.getCards()[i].getType() << endl;
-    }
+        cout << "Your hand has been filled with cards." << endl;
+        cout << "NEW DECK CONTENTS" << endl;
+        cout << "Infantry: " << infantry << endl;
+        cout << "Artillery: " << artillery << endl;
+        cout << "Cavalry: " << cavalry << endl;
+        cout << "This deck contains " << deck.getCards().size() << " cards." << endl;
+        cout << "---------------" << endl;
 
-    cout<< "\nCards in your hand have been exchanged for " << hand.exchange() << " armies.\n" << endl;
 
-    cout << "NEW HAND CONTENTS" << endl;
+        cout << "HAND CONTENTS" << endl;
 
+        for (int i = 0; i < hand.getCards().size(); i++) {
+            cout << "Card at index " << i << ": " << "Type: " << hand.getCards()[i].getType() << endl;
+        }
 
-    for (int i = 0; i < hand.getCards().size(); i++)
-    {
-        cout << "Card at index " << i << ": " << "Type: " << hand.getCards()[i].getType() << endl;
+        cout << "\nCards in your hand have been exchanged for " << hand.exchange() << " armies." << endl;
+        cout << "EXCHANGED HANDS: " << hand.getExchangedHands() << endl;
+
+        cout << "\nHAND CONTENTS AFTER EXCHANGE" << endl;
+
+        for (int i = 0; i < hand.getCards().size(); i++) {
+            cout << "Card at index " << i << ": " << "Type: " << hand.getCards()[i].getType() << endl;
+        }
+        cout << "-------------" << endl;
+
     }
 
 	cout << "*************** \n DICE DEMO \n***************\n";

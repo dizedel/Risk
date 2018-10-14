@@ -4,10 +4,12 @@
 #include "Card.h"
 #include <vector>
 
+using namespace std;
+
 class Hand
 {
 private:
-	std::vector<Card> cards;
+	vector<Card> cards;
 	int exchangedHands = 0;
 public:
 	Hand();

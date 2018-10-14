@@ -3,6 +3,7 @@
 #include "../include/Card.h"
 #include <vector>
 #include <iostream>
+using namespace std;
 
 Hand::Hand()
 {
@@ -48,27 +49,30 @@ int Hand::exchange()
             if (cavalry < 3)
                 cavalryFlag = false;
 
-            while (cardsToDiscard > 0)
+            for (int i = 0; i < cards.size(); i++)
             {
-                for (int i = 0; i < cards.size(); i++)
+                if (cardsToDiscard == 0)
+                    break;
+
+                if (infantryFlag && cards[i].getType() == "infantry")
                 {
-                    if (infantryFlag == true && cards[i].getType() == "infantry")
-                    {
-                        cards.erase(cards.begin() + i);
-                        cardsToDiscard--;
-                    }
+                    cards.erase(cards.begin() + i);
+                    cardsToDiscard--;
+                    i = 0;
+                }
 
-                    else if (artilleryFlag == true && cards[i].getType() == "artillery")
-                    {
-                        cards.erase(cards.begin() + i);
-                        cardsToDiscard--;
-                    }
+                else if (artilleryFlag && cards[i].getType() == "artillery")
+                {
+                    cards.erase(cards.begin() + i);
+                    cardsToDiscard--;
+                    i = 0;
+                }
 
-                    else if (cavalryFlag == true && cards[i].getType() == "cavalry")
-                    {
-                        cards.erase(cards.begin() + i);
-                        cardsToDiscard--;
-                    }
+                else if (cavalryFlag && cards[i].getType() == "cavalry")
+                {
+                    cards.erase(cards.begin() + i);
+                    cardsToDiscard--;
+                    i = 0;
                 }
             }
         }
@@ -81,22 +85,25 @@ int Hand::exchange()
 
             for (int i = 0; i < cards.size(); i++)
             {
-                if (infantryFlag == true && cards[i].getType() == "infantry")
+                if (infantryFlag && cards[i].getType() == "infantry")
                 {
                     cards.erase(cards.begin() + i);
-                    infantryFlag == false;
+                    infantryFlag = false;
+                    i = 0;
                 }
 
-                if (artilleryFlag == true && cards[i].getType() == "artillery")
+                else if (artilleryFlag && cards[i].getType() == "artillery")
                 {
                     cards.erase(cards.begin() + i);
                     artilleryFlag = false;
+                    i = 0;
                 }
 
-                if (cavalryFlag == true && cards[i].getType() == "cavalry")
+                else if (cavalryFlag && cards[i].getType() == "cavalry")
                 {
                     cards.erase(cards.begin() + i);
                     cavalryFlag = false;
+                    i = 0;
                 }
             }
         }

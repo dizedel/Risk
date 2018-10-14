@@ -2,6 +2,7 @@
 #include "../include/Card.h"
 #include <time.h>
 #include <vector>
+using namespace std;
 
 Deck::Deck(int numOfCards)
 {
