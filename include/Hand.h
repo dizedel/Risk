@@ -8,6 +8,7 @@ class Hand
 {
 private:
 	std::vector<Card> cards;
+	int exchangedHands = 0;
 public:
 	Hand();
 	~Hand();
@@ -15,6 +16,7 @@ public:
 	void addCardToHand(Deck&);
 	const vector<Card> &getCards() const;
 	void setCards(const vector<Card> &cards);
+    int getExchangedHands() const;
 
 };
 

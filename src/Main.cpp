@@ -84,6 +84,15 @@ int main() {
 
     cout << "HAND CONTENTS" << endl;
 
+    for (int i = 0; i < hand.getCards().size(); i++)
+    {
+        cout << "Card at index " << i << ": " << "Type: " << hand.getCards()[i].getType() << endl;
+    }
+
+    cout<< "\nCards in your hand have been exchanged for " << hand.exchange() << " armies.\n" << endl;
+
+    cout << "NEW HAND CONTENTS" << endl;
+
 
     for (int i = 0; i < hand.getCards().size(); i++)
     {
