@@ -13,4 +13,7 @@ add_executable(Risk
         src/MapLoader.cpp
         src/stdafx.cpp
         src/Territory.cpp
-        src/Player.cpp include/Player.h)
+        src/Card.cpp
+        src/Deck.cpp
+        src/Hand.cpp
+        src/Player.cpp)

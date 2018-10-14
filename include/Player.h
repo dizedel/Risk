@@ -1,38 +1,55 @@
 //
 // Created by pamel on 2018-10-11.
 //
-
-#ifndef RISK_PLAYER_H
-#define RISK_PLAYER_H
+#pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include <string>
 #include <vector>
 #include "Territory.h"
 #include "Dice.h"
+#include "Hand.h"
+#include "Map.h"
 
 using namespace std;
 
 class Player {
 
-public:
-    Player();
-    Player(string);
-    ~Player();
+    public:
+        Player();
+        Player(string);
+        ~Player();
 
-    string getName();
-    Dice getDice();
-    vector<Territory> getTerritories();
+        string getName();
+        Dice getDice();
+        Hand getHand();
+        vector<Territory> getCountries();
 
+        void setName(string);
+        void setCountries(vector<Territory>);
+        void setHand(Hand);
 
-    void setName(string);
+        void addCountry(string);
+        void addArmies(int);
+        bool addTerritory(string , Map);
 
+        void giveArmiesForTerritory();
 
+        int hasCountry(string);
+        void reinforce();
+        void attack(int, string);
+        void fortify(int, string);
 
-private:
-    string playerName;
-    vector<Territory> territories;
-    //vector<Card> cards;
-    Dice dice;
+        string displayCountries();
+
+    private:
+        string playerName;                      //player's name as an identifier
+        int numOfExchanges;                     //number of times the player has exchanged his cards for armies
+        int armies;
+        vector<Territory> countries;
+        Hand hand;
+        Dice dice;
 
 };
-#endif //RISK_PLAYER_H
+#endif
