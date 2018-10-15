@@ -27,11 +27,7 @@ int Territory::getX() {
 }
 
 int Territory::getY() {
-    return coordX;
-}
-
-int Territory::getArmies() {
-    return armies;
+    return coordY;
 }
 
 string Territory::getContinent() {
@@ -54,9 +50,6 @@ void Territory::setContinent(string c) {
     continent = c;
 }
 
-void Territory::addArmies(int a){
-    armies += a;
-}
 void Territory::addNeighbor(string t) {
     neighbors.push_back(t);
 }
