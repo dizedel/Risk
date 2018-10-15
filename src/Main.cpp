@@ -31,7 +31,7 @@ int main() {
 
     cout << "************************* \n CARDS, DECK, HAND DEMO \n*************************\n";
 
-	numOfCards = 50; // to be replaced with number of countries
+	numOfCards = 50; // to be replaced with number of continents
 
 	Deck deck(numOfCards);
 
