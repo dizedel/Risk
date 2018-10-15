@@ -45,6 +45,10 @@ string Map::getWarn() {
 	return warn;
 }
 
+int Map::getTerritoryCount() {
+    return territoryCount;
+}
+
 void Map::setAuthor(string a) {
 	author = a;
 }
@@ -63,6 +67,10 @@ void Map::setScroll(string scr) {
 
 void Map::setWarn(string wrn) {
 	warn = wrn;
+}
+
+void Map::setTerritoryCount(int tc) {
+    territoryCount = tc;
 }
 
 void Map::addContinents(Continent c1) {
