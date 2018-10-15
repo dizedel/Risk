@@ -19,6 +19,7 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="ec434e56-768a-4c32-bc03-a1ccb05dbe2a" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
@@ -34,6 +35,9 @@
       <change beforePath="$PROJECT_DIR$/src/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MapLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapLoader.cpp" afterDir="false" />
     </list>
+=======
+    <list default="true" id="3265a92a-1b28-40d7-ba82-a785c5bffafd" name="Default Changelist" comment="" />
+>>>>>>> 9072b616894e52d2b4dc869214189892d2f431f0
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
 >>>>>>> origin/Restructuring
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -131,7 +135,7 @@
     <session id="-2013937234">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.39" value="1" />
@@ -185,8 +189,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MapLoader.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+            <state relative-caret-position="414">
+              <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -415,12 +419,16 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="x" value="-15" />
     <option name="width" value="1948" />
     <option name="height" value="2075" />
 =======
   <component name="ProjectFrameBounds" extendedState="7">
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+>>>>>>> 9072b616894e52d2b4dc869214189892d2f431f0
     <option name="x" value="-10" />
     <option name="width" value="979" />
     <option name="height" value="1040" />
@@ -555,12 +563,17 @@
       <workItem from="1539372653534" duration="1826000" />
       <workItem from="1539375165461" duration="251000" />
       <workItem from="1539380211003" duration="4165000" />
+<<<<<<< HEAD
       <workItem from="1539560804145" duration="588000" />
 >>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
+=======
+      <workItem from="1539560804145" duration="1053000" />
+>>>>>>> 9072b616894e52d2b4dc869214189892d2f431f0
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="436000" />
@@ -591,6 +604,9 @@
 =======
     <option name="totallyTimeSpent" value="11496000" />
 >>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
+=======
+    <option name="totallyTimeSpent" value="11961000" />
+>>>>>>> 9072b616894e52d2b4dc869214189892d2f431f0
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -609,7 +625,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47304583" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.12938005" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -762,12 +778,17 @@
     <entry file="file://$PROJECT_DIR$/src/MapLoader.cpp">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="102">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
 >>>>>>> origin/Restructuring
 =======
         <state relative-caret-position="142">
           <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+=======
+        <state relative-caret-position="414">
+          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+>>>>>>> 9072b616894e52d2b4dc869214189892d2f431f0
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
