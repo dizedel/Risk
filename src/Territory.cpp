@@ -64,8 +64,4 @@ vector<string> Territory::getNeighbors() {
 
 void Territory::addArmies(int a){
     armies += a;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 4b3985b895e9d4778e72028854bcfae11df8bdb6
