@@ -1,4 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk"
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug
