@@ -65,7 +65,3 @@ vector<string> Territory::getNeighbors() {
 void Territory::addArmies(int a){
     armies += a;
 }
-
-int Territory::getArmies() {
-    return armies;
-}
