@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/nicho/Documents/Risk/cmake-build-debug/CMakeFiles/Risk.dir/embed.manifest"
+=======
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/CMakeFiles/Risk.dir/embed.manifest"
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941

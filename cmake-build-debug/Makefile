@@ -49,10 +49,17 @@ RM = "C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = C:\Users\nicho\Documents\Risk
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = C:\Users\nicho\Documents\Risk\cmake-build-debug
+=======
+CMAKE_SOURCE_DIR = "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk"
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug"
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -81,9 +88,15 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\CMakeFiles" "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\CMakeFiles\progress.marks"
+	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\CMakeFiles" 0
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 .PHONY : all
 
 # The main clean target
@@ -178,6 +191,7 @@ src\Continent.cpp.s:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Continent.cpp.s
 .PHONY : src\Continent.cpp.s
 
+<<<<<<< HEAD
 src\Deck.obj: src\Deck.cpp.obj
 
 .PHONY : src\Deck.obj
@@ -205,6 +219,8 @@ src\Deck.cpp.s:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Deck.cpp.s
 .PHONY : src\Deck.cpp.s
 
+=======
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 src\Dice.obj: src\Dice.cpp.obj
 
 .PHONY : src\Dice.obj
@@ -232,6 +248,7 @@ src\Dice.cpp.s:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Dice.cpp.s
 .PHONY : src\Dice.cpp.s
 
+<<<<<<< HEAD
 src\Hand.obj: src\Hand.cpp.obj
 
 .PHONY : src\Hand.obj
@@ -259,6 +276,8 @@ src\Hand.cpp.s:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\src\Hand.cpp.s
 .PHONY : src\Hand.cpp.s
 
+=======
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 src\Main.obj: src\Main.cpp.obj
 
 .PHONY : src\Main.obj
@@ -436,6 +455,7 @@ help:
 	@echo ... src/Continent.obj
 	@echo ... src/Continent.i
 	@echo ... src/Continent.s
+<<<<<<< HEAD
 	@echo ... src/Deck.obj
 	@echo ... src/Deck.i
 	@echo ... src/Deck.s
@@ -445,6 +465,11 @@ help:
 	@echo ... src/Hand.obj
 	@echo ... src/Hand.i
 	@echo ... src/Hand.s
+=======
+	@echo ... src/Dice.obj
+	@echo ... src/Dice.i
+	@echo ... src/Dice.s
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 	@echo ... src/Main.obj
 	@echo ... src/Main.i
 	@echo ... src/Main.s

@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 "C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\nicho\Documents\Risk
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/Users/nicho/Documents/Risk/cmake-build-debug
+=======
+"C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941

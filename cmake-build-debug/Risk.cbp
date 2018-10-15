@@ -8,6 +8,7 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
+<<<<<<< HEAD
 				<Option working_dir="C:/Users/nicho/Documents/Risk/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
@@ -20,13 +21,35 @@
 			<Target title="Risk">
 				<Option output="C:/Users/nicho/Documents/Risk/cmake-build-debug/Risk.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/nicho/Documents/Risk/cmake-build-debug"/>
+=======
+				<Option working_dir="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Risk">
+				<Option output="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/Risk.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug"/>
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
+<<<<<<< HEAD
 					<Add directory="C:/Users/nicho/Documents/Risk/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include"/>
+=======
+					<Add directory="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include"/>
+					<Add directory="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.14.26428\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.14.26428\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
@@ -34,6 +57,7 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
 					<Build command="nmake /NOLOGO /f C:\Users\nicho\Documents\Risk\cmake-build-debug\Makefile VERBOSE=1 Risk"/>
 					<CompileFile command="nmake /NOLOGO /f C:\Users\nicho\Documents\Risk\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="nmake /NOLOGO /f C:\Users\nicho\Documents\Risk\cmake-build-debug\Makefile VERBOSE=1 clean"/>
@@ -43,13 +67,32 @@
 			<Target title="Risk/fast">
 				<Option output="C:/Users/nicho/Documents/Risk/cmake-build-debug/Risk.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/nicho/Documents/Risk/cmake-build-debug"/>
+=======
+					<Build command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 Risk"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Risk/fast">
+				<Option output="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/Risk.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug"/>
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
+<<<<<<< HEAD
 					<Add directory="C:/Users/nicho/Documents/Risk/include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include"/>
+=======
+					<Add directory="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include"/>
+					<Add directory="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.14.26428\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.14.26428\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
@@ -57,6 +100,7 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
 					<Build command="nmake /NOLOGO /f C:\Users\nicho\Documents\Risk\cmake-build-debug\Makefile VERBOSE=1 Risk/fast"/>
 					<CompileFile command="nmake /NOLOGO /f C:\Users\nicho\Documents\Risk\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="nmake /NOLOGO /f C:\Users\nicho\Documents\Risk\cmake-build-debug\Makefile VERBOSE=1 clean"/>
@@ -118,6 +162,84 @@
 			<Option target="Risk"/>
 		</Unit>
 		<Unit filename="C:/Users/nicho/Documents/Risk/CMakeLists.txt">
+=======
+					<Build command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 Risk/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include/Continent.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include/Dice.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include/Map.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include/MapLoader.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include/Player.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include/Territory.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include/stdafx.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/include/targetver.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Continent.cpp">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Dice.cpp">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Main.cpp">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Map.cpp">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/MapLoader.cpp">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Player.cpp">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Territory.cpp">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/stdafx.cpp">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/CMakeLists.txt">
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

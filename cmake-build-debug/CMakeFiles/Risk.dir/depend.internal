@@ -7,6 +7,7 @@ CMakeFiles/Risk.dir/src/Card.cpp.obj
 CMakeFiles/Risk.dir/src/Continent.cpp.obj
  ../include/Continent.h
  ../include/Territory.h
+<<<<<<< HEAD
  C:/Users/nicho/Documents/Risk/src/Continent.cpp
 CMakeFiles/Risk.dir/src/Deck.cpp.obj
  C:/Users/nicho/Documents/Risk/include/Card.h
@@ -20,21 +21,36 @@ CMakeFiles/Risk.dir/src/Hand.cpp.obj
  C:/Users/nicho/Documents/Risk/include/Deck.h
  C:/Users/nicho/Documents/Risk/include/Hand.h
  C:/Users/nicho/Documents/Risk/src/Hand.cpp
+=======
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Continent.cpp
+CMakeFiles/Risk.dir/src/Dice.cpp.obj
+ ../include/Dice.h
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Dice.cpp
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 CMakeFiles/Risk.dir/src/Main.cpp.obj
  ../include/Card.h
  ../include/Continent.h
+<<<<<<< HEAD
  ../include/Deck.h
  ../include/Dice.h
  ../include/Hand.h
+=======
+ ../include/Dice.h
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
  ../include/Map.h
  ../include/MapLoader.h
  ../include/Player.h
  ../include/Territory.h
+<<<<<<< HEAD
  C:/Users/nicho/Documents/Risk/src/Main.cpp
+=======
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Main.cpp
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 CMakeFiles/Risk.dir/src/Map.cpp.obj
  ../include/Continent.h
  ../include/Map.h
  ../include/Territory.h
+<<<<<<< HEAD
  C:/Users/nicho/Documents/Risk/src/Map.cpp
 CMakeFiles/Risk.dir/src/MapLoader.cpp.obj
 CMakeFiles/Risk.dir/src/Player.cpp.obj
@@ -50,4 +66,16 @@ CMakeFiles/Risk.dir/src/Player.cpp.obj
 CMakeFiles/Risk.dir/src/Territory.cpp.obj
  ../include/Territory.h
  C:/Users/nicho/Documents/Risk/src/Territory.cpp
+=======
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Map.cpp
+CMakeFiles/Risk.dir/src/MapLoader.cpp.obj
+CMakeFiles/Risk.dir/src/Player.cpp.obj
+ ../include/Dice.h
+ ../include/Player.h
+ ../include/Territory.h
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Player.cpp
+CMakeFiles/Risk.dir/src/Territory.cpp.obj
+ ../include/Territory.h
+ C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/src/Territory.cpp
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 CMakeFiles/Risk.dir/src/stdafx.cpp.obj

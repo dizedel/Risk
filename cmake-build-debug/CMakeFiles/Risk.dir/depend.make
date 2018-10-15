@@ -8,6 +8,7 @@ CMakeFiles\Risk.dir\src\Continent.cpp.obj: ..\include\Continent.h
 CMakeFiles\Risk.dir\src\Continent.cpp.obj: ..\include\Territory.h
 CMakeFiles\Risk.dir\src\Continent.cpp.obj: ..\src\Continent.cpp
 
+<<<<<<< HEAD
 CMakeFiles\Risk.dir\src\Deck.cpp.obj: ..\include\Card.h
 CMakeFiles\Risk.dir\src\Deck.cpp.obj: ..\include\Deck.h
 CMakeFiles\Risk.dir\src\Deck.cpp.obj: ..\src\Deck.cpp
@@ -25,6 +26,13 @@ CMakeFiles\Risk.dir\src\Main.cpp.obj: ..\include\Continent.h
 CMakeFiles\Risk.dir\src\Main.cpp.obj: ..\include\Deck.h
 CMakeFiles\Risk.dir\src\Main.cpp.obj: ..\include\Dice.h
 CMakeFiles\Risk.dir\src\Main.cpp.obj: ..\include\Hand.h
+=======
+CMakeFiles\Risk.dir\src\Dice.cpp.obj: ..\include\Dice.h
+CMakeFiles\Risk.dir\src\Dice.cpp.obj: ..\src\Dice.cpp
+
+CMakeFiles\Risk.dir\src\Main.cpp.obj: ..\include\Continent.h
+CMakeFiles\Risk.dir\src\Main.cpp.obj: ..\include\Dice.h
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 CMakeFiles\Risk.dir\src\Main.cpp.obj: ..\include\Map.h
 CMakeFiles\Risk.dir\src\Main.cpp.obj: ..\include\MapLoader.h
 CMakeFiles\Risk.dir\src\Main.cpp.obj: ..\include\Player.h
@@ -37,12 +45,16 @@ CMakeFiles\Risk.dir\src\Map.cpp.obj: ..\include\Territory.h
 CMakeFiles\Risk.dir\src\Map.cpp.obj: ..\src\Map.cpp
 
 
+<<<<<<< HEAD
 CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\include\Card.h
 CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\include\Continent.h
 CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\include\Deck.h
 CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\include\Dice.h
 CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\include\Hand.h
 CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\include\Map.h
+=======
+CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\include\Dice.h
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\include\Player.h
 CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\include\Territory.h
 CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\src\Player.cpp

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 CMakeFiles/Risk.dir/src/Continent.cpp.obj CMakeFiles/Risk.dir/src/Dice.cpp.obj CMakeFiles/Risk.dir/src/Main.cpp.obj CMakeFiles/Risk.dir/src/Map.cpp.obj CMakeFiles/Risk.dir/src/MapLoader.cpp.obj CMakeFiles/Risk.dir/src/stdafx.cpp.obj CMakeFiles/Risk.dir/src/Territory.cpp.obj CMakeFiles/Risk.dir/src/Card.cpp.obj CMakeFiles/Risk.dir/src/Deck.cpp.obj CMakeFiles/Risk.dir/src/Hand.cpp.obj CMakeFiles/Risk.dir/src/Player.cpp.obj
+=======
+CMakeFiles/Risk.dir/src/Continent.cpp.obj CMakeFiles/Risk.dir/src/Dice.cpp.obj CMakeFiles/Risk.dir/src/Main.cpp.obj CMakeFiles/Risk.dir/src/Map.cpp.obj CMakeFiles/Risk.dir/src/MapLoader.cpp.obj CMakeFiles/Risk.dir/src/Player.cpp.obj CMakeFiles/Risk.dir/src/stdafx.cpp.obj CMakeFiles/Risk.dir/src/Territory.cpp.obj
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
