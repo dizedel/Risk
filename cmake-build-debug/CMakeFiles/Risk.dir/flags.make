@@ -6,5 +6,5 @@ CXX_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -std:c++1
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -IC:\Users\nicho\Documents\Risk\include 
+CXX_INCLUDES = -IC:\Users\nicho\Documents\Risk\include -IC:\Users\nicho\Documents\Risk\src 
 

@@ -153,9 +153,28 @@ CMakeFiles\Risk.dir\src\MapLoader.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Risk.dir\src\MapLoader.cpp.s /c C:\Users\nicho\Documents\Risk\src\MapLoader.cpp
 <<
 
+CMakeFiles\Risk.dir\src\Player.cpp.obj: CMakeFiles\Risk.dir\flags.make
+CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\src\Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Risk.dir/src/Player.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Risk.dir\src\Player.cpp.obj /FdCMakeFiles\Risk.dir\ /FS -c C:\Users\nicho\Documents\Risk\src\Player.cpp
+<<
+
+CMakeFiles\Risk.dir\src\Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Risk.dir/src/Player.cpp.i"
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\Risk.dir\src\Player.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\nicho\Documents\Risk\src\Player.cpp
+<<
+
+CMakeFiles\Risk.dir\src\Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Risk.dir/src/Player.cpp.s"
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Risk.dir\src\Player.cpp.s /c C:\Users\nicho\Documents\Risk\src\Player.cpp
+<<
+
 CMakeFiles\Risk.dir\src\stdafx.cpp.obj: CMakeFiles\Risk.dir\flags.make
 CMakeFiles\Risk.dir\src\stdafx.cpp.obj: ..\src\stdafx.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Risk.dir/src/stdafx.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Risk.dir/src/stdafx.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Risk.dir\src\stdafx.cpp.obj /FdCMakeFiles\Risk.dir\ /FS -c C:\Users\nicho\Documents\Risk\src\stdafx.cpp
 <<
@@ -174,7 +193,7 @@ CMakeFiles\Risk.dir\src\stdafx.cpp.s: cmake_force
 
 CMakeFiles\Risk.dir\src\Territory.cpp.obj: CMakeFiles\Risk.dir\flags.make
 CMakeFiles\Risk.dir\src\Territory.cpp.obj: ..\src\Territory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Risk.dir/src/Territory.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Risk.dir/src/Territory.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Risk.dir\src\Territory.cpp.obj /FdCMakeFiles\Risk.dir\ /FS -c C:\Users\nicho\Documents\Risk\src\Territory.cpp
 <<
@@ -193,7 +212,7 @@ CMakeFiles\Risk.dir\src\Territory.cpp.s: cmake_force
 
 CMakeFiles\Risk.dir\src\Card.cpp.obj: CMakeFiles\Risk.dir\flags.make
 CMakeFiles\Risk.dir\src\Card.cpp.obj: ..\src\Card.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Risk.dir/src/Card.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Risk.dir/src/Card.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Risk.dir\src\Card.cpp.obj /FdCMakeFiles\Risk.dir\ /FS -c C:\Users\nicho\Documents\Risk\src\Card.cpp
 <<
@@ -212,7 +231,7 @@ CMakeFiles\Risk.dir\src\Card.cpp.s: cmake_force
 
 CMakeFiles\Risk.dir\src\Deck.cpp.obj: CMakeFiles\Risk.dir\flags.make
 CMakeFiles\Risk.dir\src\Deck.cpp.obj: ..\src\Deck.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Risk.dir/src/Deck.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Risk.dir/src/Deck.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Risk.dir\src\Deck.cpp.obj /FdCMakeFiles\Risk.dir\ /FS -c C:\Users\nicho\Documents\Risk\src\Deck.cpp
 <<
@@ -231,7 +250,7 @@ CMakeFiles\Risk.dir\src\Deck.cpp.s: cmake_force
 
 CMakeFiles\Risk.dir\src\Hand.cpp.obj: CMakeFiles\Risk.dir\flags.make
 CMakeFiles\Risk.dir\src\Hand.cpp.obj: ..\src\Hand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Risk.dir/src/Hand.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Risk.dir/src/Hand.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Risk.dir\src\Hand.cpp.obj /FdCMakeFiles\Risk.dir\ /FS -c C:\Users\nicho\Documents\Risk\src\Hand.cpp
 <<
@@ -248,25 +267,6 @@ CMakeFiles\Risk.dir\src\Hand.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Risk.dir\src\Hand.cpp.s /c C:\Users\nicho\Documents\Risk\src\Hand.cpp
 <<
 
-CMakeFiles\Risk.dir\src\Player.cpp.obj: CMakeFiles\Risk.dir\flags.make
-CMakeFiles\Risk.dir\src\Player.cpp.obj: ..\src\Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Risk.dir/src/Player.cpp.obj"
-	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Risk.dir\src\Player.cpp.obj /FdCMakeFiles\Risk.dir\ /FS -c C:\Users\nicho\Documents\Risk\src\Player.cpp
-<<
-
-CMakeFiles\Risk.dir\src\Player.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Risk.dir/src/Player.cpp.i"
-	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\Risk.dir\src\Player.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\nicho\Documents\Risk\src\Player.cpp
-<<
-
-CMakeFiles\Risk.dir\src\Player.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Risk.dir/src/Player.cpp.s"
-	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Risk.dir\src\Player.cpp.s /c C:\Users\nicho\Documents\Risk\src\Player.cpp
-<<
-
 # Object files for target Risk
 Risk_OBJECTS = \
 "CMakeFiles\Risk.dir\src\Continent.cpp.obj" \
@@ -274,12 +274,12 @@ Risk_OBJECTS = \
 "CMakeFiles\Risk.dir\src\Main.cpp.obj" \
 "CMakeFiles\Risk.dir\src\Map.cpp.obj" \
 "CMakeFiles\Risk.dir\src\MapLoader.cpp.obj" \
+"CMakeFiles\Risk.dir\src\Player.cpp.obj" \
 "CMakeFiles\Risk.dir\src\stdafx.cpp.obj" \
 "CMakeFiles\Risk.dir\src\Territory.cpp.obj" \
 "CMakeFiles\Risk.dir\src\Card.cpp.obj" \
 "CMakeFiles\Risk.dir\src\Deck.cpp.obj" \
-"CMakeFiles\Risk.dir\src\Hand.cpp.obj" \
-"CMakeFiles\Risk.dir\src\Player.cpp.obj"
+"CMakeFiles\Risk.dir\src\Hand.cpp.obj"
 
 # External object files for target Risk
 Risk_EXTERNAL_OBJECTS =
@@ -289,12 +289,12 @@ Risk.exe: CMakeFiles\Risk.dir\src\Dice.cpp.obj
 Risk.exe: CMakeFiles\Risk.dir\src\Main.cpp.obj
 Risk.exe: CMakeFiles\Risk.dir\src\Map.cpp.obj
 Risk.exe: CMakeFiles\Risk.dir\src\MapLoader.cpp.obj
+Risk.exe: CMakeFiles\Risk.dir\src\Player.cpp.obj
 Risk.exe: CMakeFiles\Risk.dir\src\stdafx.cpp.obj
 Risk.exe: CMakeFiles\Risk.dir\src\Territory.cpp.obj
 Risk.exe: CMakeFiles\Risk.dir\src\Card.cpp.obj
 Risk.exe: CMakeFiles\Risk.dir\src\Deck.cpp.obj
 Risk.exe: CMakeFiles\Risk.dir\src\Hand.cpp.obj
-Risk.exe: CMakeFiles\Risk.dir\src\Player.cpp.obj
 Risk.exe: CMakeFiles\Risk.dir\build.make
 Risk.exe: CMakeFiles\Risk.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Risk.exe"
