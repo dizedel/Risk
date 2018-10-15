@@ -10,14 +10,17 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeCInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeCXXInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake"
+  "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeDetermineRCCompiler.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeFindCodeBlocks.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeGenericSystem.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake"
+  "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeRCCompiler.cmake.in"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeRCInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake"
+  "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeTestRCCompiler.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/Compiler/MSVC-C.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/Compiler/MSVC-CXX.cmake"
@@ -42,6 +45,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "CMakeFiles/3.12.2/CMakeRCCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
