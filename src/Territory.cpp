@@ -30,6 +30,10 @@ int Territory::getY() {
     return coordY;
 }
 
+int Territory::getArmies() {
+    return armies;
+}
+
 string Territory::getContinent() {
     return continent;
 }
@@ -60,8 +64,4 @@ vector<string> Territory::getNeighbors() {
 
 void Territory::addArmies(int a){
     armies += a;
-}
-
-int Territory::getArmies() {
-    return armies;
 }
