@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Install script for directory: C:/Users/nicho/Documents/Risk
-=======
-# Install script for directory: C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk
->>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,9 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
 file(WRITE "C:/Users/nicho/Documents/Risk/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
-=======
-file(WRITE "C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

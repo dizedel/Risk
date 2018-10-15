@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 set(CMAKE_CXX_COMPILER "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.15.26726/bin/Hostx86/x86/cl.exe")
-=======
-set(CMAKE_CXX_COMPILER "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Tools/MSVC/14.14.26428/bin/Hostx86/x86/cl.exe")
->>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 set(CMAKE_CXX_COMPILER_VERSION "19.15.26726.0")
@@ -26,11 +22,7 @@ set(CMAKE_AR "")
 set(CMAKE_CXX_COMPILER_AR "")
 set(CMAKE_RANLIB "")
 set(CMAKE_CXX_COMPILER_RANLIB "")
-<<<<<<< HEAD
 set(CMAKE_LINKER "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.15.26726/bin/Hostx86/x86/link.exe")
-=======
-set(CMAKE_LINKER "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Tools/MSVC/14.14.26428/bin/Hostx86/x86/link.exe")
->>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 set(CMAKE_COMPILER_IS_GNUCXX )
 set(CMAKE_CXX_COMPILER_LOADED 1)
 set(CMAKE_CXX_COMPILER_WORKS TRUE)

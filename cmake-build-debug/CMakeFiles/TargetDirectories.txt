@@ -1,9 +1,3 @@
-<<<<<<< HEAD
 C:/Users/nicho/Documents/Risk/cmake-build-debug/CMakeFiles/Risk.dir
 C:/Users/nicho/Documents/Risk/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/nicho/Documents/Risk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-=======
-C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/CMakeFiles/Risk.dir
-C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Doc/Concordia/2018 Fall/COMP345/comp345project/Risk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
->>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941

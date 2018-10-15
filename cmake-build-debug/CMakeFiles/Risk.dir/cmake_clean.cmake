@@ -10,7 +10,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Risk.dir/src/Card.cpp.obj"
   "CMakeFiles/Risk.dir/src/Deck.cpp.obj"
   "CMakeFiles/Risk.dir/src/Hand.cpp.obj"
-  "CMakeFiles/Risk.dir/src/Player.cpp.obj"
   "Risk.pdb"
   "Risk.exe"
   "Risk.exe.manifest"

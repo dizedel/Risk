@@ -22,12 +22,8 @@ add_executable(Risk
         src/MapLoader.cpp
         src/Player.cpp
         src/stdafx.cpp
-<<<<<<< HEAD
         src/Territory.cpp
         src/Card.cpp
         src/Deck.cpp
         src/Hand.cpp
         src/Player.cpp)
-=======
-        src/Territory.cpp)
->>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941

@@ -60,17 +60,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = C:\Users\nicho\Documents\Risk
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = C:\Users\nicho\Documents\Risk\cmake-build-debug
-=======
-CMAKE_SOURCE_DIR = "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk"
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug"
->>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 
 #=============================================================================
 # Target rules for target CMakeFiles/Risk.dir
@@ -79,11 +72,7 @@ CMAKE_BINARY_DIR = "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake
 CMakeFiles\Risk.dir\all:
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\depend
 	$(MAKE) -f CMakeFiles\Risk.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\build
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target Risk"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9 "Built target Risk"
->>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 .PHONY : CMakeFiles\Risk.dir\all
 
 # Include target in all.
@@ -93,15 +82,9 @@ all: CMakeFiles\Risk.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\Risk.dir\rule: cmake_check_build_system
-<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles 12
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\nicho\Documents\Risk\cmake-build-debug\CMakeFiles 0
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\CMakeFiles" 9
-	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\Risk.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Doc\Concordia\2018 Fall\COMP345\comp345project\Risk\cmake-build-debug\CMakeFiles" 0
->>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
 .PHONY : CMakeFiles\Risk.dir\rule
 
 # Convenience name for target.

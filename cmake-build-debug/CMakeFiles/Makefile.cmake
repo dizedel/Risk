@@ -7,11 +7,6 @@ set(CMAKE_DEPENDS_GENERATOR "NMake Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "../CMakeLists.txt"
-  "CMakeFiles/3.12.2/CMakeCCompiler.cmake"
-  "CMakeFiles/3.12.2/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.12.2/CMakeRCCompiler.cmake"
-  "CMakeFiles/3.12.2/CMakeSystem.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeCInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeCXXInformation.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake"
@@ -32,6 +27,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/Platform/Windows.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/Platform/WindowsPaths.cmake"
   "C:/Program Files/JetBrains/CLion 2018.2.4/bin/cmake/win/share/cmake-3.12/Modules/ProcessorCount.cmake"
+  "../CMakeLists.txt"
+  "CMakeFiles/3.12.2/CMakeCCompiler.cmake"
+  "CMakeFiles/3.12.2/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.12.2/CMakeRCCompiler.cmake"
+  "CMakeFiles/3.12.2/CMakeSystem.cmake"
   )
 
 # The corresponding makefile is:
