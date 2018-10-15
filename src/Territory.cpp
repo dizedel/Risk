@@ -57,3 +57,11 @@ void Territory::addNeighbor(string t) {
 vector<string> Territory::getNeighbors() {
     return neighbors;
 }
+
+void Territory::addArmies(int a){
+    armies += a;
+}
+
+int Territory::getArmies() {
+    return armies;
+}
