@@ -3,18 +3,23 @@
 #include "Deck.h"
 #include "Card.h"
 #include <vector>
+using namespace std;
 
 class Hand
 {
 private:
-	std::vector<Card> cards;
+	vector<Card> cards;
+	int exchangedHands = 0;
 	int numOfExchanges();
+
 public:
 	Hand();
 	~Hand();
-	int exchange(int);
+	int exchange();
+	void addCardToHand(Deck&);
 	const vector<Card> &getCards() const;
 	void setCards(const vector<Card> &cards);
+    int getExchangedHands() const;
 	string toString();
 
 };

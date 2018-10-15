@@ -28,6 +28,7 @@ CMakeFiles/Risk.dir/src/Main.cpp.obj
  ../include/Hand.h
  ../include/Map.h
  ../include/MapLoader.h
+ ../include/Player.h
  ../include/Territory.h
  C:/Users/nicho/Documents/Risk/src/Main.cpp
 CMakeFiles/Risk.dir/src/Map.cpp.obj
@@ -37,7 +38,12 @@ CMakeFiles/Risk.dir/src/Map.cpp.obj
  C:/Users/nicho/Documents/Risk/src/Map.cpp
 CMakeFiles/Risk.dir/src/MapLoader.cpp.obj
 CMakeFiles/Risk.dir/src/Player.cpp.obj
+ ../include/Card.h
+ ../include/Continent.h
+ ../include/Deck.h
  ../include/Dice.h
+ ../include/Hand.h
+ ../include/Map.h
  ../include/Player.h
  ../include/Territory.h
  C:/Users/nicho/Documents/Risk/src/Player.cpp
