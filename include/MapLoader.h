@@ -17,7 +17,6 @@ class MapLoader {
 		void parseContinents(ifstream&);
 		void parseTerritories(ifstream&);
 		void loadMapFile(string);
-		void runLoader();
 
 	private:
 		ifstream inputFile;
