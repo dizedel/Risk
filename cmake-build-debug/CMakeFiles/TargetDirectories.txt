@@ -1,3 +1,0 @@
-C:/Users/nicho/Documents/Risk/cmake-build-debug/CMakeFiles/Risk.dir
-C:/Users/nicho/Documents/Risk/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/nicho/Documents/Risk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
