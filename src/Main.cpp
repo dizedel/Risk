@@ -117,10 +117,18 @@ int main() {
 	 cout << p1.displayCountries();
 	Territory canada;
 	Territory usa;
+    Hand h;
+
+
+    p1.setHand(h);
+
 	canada.setName("Canada");
 	usa.setName("USA");
 	vector<Territory> countries{canada,usa};
 	p1.setCountries(countries);
+
+    p1.getHand().getExchangedHands();
+    cout << p1.getHand().toString();
     cout << p1.displayCountries();
 
 

@@ -36,8 +36,16 @@ Dice Player::getDice() {
     return dice;
 }
 
+Hand Player::getHand() {
+    return hand;
+}
+
 void Player::setName(string name) {
    playerName = name;
+}
+
+void Player::setHand(Hand h) {
+    hand = h;
 }
 
 void Player::setCountries(vector<Territory> c) {
