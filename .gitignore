@@ -31,8 +31,10 @@
 *.out
 *.app
 
-#other
+# other
 *.xml
 *.pdb
 *.includecache
 *.cmake
+/cmake-build-debug/
+/.vs/
