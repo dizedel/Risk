@@ -28,13 +28,10 @@ int Territory::getX() {
 
 int Territory::getY() {
     return coordY;
-<<<<<<< HEAD
 }
 
 int Territory::getArmies() {
     return armies;
-=======
->>>>>>> e8d15b690c8a716f7b10f4a719f023c13eedcacf
 }
 
 string Territory::getContinent() {
