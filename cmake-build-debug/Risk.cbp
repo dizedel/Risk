@@ -25,6 +25,7 @@
 				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add directory="C:/Users/nicho/Documents/Risk/include"/>
+					<Add directory="C:/Users/nicho/Documents/Risk/src"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
@@ -48,6 +49,7 @@
 				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add directory="C:/Users/nicho/Documents/Risk/include"/>
+					<Add directory="C:/Users/nicho/Documents/Risk/src"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
@@ -84,6 +86,30 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/nicho/Documents/Risk/include/Continent.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Users/nicho/Documents/Risk/include/Dice.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Users/nicho/Documents/Risk/include/Map.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Users/nicho/Documents/Risk/include/MapLoader.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Users/nicho/Documents/Risk/include/Player.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Users/nicho/Documents/Risk/include/Territory.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Users/nicho/Documents/Risk/include/stdafx.h">
+			<Option target="Risk"/>
+		</Unit>
+		<Unit filename="C:/Users/nicho/Documents/Risk/include/targetver.h">
+			<Option target="Risk"/>
+		</Unit>
 		<Unit filename="C:/Users/nicho/Documents/Risk/src/Card.cpp">
 			<Option target="Risk"/>
 		</Unit>

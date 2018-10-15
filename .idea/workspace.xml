@@ -28,43 +28,11 @@
     </list>
 =======
     <list default="true" id="3265a92a-1b28-40d7-ba82-a785c5bffafd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/COMP345proj/v15/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/COMP345proj/v15/Browse.VC.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/COMP345proj/v15/Browse.VC.opendb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/COMP345proj/v15/ipch/c8038e1ed77e4bf7.ipch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/COMP345proj.vcxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/COMP345proj.vcxproj.filters" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/COMP345proj.vcxproj.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Continent.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Continent.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/COMP345proj.Build.CppClean.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/COMP345proj.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/COMP345proj.tlog/CL.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/COMP345proj.tlog/CL.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/COMP345proj.tlog/CL.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/COMP345proj.tlog/COMP345proj.lastbuildstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/COMP345proj.tlog/link.command.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/COMP345proj.tlog/link.read.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/COMP345proj.tlog/link.write.1.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/vc141.idb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Debug/vc141.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Map.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Map.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/MapLoader.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/MapLoader.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Territory.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/Territory.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/World.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/World.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/stdafx.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/stdafx.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COMP345proj/targetver.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/COMP345proj.ilk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/COMP345proj.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Map.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Map.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/World.map" beforeDir="false" afterPath="$PROJECT_DIR$/maps/World.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MapLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapLoader.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
 >>>>>>> origin/Restructuring
@@ -160,8 +128,46 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-2013937234">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cpp" value="3" />
+          <entry key="h" value="1" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CMakeLists.txt" value="1" />
+          <entry key="ObjectiveC" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cpp" value="1112" />
+          <entry key="h" value="80" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="ObjectiveC" value="1192" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <leaf>
       <file pinned="false" current-in-tab="true">
@@ -169,11 +175,28 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/Dice.h">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MapLoader.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/COMP345proj/Main.cpp">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -183,6 +206,33 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/Map.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/Map.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Territory.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -191,6 +241,7 @@
         </entry>
       </file>
     </leaf>
+<<<<<<< HEAD
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -312,6 +363,8 @@
         </leaf>
       </split-second>
     </splitter>
+=======
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -342,13 +395,15 @@
         <option value="$PROJECT_DIR$/include/targetver.h" />
         <option value="$PROJECT_DIR$/include/stdafx.h" />
         <option value="$PROJECT_DIR$/src/stdafx.cpp" />
-        <option value="$PROJECT_DIR$/src/MapLoader.cpp" />
-        <option value="$PROJECT_DIR$/src/Map.cpp" />
         <option value="$PROJECT_DIR$/src/Main.cpp" />
         <option value="$PROJECT_DIR$/src/Continent.cpp" />
-        <option value="$PROJECT_DIR$/src/Territory.cpp" />
         <option value="$PROJECT_DIR$/include/Territory.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/Dice.cpp" />
+        <option value="$PROJECT_DIR$/src/Territory.cpp" />
+        <option value="$PROJECT_DIR$/src/Map.cpp" />
+        <option value="$PROJECT_DIR$/include/Map.h" />
+        <option value="$PROJECT_DIR$/src/MapLoader.cpp" />
       </list>
     </option>
   </component>
@@ -377,9 +432,12 @@
     </navigator>
     <panes>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <pane id="Scope" />
 >>>>>>> origin/Restructuring
+=======
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -391,8 +449,16 @@
               <item name="Risk" type="b2602c69:ProjectViewProjectNode" />
               <item name="Risk" type="462c0819:PsiDirectoryNode" />
 <<<<<<< HEAD
+<<<<<<< HEAD
               <item name="COMP345proj" type="462c0819:PsiDirectoryNode" />
 =======
+=======
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Risk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Risk" type="462c0819:PsiDirectoryNode" />
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
               <item name="src" type="462c0819:PsiDirectoryNode" />
 >>>>>>> origin/Restructuring
             </path>
@@ -401,9 +467,13 @@
         </subPane>
       </pane>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <pane id="Scope" />
 =======
 >>>>>>> origin/Restructuring
+=======
+      <pane id="Scope" />
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -478,11 +548,20 @@
       <workItem from="1539285010875" duration="37000" />
       <workItem from="1539285407314" duration="6000" />
       <workItem from="1539285430781" duration="134000" />
+<<<<<<< HEAD
 >>>>>>> origin/Restructuring
+=======
+      <workItem from="1539372520814" duration="88000" />
+      <workItem from="1539372653534" duration="1826000" />
+      <workItem from="1539375165461" duration="251000" />
+      <workItem from="1539380211003" duration="4165000" />
+      <workItem from="1539560804145" duration="588000" />
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="436000" />
   </component>
@@ -509,6 +588,9 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
 =======
     <option name="totallyTimeSpent" value="4578000" />
+=======
+    <option name="totallyTimeSpent" value="11496000" />
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -520,21 +602,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13624161" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16117479" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47304583" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32664755" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.62938005" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
@@ -584,31 +665,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.cpp">
+    <entry file="file://$PROJECT_DIR$/include/MapLoader.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map.cpp">
+    <entry file="file://$PROJECT_DIR$/src/Continent.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Territory.cpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="221">
           <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
 >>>>>>> origin/Restructuring
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="340">
+          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
         </state>
       </provider>
     </entry>
@@ -632,39 +715,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/MapLoader.h">
+    <entry file="file://$PROJECT_DIR$/src/Dice.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="493">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Dice.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Territory.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/Map.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="27" selection-end-line="40" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Continent.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        <state relative-caret-position="408">
+          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MapLoader.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="102">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
 >>>>>>> origin/Restructuring
+=======
+        <state relative-caret-position="142">
+          <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+>>>>>>> a5beb280799e62c6ad6565c29be6cbc33d369941
         </state>
       </provider>
     </entry>
