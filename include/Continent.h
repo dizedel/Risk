@@ -4,6 +4,7 @@
 #define CONTINENT_H
 
 #include <string>
+#include <vector>
 
 #include "Territory.h"
 
@@ -12,14 +13,13 @@ using namespace std;
 class Continent {
 
 public:
-	vector<Territory> t;
 	Continent();
 	Continent(string, int);
 	~Continent();
 
 	string getName();
 	int getTerritoryCount();
-	vector<Territory> getTerritories();
+	vector<Territory> getContainingTerritories(); //return territories in continent
 
 	void setName(string);
 	void setTerritoryCount(int);
@@ -28,6 +28,7 @@ public:
 private:
 	string name;
 	int territoryCount;
+	vector<Territory> containingTerritories;
 
 };
 #endif

@@ -16,11 +16,11 @@ class Territory {
         ~Territory();
 
         string getName();
-        int getArmies();
         int getX();
         int getY();
-        string getContinent();
-        vector<string> getNeighbors();
+        string getContinent();	//return name of continent territory is in
+        vector<string> getNeighbors(); //return the container of neighbors for the territory
+        int getArmies(); //return number armies the territory has
 
         void setName(string);
         void setArmies(int);

@@ -22,8 +22,8 @@ int Continent::getTerritoryCount() {
     return territoryCount;
 }
 
-vector<Territory> Continent::getTerritories() {
-    return t;
+vector<Territory> Continent::getContainingTerritories() {
+    return containingTerritories;
 }
 
 void Continent::setName(string n) {
@@ -35,5 +35,5 @@ void Continent::setTerritoryCount(int tc) {
 }
 
 void Continent::addTerritories(Territory t1) {
-    t.push_back(t1);
+    containingTerritories.push_back(t1);
 }

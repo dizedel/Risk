@@ -11,6 +11,7 @@ using namespace std;
 
 int main() {
 
+    Map gen;
     int numOfCards;
     int infantry = 0;
     int artillery = 0;
@@ -28,10 +29,16 @@ int main() {
 	loader.loadMapFile(mapFileName);
 	cout << endl;
 
+    cout << "*************** \n MAP CREATOR DEMO \n***************\n";
+    gen.createMap(loader.getMap());
+    cout << " \n \n \n";
+    gen.checkIfValid(loader.getMap());
+    loader.getMap().printContainedTerritories();
+    cout << endl;
 
     cout << "************************* \n CARDS, DECK, HAND DEMO \n*************************\n";
 
-	numOfCards = loader.getMap().getTerritory().size(); //the number of countries in the map
+    numOfCards = loader.getMap().getTerritory().size(); //the number of countries in the map
 
 	Deck deck(numOfCards);
 

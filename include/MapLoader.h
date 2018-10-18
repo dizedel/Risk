@@ -17,6 +17,7 @@ class MapLoader {
 		void parseContinents(ifstream&);
 		void parseTerritories(ifstream&);
 		void loadMapFile(string);
+		Map getMap(); //a function that would return the map, added by person doing map part
 
 	private:
 		ifstream inputFile;

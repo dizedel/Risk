@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Territory.h"
 
 using namespace std;
