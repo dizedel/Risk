@@ -2,7 +2,7 @@
 
 using namespace std;
 
-MainGame::MainGame(vector<Player> players) {
+MainGame::MainGame(vector<Player> &players) {
     playersInGame = players;
 }
 

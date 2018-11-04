@@ -10,7 +10,7 @@ private:
     vector<Player> playersInGame;
 
 public:
-    MainGame(vector<Player>);
+    MainGame(vector<Player>&);
     ~MainGame();
     void playGame();
 
