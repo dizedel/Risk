@@ -9,11 +9,15 @@ using namespace std;
 Reinforce::Reinforce() {}
 
 Reinforce::Reinforce(Player player) {
-
+    setPlayer(player);
 }
 
 Reinforce::~Reinforce()
 {
+}
+
+void Reinforce::setPlayer(Player p) {
+    player = p;
 }
 
 
@@ -26,9 +30,6 @@ void Reinforce::giveArmiesForTerritory(){
     //TODO: give armies for entire continent
 }
 
-bool Reinforce::reinforce(string country, int armies){
-
-}
 
 /***********************************************************
  *              REINFORCEMENT LOOP
@@ -43,15 +44,30 @@ void Reinforce::playPhase() {
     /**
      * EXCHANGE CARDS
      */
+    while (true) {
 
-     int exchangedCards = player.getHand().exchange();
-     if (exchangedCards==0){
-         cout << "You have no cards to exchange this round.";
-     }
+        cout << "Do you wish to exchange your cards?";
+         cin >> txtline;
+
+             if (txtline == "yes" || txtline == "no") {
+                 if (txtline == "yes"){
+                     int exchangedCards = player.getHand().exchange();
+                     if (exchangedCards == 0) {
+                         cout << "You have no cards to exchange this round.";
+                         break;
+                     }
+                 }
+                 cout << "No problem, moving along....";
+                 break;
+             }
+             else {
+                 cout << "Not a valid answer. Please answer 'yes' or 'no'";
+             }
+    }
 
 
     /*
-     * ADD ARMIES TO COUNTRIES
+     * REINFORCE LOOP
      */
     if(player.getArmies()>= 3) {
         while (!answered && player.getArmies() >= 3) {

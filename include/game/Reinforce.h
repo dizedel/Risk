@@ -10,19 +10,22 @@
 #include <Map.h>
 #include <Hand.h>
 #include <Player.h>
-#include "Phase.h"
 
 using namespace std;
 
-class Reinforce: public Phase{
+class Reinforce{
 
 public:
     Reinforce();
     Reinforce(Player);
     ~Reinforce();
 
-    bool reinforce(string, int);
+    void setPlayer(Player);
+
     void giveArmiesForTerritory();
+    void playPhase();
+    bool reinforce(string, int);
+
 
 private:
     Player player;
