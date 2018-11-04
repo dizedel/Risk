@@ -178,7 +178,7 @@ void Hand::addCardToHand(Deck &deck)
    }
 }
 
-int Hand::getExchangedHands() const {
+int Hand::getExchangedHands() {
     return exchangedHands;
 }
 

@@ -9,6 +9,8 @@
 
 using namespace std;
 
+int Hand::exchangedHands = 0;
+
 int main() {
 
     Map gen;
@@ -96,7 +98,7 @@ int main() {
         }
 
         cout << "\nCards in your hand have been exchanged for " << hand.exchange() << " armies." << endl;
-        cout << "EXCHANGED HANDS: " << hand.getExchangedHands() << endl;
+        cout << "EXCHANGED HANDS: " << Hand::getExchangedHands() << endl;
 
         cout << "\nHAND CONTENTS AFTER EXCHANGE" << endl;
 
@@ -134,7 +136,7 @@ int main() {
 	vector<Territory> countries{canada,usa};
 	p1.setCountries(countries);
 
-    p1.getHand().getExchangedHands();
+    Hand::getExchangedHands();
     cout << p1.getHand().toString();
     cout << p1.displayCountries();
 
