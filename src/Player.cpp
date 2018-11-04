@@ -9,7 +9,11 @@
 
 using namespace std;
 Player::Player() {
-
+    Hand h;
+    Dice d;
+    hand = h;
+    dice = d;
+    armies = 0;
 }
 
 Player::Player(string name) {
@@ -18,6 +22,7 @@ Player::Player(string name) {
     Dice d;
     hand = h;
     dice = d;
+    armies = 0;
 }
 
 Player::~Player()
@@ -54,6 +59,10 @@ void Player::setHand(Hand h) {
 
 void Player::setCountries(vector<Territory> c) {
    countries = c;
+}
+
+void Player::setArmies(int a){
+    armies = a;
 }
 
 void Player::addArmies(int numOfArmies) {

@@ -27,6 +27,7 @@ class Player {
         void setName(string);
         void setCountries(vector<Territory>);
         void setHand(Hand);
+        void setArmies(int);
 
         void addCountry(string);
         void addArmies(int);

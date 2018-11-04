@@ -2,11 +2,11 @@
 #include "MapLoader.h"
 #include "Card.h"
 #include "Deck.h"
-#include "Hand.h"
 #include <vector>
 #include <Player.h>
+#include <game/Fortify.h>
 #include "Dice.h"
-#include "/game/Reinforce.h"
+#include "game/Reinforce.h"
 
 using namespace std;
 
@@ -27,8 +27,11 @@ int main() {
     /*********************************
      *    REINFORCE DEMO
      * ******************************/
-    Reinforce r = Reinforce(tom);
-    r.playPhase();
+    Reinforce r_tom = Reinforce(tom);
+    r_tom.playPhase();
+    //Fortify f_tom = Fortify(tom);
+    //f_tom.playPhase();
+
 
     system("pause");
 

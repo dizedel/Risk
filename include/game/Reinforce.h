@@ -24,7 +24,7 @@ public:
 
     void giveArmiesForTerritory();
     void playPhase();
-    bool reinforce(string, int);
+    bool reinforce();
 
 
 private:

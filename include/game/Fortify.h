@@ -12,11 +12,10 @@
 #include <Map.h>
 #include <Hand.h>
 #include <Player.h>
-#include "Phase.h"
 
 using namespace std;
 
-class Fortify: public Phase{
+class Fortify{
 
 public:
     Fortify();
@@ -24,6 +23,7 @@ public:
     ~Fortify();
 
     bool fortify(string, int);
+    void playPhase();
     void giveArmiesForTerritory();
 
 };
