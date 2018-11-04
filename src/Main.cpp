@@ -32,7 +32,6 @@ int main() {
     //Fortify f_tom = Fortify(tom);
     //f_tom.playPhase();
 
-
     system("pause");
 
 

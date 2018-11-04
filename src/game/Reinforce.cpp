@@ -37,18 +37,20 @@ bool Reinforce::reinforce(){
      *****************/
     if(player.getArmies()>= 3) {
         while (player.getArmies() >= 3) {
-            cout <<"You have --- " << player.getArmies() <<" --- armies. Which countries do you wish to reinforce? Enter 'done' if you do not wish to";
+            cout <<"You have --- " << player.getArmies() <<" --- armies. Which countries do you wish to reinforce? Enter 'done' if you do not wish to. \n";
             getline(cin, txtline);
             if (txtline == "done") {
                 break;
-            } else if (player.hasCountry(txtline)) {
+            }
+            else if (player.hasCountry(txtline)) {
                 int numOfArmies = 0;
                 while (true) {
-                    cout << "How many armies do you wish to place?";
+                    cout << "How many armies do you wish to place?" << endl;
                     cin >> numOfArmies;
                     if (numOfArmies < 3) {
-                        cout << "You need to place more than 3 armies per country";
-                    } else {
+                        cout << "You need to place more than 3 armies per country" << endl;
+                    }
+                    else {
                         player.getCountries().at(player.hasCountry(txtline)).addArmies(numOfArmies);
                         break;
                     }
@@ -94,6 +96,7 @@ void Reinforce::playPhase() {
                  cout << "Not a valid answer. Please answer 'yes' or 'no'";
              }
     }
+
     reinforce();
 }
 

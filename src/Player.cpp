@@ -73,13 +73,20 @@ bool Player::addTerritory(string countryName, Map map) {
     return false;
 }
 
-int Player::hasCountry(string countryName){
+int Player::posOfCountry(string countryName){
     for (int i = 0; i < countries.size(); i++) {
         if (countries.at(i).getName() == countryName){
             return i;
         }
     }
     return -1;
+}
+
+bool Player::hasCountry(string countryName){
+    if(posOfCountry(countryName)==-1)
+        return false;
+    else
+        return true;
 }
 
 string Player::displayCountries() {

@@ -35,7 +35,8 @@ class Player {
 
         void giveArmiesForTerritory();
 
-        int hasCountry(string);
+        bool hasCountry(string);
+        int posOfCountry(string);
         void reinforce();
         void attack(int, string);
         void fortify(int, string);
