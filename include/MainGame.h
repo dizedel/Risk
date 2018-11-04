@@ -1,15 +1,16 @@
 #pragma once
 
 #include "Player.h"
+#include <vector>
 
 class MainGame {
 
 private:
 
-    Player *playersInGame;
+    vector<Player> playersInGame;
 
 public:
-    MainGame(Player[]);
+    MainGame(vector<Player>);
     ~MainGame();
     void playGame();
 
