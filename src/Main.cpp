@@ -6,6 +6,7 @@
 #include <vector>
 #include <Player.h>
 #include "Dice.h"
+#include "/game/Reinforce.h"
 
 using namespace std;
 
@@ -15,11 +16,19 @@ int main() {
 
 
 
+    Player tom = Player("Tom");
+    Deck d     = Deck(100);
+    tom.getHand().addCardToHand(d);
+    tom.getHand().addCardToHand(d);
+    tom.getHand().addCardToHand(d);
+    tom.getHand().addCardToHand(d);
+    tom.getHand().addCardToHand(d);
 
     /*********************************
      *    REINFORCE DEMO
      * ******************************/
-
+    Reinforce r = Reinforce(tom);
+    r.playPhase();
 
     system("pause");
 

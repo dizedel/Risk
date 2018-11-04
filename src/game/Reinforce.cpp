@@ -66,14 +66,14 @@ void Reinforce::playPhase() {
     }
 
 
-    /*
+    /******************
      * REINFORCE LOOP
-     */
+     *****************/
     if(player.getArmies()>= 3) {
         while (!answered && player.getArmies() >= 3) {
-            cout << "Which countries do you wish to reinforce? Enter 'Done' if you do not wish to";
+            cout <<"You have --- " << player.getArmies() <<" --- armies. Which countries do you wish to reinforce? Enter 'done' if you do not wish to";
             getline(cin, txtline);
-            if (txtline == "Done") {
+            if (txtline == "done") {
                 answered = true;
                 break;
             } else if (player.hasCountry(txtline)) {
