@@ -142,8 +142,9 @@ int main() {
 
 
     /*
-     *
+     * MAIN GAME LOOP
      * */
+
     system("pause");
 
 

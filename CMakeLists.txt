@@ -4,26 +4,27 @@ project(Risk)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
-include_directories(src)
 
 add_executable(Risk
+        include/Card.h
         include/Continent.h
+        include/Deck.h
         include/Dice.h
+        include/Hand.h
         include/Map.h
         include/MapLoader.h
         include/Player.h
         include/stdafx.h
         include/targetver.h
         include/Territory.h
+        src/Card.cpp
         src/Continent.cpp
+        src/Deck.cpp
         src/Dice.cpp
+        src/Hand.cpp
         src/Main.cpp
         src/Map.cpp
         src/MapLoader.cpp
         src/Player.cpp
         src/stdafx.cpp
-        src/Territory.cpp
-        src/Card.cpp
-        src/Deck.cpp
-        src/Hand.cpp
-        src/Player.cpp)
+        src/Territory.cpp include/game/Reinforce.h src/game/Reinforce.cpp src/game/Fortify.cpp src/game/Phase.cpp include/game/Phase.h include/game/Fortify.h)

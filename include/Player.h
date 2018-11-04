@@ -2,9 +2,6 @@
 // Created by pamel on 2018-10-11.
 //
 #pragma once
-#ifndef PLAYER_H
-#define PLAYER_H
-
 #include <string>
 #include <vector>
 #include "Territory.h"
@@ -25,6 +22,7 @@ class Player {
         Dice getDice();
         Hand getHand();
         vector<Territory> getCountries();
+        int getArmies();
 
         void setName(string);
         void setCountries(vector<Territory>);
@@ -52,4 +50,3 @@ class Player {
         Dice dice;
 
 };
-#endif
