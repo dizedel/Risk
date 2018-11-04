@@ -9,17 +9,16 @@ class Hand
 {
 private:
 	vector<Card> cards;
-	int exchangedHands = 0;
-	int numOfExchanges();
 
 public:
 	Hand();
 	~Hand();
+    static int exchangedHands;
 	int exchange();
 	void addCardToHand(Deck&);
 	const vector<Card> &getCards() const;
 	void setCards(const vector<Card> &cards);
-    int getExchangedHands() const;
+    static int getExchangedHands();
 	string toString();
 
 };
