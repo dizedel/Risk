@@ -26,4 +26,4 @@ add_executable(Risk
         src/Card.cpp
         src/Deck.cpp
         src/Hand.cpp
-        src/Player.cpp)
+        src/Player.cpp src/MainGame.cpp include/MainGame.h)
