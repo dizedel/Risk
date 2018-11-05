@@ -19,6 +19,7 @@
 #include <game/Fortify.h>
 #include "Dice.h"
 #include "game/Reinforce.h"
+#include "MainGame.h"
 
 using namespace std;
 
@@ -277,8 +278,10 @@ int main() {
      *
      *
      */
-	
 
+    cout << "************* | MAIN GAME LOOP DEMO | *************" << endl;
+    MainGame game{players, map1};
+    game.playGame();
 
 	system("pause");
 
