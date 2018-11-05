@@ -9,9 +9,13 @@
 
 using namespace std;
 
+Fortify::Fortify(){}
+
 Fortify::Fortify(Player p){
     player = p;
 }
+
+Fortify::~Fortify(){}
 
 bool Fortify::fortify(string countryToFortify, string armyProvider, int){
 

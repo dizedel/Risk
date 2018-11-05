@@ -15,6 +15,7 @@ private:
     Map map;
 
 public:
+    MainGame();
     MainGame(vector<Player>&, Map&);
     ~MainGame();
     void playGame();
