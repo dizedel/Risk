@@ -7,23 +7,27 @@ include_directories(include)
 include_directories(src)
 
 add_executable(Risk
+        include/Card.h
         include/Continent.h
+        include/Deck.h
         include/Dice.h
+        include/Hand.h
         include/Map.h
         include/MapLoader.h
         include/Player.h
         include/stdafx.h
         include/targetver.h
         include/Territory.h
+        src/Card.cpp
         src/Continent.cpp
+        src/Deck.cpp
         src/Dice.cpp
+        src/Hand.cpp
         src/Main.cpp
         src/Map.cpp
+        src/MapCreatorTester.cpp
         src/MapLoader.cpp
         src/Player.cpp
         src/stdafx.cpp
-        src/Territory.cpp
-        src/Card.cpp
-        src/Deck.cpp
-        src/Hand.cpp
-        src/Player.cpp)
+        src/stdafx.h
+        src/Territory.cpp)
