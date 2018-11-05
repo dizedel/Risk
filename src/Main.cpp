@@ -16,6 +16,125 @@ using namespace std;
 
 int Hand::exchangedHands = 0;
 
+void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, Hand &hand1)
+{
+    char startGame;
+    cout << "Would you like to start a game ? (Y or N)" << endl;
+    cin >> startGame;
+
+    if (startGame == 'Y')
+    {
+        //open directory and display and let player select
+        ifstream inputFileStream("../maps/listOfMaps.txt");
+
+        if (inputFileStream.fail())
+        {
+            cout << "error opening directory" << endl;
+        }
+
+        //store lines of string into a vector and display it
+        vector<string> directoryContent;
+        string temp; // to load all the maps in the directory into the vector
+
+        getline(inputFileStream, temp, '\t');
+        directoryContent.push_back(temp);
+        cout << "0. " <<directoryContent.at(0);
+
+        if (inputFileStream.eof())
+            cout << " \nEnd of directory \n " << endl;
+
+        //player selects map
+        int playerChoice;
+        string mapName;
+        cout << " \nPlease select a map to load (0,1,2,......)" << endl;
+        cin >> playerChoice;
+        cout << "\nMap selected: " << directoryContent.at(playerChoice) << endl;
+        mapName = directoryContent.at(playerChoice);
+        cout << '\n' << mapName << endl;
+
+        //player selects number of players
+        int numberOfPlayers;
+        cout << "\n Select number of players between 2 and 6" << endl;
+        cin >> numberOfPlayers;
+        if (numberOfPlayers < 2 || numberOfPlayers > 6)
+        {
+            cout << "invalid number of players please select a valid range \n";
+            while ((numberOfPlayers < 2 || numberOfPlayers > 6) == true)
+            {
+                cin >> numberOfPlayers;
+                cout << "invalid number of players please select a valid range \n";
+            }
+        }
+        cout << "number of players: " << numberOfPlayers << endl;
+
+        //load map
+        loader1.loadMapFile(mapName);
+
+        //create map
+        map1 = loader1.getMap();
+        map1.createMap(map1);
+        cout << " \n \n \n";
+        map1.checkIfValid(map1);
+        map1.printContainedTerritories(); //same problem as A1 doesnt print contained territories in each content
+
+        //create players, each player is instantiated with a dice object
+
+        int playerCount = 0;
+
+        Player player1("player1");
+        vp->push_back(player1);
+        playerCount++;
+
+        Player player2("player2");
+        vp->push_back(player2);
+        playerCount++;
+        if (playerCount < numberOfPlayers)
+        {
+            Player player3("player3");
+            vp->push_back(player3);
+            playerCount++;
+        }
+        if (playerCount < numberOfPlayers)
+        {
+            Player player4("player4");
+            vp->push_back(player4);
+            playerCount++;
+        }
+        if (playerCount < numberOfPlayers)
+        {
+            Player player5("player5");
+            vp->push_back(player5);
+            playerCount++;
+        }
+        if (playerCount < numberOfPlayers)
+        {
+            Player player6("player6");
+            vp->push_back(player6);
+            playerCount++;
+        }
+
+        //print player names
+        cout << "Player names : " << endl;
+        for (int i = 0; i < vp->size(); i++)
+        {
+            cout << vp->at(i).getName() << endl;
+        }
+
+        //create deck of cards
+        Deck tempdeck(map1.getTerritory().size());
+        deck1=tempdeck;
+
+        cout << "Number of cards: " << deck1.getCards().size() << endl;
+
+        //assign empty hand to each player
+        for (int i = 0; i < vp->size(); i++)
+        {
+            vp->at(i).setHand(hand1);
+        }
+    }
+
+}
+
 void startupPhase(vector<Player> *vp, Map &map1) {
     cout << "STARTING UP" << endl;
 
@@ -121,43 +240,19 @@ void startupPhase(vector<Player> *vp, Map &map1) {
 int main() {
 	
 	Map gen;
+    Map map1;
 	MapLoader loader;
 	Hand hand;
+	Deck deck;
 	Dice dice;
-
-	int numOfCards;
-	int infantry = 0;
-	int artillery = 0;
-	int cavalry = 0;
-
-	// loading map
-	string mapFileName;
-	cout << "Enter the map's file name: ";
-	getline(cin, mapFileName);
-	cout << "Attempting to load " << mapFileName;
-	loader.loadMapFile(mapFileName);
-	cout << '\n';
-
-	Map map1 = loader.getMap();
-	gen.createMap(map1);
-	cout << " \n \n \n";
-	gen.checkIfValid(map1);
-	cout << endl;
-	map1.printContainedTerritories();
-	cout << endl;	
+    vector<Player> players;
 
 	// assignment 2 demo
 
-	//Part 2
-    Player p1, p2, p3;
-    p1.setName("PLAYER ONE");
-    p2.setName("PLAYER TWO");
-    p3.setName("PLAYER THREE");
+	//Part 1
+    GameStart(&players, loader, map1, deck, hand);
 
-    vector<Player> players;
-    players.push_back(p1);
-    players.push_back(p2);
-    players.push_back(p3);
+	//Part 2
 	startupPhase(&players, map1);
     cout << "====== Territory Ownerships ======" << endl;
     for (Player& p : players){
