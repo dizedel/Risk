@@ -48,7 +48,6 @@ class Player {
 
         string displayCountries();
 
-		void addTerritory(Territory);
 
     private:
         string playerName;                      //player's name as an identifier

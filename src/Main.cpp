@@ -173,7 +173,7 @@ void startupPhase(vector<Player> *vp, Map &map1) {
         ownerName = vp->at(playerIndex).getName();
         territoryName = tempTVect.back().getName();
 
-        vp->at(playerIndex).addTerritory(tempTVect.back());
+        vp->at(playerIndex).addCountry(tempTVect.back());
         tempTVect.back().setTerritoryOwner(ownerName);
         occupiedTerritories.push_back(tempTVect.back());
 
@@ -201,7 +201,7 @@ void startupPhase(vector<Player> *vp, Map &map1) {
     // assign starting armies to players
     int startingArmy = 50 - (5 * playerCount);
     for(int i=0; i<playerCount; i++){
-        vp->at(i).setStartingArmy(startingArmy);
+        vp->at(i).setArmies(startingArmy);
         cout << vp->at(i).getName() << " was given " << vp->at(i).getArmies() << " armies." << endl;
     }
 
@@ -254,7 +254,6 @@ int main() {
 	MapLoader loader;
 	Hand hand;
 	Deck deck;
-	Dice dice;
     vector<Player> players;
 
 	// assignment 2 demo
@@ -280,7 +279,7 @@ int main() {
      */
 	
 
-    
+
 	system("pause");
 
 	return 0;
