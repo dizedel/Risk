@@ -18,6 +18,7 @@ add_executable(Risk
         include/stdafx.h
         include/targetver.h
         include/Territory.h
+        include/MainGame.h
         src/Card.cpp
         src/Continent.cpp
         src/Deck.cpp
@@ -29,15 +30,5 @@ add_executable(Risk
         src/MapLoader.cpp
         src/Player.cpp
         src/stdafx.cpp
-<<<<<<< HEAD
         src/Territory.cpp
-        src/Card.cpp
-        src/Deck.cpp
-        src/Hand.cpp
-        src/Player.cpp
-        src/MainGame.cpp
-        include/MainGame.h)
-=======
-        src/stdafx.h
-        src/Territory.cpp)
->>>>>>> c1bc95c756c5067ff0fa0f46a13201c23d3b17ed
+        src/MainGame.cpp)
