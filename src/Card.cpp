@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "../include/Card.h"
+#include "Card.h"
 using namespace std;
 
 Card::Card(const string &type) : type(type) {}
