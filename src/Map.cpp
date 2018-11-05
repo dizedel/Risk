@@ -1,4 +1,5 @@
-#include "Map.h"
+#include "stdafx.h"
+#include "../include/Map.h"
 
 using namespace std;
 
@@ -21,18 +22,18 @@ Map::Map(string a, string img, string wrp, string scr, string wrn) {
 
 Map::~Map() {}
 
-vector<Continent> Map::getContinents() {
+vector<Continent>& Map::getContinents() {
 	return c;
 }
 
-vector<Territory> Map::getTerritory()
+vector<Territory>& Map::getTerritory()
 {
 	return t;
 }
 
 int Map::getNbTerritories()
 {
-	return Map::t.size();
+	return t.size();
 }
 
 string Map::getAuthor() {
@@ -55,10 +56,6 @@ string Map::getWarn() {
 	return warn;
 }
 
-int Map::getTerritoryCount() {
-    return territoryCount;
-}
-
 void Map::setAuthor(string a) {
 	author = a;
 }
@@ -79,10 +76,6 @@ void Map::setWarn(string wrn) {
 	warn = wrn;
 }
 
-void Map::setTerritoryCount(int tc) {
-    territoryCount = tc;
-}
-
 void Map::addContinents(Continent c1) {
 	c.push_back(c1);
 }
@@ -92,8 +85,7 @@ void Map::addTerritories(Territory t1)
 	t.push_back(t1);
 }
 
-//method creates the map representation using an adjacency list. basically a vector storing a list; first index of vector would store territory and a list of adjacent territories
-void Map::createMap(Map m)
+void Map::createMap(Map m)  //method creates the map representation using an adjacency list. basically a vector storing a list; first index of vector would store territory and a list of adjacent territories
 {
 	vector<list<string>> adjList(m.getNbTerritories()); //intialize adjacency list to size of Territory container in the map object
 
@@ -106,19 +98,22 @@ void Map::createMap(Map m)
 		}
 	}
 
-	vector<list<string> >::iterator i;
-
+	/* demo for asg1
+	vector<list<string> >::iterator i;  
+	
 	int c = 0;
 	for (vector<list<string> >::iterator i = adjList.begin() ; i != adjList.end(); i++)  //traversing thru the entire adjacency list using iterators.
 	{
 		list<string> li = *i;
-		for (std::list<string>::iterator iter = li.begin(); iter != li.end(); iter++)
+		for (std::list<string>::iterator iter = li.begin(); iter != li.end(); iter++) 
 		{
 			cout << *iter << " ";
 		}
 		cout << endl;
 		c++;
 	}
+	*/
+	
 }
 
 void Map::printContainedTerritories() {
@@ -138,7 +133,7 @@ void Map::printContainedTerritories() {
 	}
 }
 
-void Map::checkIfValid(Map m)
+void Map::checkIfValid(Map m) 
 {
 	Territory temp;
 	Territory temp2;
@@ -151,7 +146,7 @@ void Map::checkIfValid(Map m)
 
 			for (int j = i + 1; j < m.getContinents().size(); j++) //comparer loop thru the continents
 			{
-				for (int jj = 0; jj < m.getContinents().at(j).getContainingTerritories().size(); jj++)  //loop thru the countries
+				for (int jj = 0; jj < m.getContinents().at(j).getContainingTerritories().size(); jj++)  //loop thru the countries 
 				{
 
 					temp2 = m.getContinents().at(j).getContainingTerritories().at(jj);
@@ -168,3 +163,8 @@ void Map::checkIfValid(Map m)
 	if (valid == true)
 		cout << "map is valid";
 }
+
+void Map::setTerritoryCount(int tc) {
+	territoryCount = tc;
+}
+

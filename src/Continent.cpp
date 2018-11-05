@@ -1,39 +1,41 @@
-#include "Continent.h"
-#include "Territory.h"
+#include "stdafx.h"
+#include "../include/Continent.h"
+
 using namespace std;
 
 Continent::Continent() {
-    name = "";
-    territoryCount = NULL;
+	name = "";
+	territoryCount = NULL;
 }
 
 Continent::Continent(string n, int tc) {
-    name = n;
-    territoryCount = tc;
+	name = n;
+	territoryCount = tc;
 }
 
 Continent::~Continent() {}
 
 string Continent::getName() {
-    return name;
+	return name;
 }
 
 int Continent::getTerritoryCount() {
-    return territoryCount;
+	return territoryCount;
 }
 
 vector<Territory> Continent::getContainingTerritories() {
-    return containingTerritories;
+	return containingTerritories;
 }
 
+
 void Continent::setName(string n) {
-    name = n;
+	name = n;
 }
 
 void Continent::setTerritoryCount(int tc) {
-    territoryCount = tc;
+	territoryCount = tc;
 }
 
 void Continent::addTerritories(Territory t1) {
-    containingTerritories.push_back(t1);
+	containingTerritories.push_back(t1);
 }

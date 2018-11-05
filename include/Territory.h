@@ -1,41 +1,46 @@
 #pragma once
 
-#ifndef TERRITORY_H
-#define TERRITORY_H
-
+#include "stdafx.h"
 #include <string>
 #include <vector>
+//#include "Continent.h"
 
 using namespace std;
 
 class Territory {
 
-    public:
-        Territory();
-        Territory(string, int, int, vector<string>);
-        ~Territory();
+public:
+	Territory();	
+	Territory(string, int, int, vector<string>, string); // contstructor, Name , X & Y coord, Neighbors, owner
+	~Territory();
 
-        string getName();
-        int getX();
-        int getY();
-        string getContinent();	//return name of continent territory is in
-        vector<string> getNeighbors(); //return the container of neighbors for the territory
-        int getArmies(); //return number armies the territory has
+	string getName();	//return Name of territory
+	int getX();	
+	int getY();
+	string getContinent();	//return name of continent territory is in
+	vector<string> getNeighbors(); //return the container of neighbors for the territory
+	int getArmies(); //return number armies the territory has	
 
-        void setName(string);
-        void setArmies(int);
-        void setX(int);
-        void setY(int);
-        void setContinent(string);
-        void addArmies(int);
-        void addNeighbor(string);
+	void setName(string);
+	void setX(int);
+	void setY(int);
+	void setContinent(string);
+	void addNeighbor(string);
 
-    private:
-        string name;
-        int armies;
-        int coordX;
-        int coordY;
-        string continent;
-        vector<string> neighbors;
-    };
-#endif
+	void setArmies(int a);
+	void addArmies(int);
+
+	string getTerritoryOwner();
+	void setTerritoryOwner(string);
+
+private:
+	string territoryName;
+	int coordX;
+	int coordY;
+	string continent;
+	vector<string> neighbors;
+	int armies;
+	string territoryOwner;
+
+	//Player owner;
+};
