@@ -18,7 +18,7 @@ bool Fortify::fortify(string countryToFortify, string armyProvider, int){
     if (!player.hasCountry(countryToFortify) || !player.hasCountry(armyProvider))
         return false;
     else{
-
+        return true;
     }
 }
 
