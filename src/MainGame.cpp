@@ -1,22 +1,38 @@
 #include "MainGame.h"
+#include "game/Reinforce.h"
+#include "game/Fortify.h"
 
 using namespace std;
 
-void playGame(vector<Player> &playersInGame) {
+MainGame::MainGame(vector<Player> &players) {
+    playersInGame = players;
+}
+
+void MainGame::playGame() {
 
     bool keepPlaying = true;
     int currentPlayer = 0;
     int numberOfPlayers = playersInGame.size();
-    
+
+    for (int i = 0; i < playersInGame.size(); i++)
+    {
+        reinforceVector.push_back(Reinforce{playersInGame[i]});
+    }
+
+    for (int j = 0; j < playersInGame.size(); j++)
+    {
+        fortifyVector.push_back(Fortify{playersInGame[j]});
+    }
+
 
     while (keepPlaying)
     {
-        cout<< "player" << currentPlayer << ".reinforce() called" << endl;
-        playersInGame[currentPlayer].reinforce();
-        cout<< "player" << currentPlayer << ".attack() called" << endl;
-        playersInGame[currentPlayer].attack(0,"");
-        cout<< "player" << currentPlayer << ".fortify() called" << endl;
-        playersInGame[currentPlayer].fortify(0,"");
+        cout<< "Player " << currentPlayer + 1 << " -- Reinforce::playPhase() called" << endl;
+        reinforceVector[currentPlayer].playPhase();
+        cout<< "Player" << currentPlayer + 1 << " attack() called" << endl;
+
+        cout<< "Player" << currentPlayer + 1 << " -- Fortify::playPhase() called" << endl;
+        fortifyVector[currentPlayer].playPhase();
 
         currentPlayer++;
 
