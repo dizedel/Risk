@@ -1,66 +1,87 @@
-#include "Territory.h"
+#include "stdafx.h"
+#include "../include/Territory.h"
 
 using namespace std;
 
 Territory::Territory() {
-    name = "";
-    coordX = NULL;
-    coordY = NULL;
+	territoryName = "";
+	coordX = NULL;
+	coordY = NULL;
+	territoryOwner = "";
 }
 
-Territory::Territory(string n, int x, int y, vector<string> v) {
-    name = n;
-    coordX = x;
-    coordY = y;
-    neighbors = v;
+Territory::Territory(string n, int x, int y, vector<string> v, string s) {
+	territoryName = n;
+	coordX = x;
+	coordY = y;
+	neighbors = v;
+	territoryOwner = "";
 }
 
 Territory::~Territory() {}
 
 string Territory::getName() {
-    return name;
+	return territoryName;
 }
 
 int Territory::getX() {
-    return coordX;
+	return coordX;
 }
 
 int Territory::getY() {
-    return coordY;
-}
-
-int Territory::getArmies() {
-    return armies;
+	return coordY;
 }
 
 string Territory::getContinent() {
-    return continent;
+	return continent;
 }
 
 void Territory::setName(string n){
-    name = n;
+	territoryName = n;
 }
 
 void Territory::setX(int x) {
-    coordX = x;
+	coordX = x;
 }
 
 void Territory::setY(int y) {
-    coordY = y;
+	coordY = y;
 }
 
+
 void Territory::setContinent(string c) {
-    continent = c;
+	continent = c;
 }
 
 void Territory::addNeighbor(string t) {
-    neighbors.push_back(t);
+	neighbors.push_back(t);
+}
+
+void Territory::setArmies(int a)
+{
+	armies = a;
 }
 
 vector<string> Territory::getNeighbors() {
-    return neighbors;
+	return neighbors;
 }
 
-void Territory::addArmies(int a){
-    armies += a;
+int Territory::getArmies()
+{
+	return armies;
 }
+
+void Territory::addArmies(int a) {
+	armies += a;
+}
+
+
+string Territory::getTerritoryOwner() {
+	return territoryOwner;
+}
+
+void Territory::setTerritoryOwner(string s) {
+	territoryOwner = s;
+}
+
+

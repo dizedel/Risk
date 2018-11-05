@@ -1,8 +1,11 @@
+#include "stdafx.h"
 #include "../include/Deck.h"
 #include "../include/Card.h"
 #include <time.h>
 #include <vector>
 using namespace std;
+
+Deck::Deck(){}
 
 Deck::Deck(int numOfCards)
 {

@@ -1,8 +1,6 @@
 #pragma once
 
-#ifndef CONTINENT_H
-#define CONTINENT_H
-
+#include "stdafx.h"
 #include <string>
 #include <vector>
 
@@ -13,17 +11,19 @@ using namespace std;
 class Continent {
 
 public:
+	//vector<Territory> containingTerritories; 
 	Continent();
-	Continent(string, int);
+	Continent(string, int); //name and territory count
 	~Continent();
 
 	string getName();
 	int getTerritoryCount();
 	vector<Territory> getContainingTerritories(); //return territories in continent
+	
 
 	void setName(string);
 	void setTerritoryCount(int);
-	void addTerritories(Territory);
+	void addTerritories(Territory); //add territories in the container
 
 private:
 	string name;
@@ -31,4 +31,3 @@ private:
 	vector<Territory> containingTerritories;
 
 };
-#endif

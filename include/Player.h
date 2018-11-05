@@ -2,12 +2,15 @@
 // Created by pamel on 2018-10-11.
 //
 #pragma once
+#include "stdafx.h"
+
 #include <string>
 #include <vector>
 #include "Territory.h"
 #include "Dice.h"
 #include "Hand.h"
 #include "Map.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -31,6 +34,8 @@ class Player {
 
         void addCountry(Territory);
         void addArmies(int);
+        void setStartingArmy(int);
+        int getArmies();
 
 
 
@@ -43,6 +48,8 @@ class Player {
         void fortify(int, string);
 
         string displayCountries();
+
+		void addTerritory(Territory);
 
     private:
         string playerName;                      //player's name as an identifier

@@ -1,8 +1,8 @@
 #pragma once
-
+#include "stdafx.h"
+#include <vector>
 #include "Deck.h"
 #include "Card.h"
-#include <vector>
 using namespace std;
 
 class Deck
@@ -10,6 +10,7 @@ class Deck
 private:
 	vector<Card> cards;
 public:
+	Deck();
 	Deck(int);
 	~Deck();
 	Card draw();

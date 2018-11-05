@@ -24,7 +24,10 @@ add_executable(Risk
         src/Hand.cpp
         src/Main.cpp
         src/Map.cpp
+        src/MapCreatorTester.cpp
         src/MapLoader.cpp
         src/Player.cpp
         src/stdafx.cpp
+
+        src/stdafx.h
         src/Territory.cpp include/game/Reinforce.h src/game/Reinforce.cpp src/game/Fortify.cpp include/game/Fortify.h)

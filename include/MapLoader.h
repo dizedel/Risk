@@ -1,13 +1,12 @@
 #pragma once
 
-#ifndef MAPLOADER_H
-#define MAPLOADER_H
-
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "Map.h"
-#include <fstream>
+#include "Continent.h"
+#include "Territory.h"
 
 using namespace std;
 
@@ -18,13 +17,11 @@ class MapLoader {
 		void parseTerritories(ifstream&);
 		void loadMapFile(string);
 		Map getMap(); //a function that would return the map, added by person doing map part
-
+		
 	private:
 		ifstream inputFile;
 		bool fileInfoFound = false;
 		bool continentInfoFound = false;
 		bool territoryInfoFound = false;
-		Map map1;
-
+		Map map1; // a Map object that will store all the info parsed from the map txt file.
 };
-#endif
