@@ -86,9 +86,9 @@ void Reinforce::playPhase() {
     cout<< endl<< "---------------------------------------------"<< endl;
 
     int armiesFromLand = floor(double(player.getCountries().size()/3));
-    cout << player.getName() << "current armies: " << player.getArmies() << endl;
+    cout << player.getName() << " current armies: " << player.getArmies() << endl;
     player.addArmies(armiesFromLand);
-    cout << player.getName() << "was given: " << armiesFromLand << "armies" << endl;
+    cout << player.getName() << " was given: " << armiesFromLand << " armies" << endl;
     cout << "Player has a total of " << player.getArmies() << endl;
 
     /**
