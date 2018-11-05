@@ -11,6 +11,14 @@
 #include "../include/Deck.h"
 #include "../include/Hand.h"
 #include "../include/Player.h"
+#include "MapLoader.h"
+#include "Card.h"
+#include "Deck.h"
+#include <vector>
+#include <Player.h>
+#include <game/Fortify.h>
+#include "Dice.h"
+#include "game/Reinforce.h"
 
 using namespace std;
 
@@ -153,6 +161,7 @@ void startupPhase(vector<Player> *vp, Map &map1) {
     int terrCount = tempTVect.size();
     cout << "There are " << terrCount <<" territories to be distributed." << endl;
 
+
     int playerIndex = 0;
     string ownerName = "";
     string territoryName = "";
@@ -164,7 +173,7 @@ void startupPhase(vector<Player> *vp, Map &map1) {
         ownerName = vp->at(playerIndex).getName();
         territoryName = tempTVect.back().getName();
 
-        vp->at(playerIndex).addTerritory(tempTVect.back());
+        vp->at(playerIndex).addCountry(tempTVect.back());
         tempTVect.back().setTerritoryOwner(ownerName);
         occupiedTerritories.push_back(tempTVect.back());
 
@@ -192,7 +201,7 @@ void startupPhase(vector<Player> *vp, Map &map1) {
     // assign starting armies to players
     int startingArmy = 50 - (5 * playerCount);
     for(int i=0; i<playerCount; i++){
-        vp->at(i).setStartingArmy(startingArmy);
+        vp->at(i).setArmies(startingArmy);
         cout << vp->at(i).getName() << " was given " << vp->at(i).getArmies() << " armies." << endl;
     }
 
@@ -237,6 +246,7 @@ void startupPhase(vector<Player> *vp, Map &map1) {
 }
 
 
+
 int main() {
 	
 	Map gen;
@@ -244,7 +254,6 @@ int main() {
 	MapLoader loader;
 	Hand hand;
 	Deck deck;
-	Dice dice;
     vector<Player> players;
 
 	// assignment 2 demo
@@ -269,8 +278,9 @@ int main() {
      *
      */
 	
+
+
 	system("pause");
-	
 
 	return 0;
 }

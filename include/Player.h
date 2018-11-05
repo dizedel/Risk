@@ -3,6 +3,7 @@
 //
 #pragma once
 #include "stdafx.h"
+
 #include <string>
 #include <vector>
 #include "Territory.h"
@@ -24,26 +25,29 @@ class Player {
         Dice getDice();
         Hand getHand();
         vector<Territory> getCountries();
+        int getArmies();
 
         void setName(string);
         void setCountries(vector<Territory>);
         void setHand(Hand);
+        void setArmies(int);
 
-        void addCountry(string);
+        void addCountry(Territory);
         void addArmies(int);
         void setStartingArmy(int);
-        int getArmies();
+
+
 
         void giveArmiesForTerritory();
 
-        int hasCountry(string);
+        bool hasCountry(string);
+        int posOfCountry(string);
         void reinforce();
         void attack(int, string);
         void fortify(int, string);
 
         string displayCountries();
 
-		void addTerritory(Territory);
 
     private:
         string playerName;                      //player's name as an identifier

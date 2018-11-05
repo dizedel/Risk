@@ -4,7 +4,6 @@ project(Risk)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
-include_directories(src)
 
 add_executable(Risk
         include/Card.h
@@ -31,4 +30,9 @@ add_executable(Risk
         src/Player.cpp
         src/stdafx.cpp
         src/Territory.cpp
-        src/MainGame.cpp)
+        src/MainGame.cpp
+        src/stdafx.h
+        include/game/Reinforce.h
+        src/game/Reinforce.cpp
+        src/game/Fortify.cpp
+        include/game/Fortify.h)
