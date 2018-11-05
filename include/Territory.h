@@ -39,7 +39,7 @@ private:
 	int coordY;
 	string continent;
 	vector<string> neighbors;
-	int armies;
+	int armies=0;
 	string territoryOwner;
 
 	//Player owner;

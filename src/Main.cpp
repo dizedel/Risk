@@ -15,8 +15,8 @@
 #include "Card.h"
 #include "Deck.h"
 #include <vector>
-#include <Player.h>
-#include <game/Fortify.h>
+#include "Player.h"
+#include "game/Fortify.h"
 #include "Dice.h"
 #include "game/Reinforce.h"
 #include "MainGame.h"
@@ -45,9 +45,13 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
         vector<string> directoryContent;
         string temp; // to load all the maps in the directory into the vector
 
-        getline(inputFileStream, temp, '\t');
-        directoryContent.push_back(temp);
-        cout << "0. " <<directoryContent.at(0);
+        while(getline(inputFileStream, temp)){
+            directoryContent.push_back(temp);
+        }
+
+        for(int i=0; i<directoryContent.size(); i++){
+            cout << i << ". " << directoryContent.at(i) << endl;
+        }
 
         if (inputFileStream.eof())
             cout << " \nEnd of directory \n " << endl;
@@ -144,6 +148,16 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
 
 }
 
+
+bool allArmiesAssigned(vector<Player> *vp){
+    for(Player p : *vp){
+        if(p.getInitialArmies()!=0){
+            return false;
+        }
+    }
+    return true;
+}
+
 void startupPhase(vector<Player> *vp, Map &map1) {
     cout << "STARTING UP" << endl;
 
@@ -162,7 +176,6 @@ void startupPhase(vector<Player> *vp, Map &map1) {
     int terrCount = tempTVect.size();
     cout << "There are " << terrCount <<" territories to be distributed." << endl;
 
-
     int playerIndex = 0;
     string ownerName = "";
     string territoryName = "";
@@ -174,7 +187,7 @@ void startupPhase(vector<Player> *vp, Map &map1) {
         ownerName = vp->at(playerIndex).getName();
         territoryName = tempTVect.back().getName();
 
-        vp->at(playerIndex).addCountry(tempTVect.back());
+        vp->at(playerIndex).addTerritory(tempTVect.back());
         tempTVect.back().setTerritoryOwner(ownerName);
         occupiedTerritories.push_back(tempTVect.back());
 
@@ -197,56 +210,83 @@ void startupPhase(vector<Player> *vp, Map &map1) {
         }
     }
 
+    for (Player& p : *vp){
+        cout << p.getName() << " owns " << p.getCountries().size() << " territories:" << endl;
+        cout << p.displayCountries() << endl;
+    }
+
     cout << endl;
 
     // assign starting armies to players
     int startingArmy = 50 - (5 * playerCount);
     for(int i=0; i<playerCount; i++){
-        vp->at(i).setArmies(startingArmy);
-        cout << vp->at(i).getName() << " was given " << vp->at(i).getArmies() << " armies." << endl;
+        vp->at(i).setInitialArmies(startingArmy);
+        vp->at(i).addArmies(startingArmy);
+        cout << vp->at(i).getName() << " was given " << vp->at(i).getInitialArmies() << " armies." << endl;
     }
 
     cout << endl;
 
-    /*
     // assign armies to territories
     // maybe this should be done using reinforce(), will fix when pam is done with her part
-    bool allArmiesAssigned=false;
-    while(!allArmiesAssigned){
+    bool doneAssigning=false;
+    while(!doneAssigning){
         for(int j=0; j<playerCount; j++){
-            cout << vp->at(j).getName() << "\'s turn." << endl;
             bool successfulTurn=false;
+
+            int userinput=0;
             while(!successfulTurn){
-                cout << "Enter the territory name where you want to add armies: " << endl;
-                string tempstr;
-                getline(cin, tempstr);
-                if(vp->at(j).hasCountry(tempstr)>0){
-                    int armySize;
-                    cout << "How many armies do you want to assign to this territory?";
-                    cin >> armySize;
-                    if(vp->at(j).getArmies()<armySize){
-                        cout << "You don't have that many remaining armies to assign." << endl;
-                    }
-                    else{
-                        for(int k=0; k<occupiedTerritories.size(); k++){
-                            if(occupiedTerritories.at(k).getName()==tempstr){
-                                occupiedTerritories.at(k).addArmies(armySize);
-                                cout << "Army assigned, next player's turn!" << endl;
-                                successfulTurn=true;
-                            }
+                cout << vp->at(j).getName() << "s turn to assign initial armies." << endl;
+
+                cout << "Enter the territory number where you want to add armies:" << endl;
+                for(int k=0; k< map1.getNbTerritories(); k++){
+                    for(int l=0; l<vp->at(j).getCountries().size(); l++){
+                        if(map1.getTerritory().at(k).getName() == vp->at(j).getCountries().at(l).getName()){
+                            cout << "#" << k << " - " << map1.getTerritory().at(k).getName() << endl;
                         }
                     }
                 }
+                cin >> userinput;
+
+
+                if(userinput>=map1.getNbTerritories()){
+                    cout << "Invalid territory number." << endl;
+                }
                 else{
-                    cout << "This territory does not belong to you." << endl;
+                    string tempstr = map1.getTerritory().at(userinput).getName();
+                    if(vp->at(j).hasCountry(tempstr)){
+                        int armySize;
+                        cout << "How many armies do you want to assign to this territory?" << endl;
+                        cin >> armySize;
+                        if(armySize > vp->at(j).getInitialArmies()){
+                            cout << "You only have " << vp->at(j).getInitialArmies() << " armies to assign." << endl;
+                            cin.clear();
+                            cin.sync();
+                        }
+                        else{
+                            for(int k=0; k<map1.getTerritory().size(); k++){
+                                if(map1.getTerritory().at(k).getName()==tempstr){
+                                    map1.getTerritory().at(k).addArmies(armySize);
+                                    vp->at(j).assignInitialArmyToCountry(armySize);
+                                    cout << "You only have " << vp->at(j).getInitialArmies() << " left to assign." << endl;
+                                    cout << "Army assigned, next player's turn!" << endl;
+                                    cin.clear();
+                                    cin.sync();
+                                    successfulTurn=true;
+                                }
+                            }
+                        }
+                    }
+                    else{
+                        cout << "This territory does not belong to you." << endl;
+                    }
                 }
             }
+            doneAssigning = allArmiesAssigned(vp);
         }
     }
-     */
+    cout << "Army assignments done." << endl;
 }
-
-
 
 int main() {
 
@@ -262,24 +302,19 @@ int main() {
 	//Part 1
     GameStart(&players, loader, map1, deck, hand);
 
-	//Part 2
-	startupPhase(&players, map1);
+    //Part 2
+    startupPhase(&players, map1);
     cout << "====== Territory Ownerships ======" << endl;
     for (Player& p : players){
         cout << p.getName() << " owns " << p.getCountries().size() << " territories:" << endl;
         cout << p.displayCountries() << endl;
     }
-    for(int i=0; i<map1.getTerritory().size();i++){
-        cout << map1.getTerritory().at(i).getName() << " is owned by " << map1.getTerritory().at(i).getTerritoryOwner() << endl;
+    for(int i=0; i<map1.getTerritory().size(); i++){
+        cout << map1.getTerritory().at(i).getName() << " is owned by " << map1.getTerritory().at(i).getTerritoryOwner()
+             << " and it currently has " << map1.getTerritory().at(i).getArmies() << " armies" << endl;
     }
-    /*
-     * to do: assign armies to countries
-     *
-     *
-     *
-     */
     
-    MainGame game{players, map1};
+    MainGame game(players, map1);
     game.playGame();
 
 	system("pause");

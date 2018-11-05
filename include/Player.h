@@ -48,13 +48,20 @@ class Player {
 
         string displayCountries();
 
+        void addTerritory(Territory);
+
+        void setInitialArmies(int);
+        int getInitialArmies();
+        void assignInitialArmyToCountry(int);
+
 
     private:
         string playerName;                      //player's name as an identifier
         int numOfExchanges;                     //number of times the player has exchanged his cards for armies
-        int armies;
+        int armies=0;
         vector<Territory> countries;
         Hand hand;
         Dice dice;
+        int initialArmies=0;
 
 };

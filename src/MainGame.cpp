@@ -4,10 +4,14 @@
 
 using namespace std;
 
+MainGame::MainGame(){}
+
 MainGame::MainGame(vector<Player> &players, Map &mapRef) {
     playersInGame = players;
     map = mapRef;
 }
+
+MainGame::~MainGame(){}
 
 void MainGame::playGame() {
 

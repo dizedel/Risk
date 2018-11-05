@@ -103,3 +103,19 @@ void Player::giveArmiesForTerritory(){
     armies += countries.size()/3;
     //TODO: give armies for entire continent
 }
+
+void Player::addTerritory(Territory t) {
+    countries.push_back(t);
+}
+
+void Player::setInitialArmies(int n){
+    initialArmies=n;
+}
+
+void Player::assignInitialArmyToCountry(int n){
+    initialArmies-=n;
+}
+
+int Player::getInitialArmies(){
+    return initialArmies;
+}

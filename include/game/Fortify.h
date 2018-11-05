@@ -15,6 +15,7 @@ using namespace std;
 class Fortify{
 
 public:
+    Fortify();
     Fortify(Player);
     ~Fortify();
 
