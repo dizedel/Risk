@@ -5,6 +5,8 @@
 #include <vector>
 using namespace std;
 
+Deck::Deck(){}
+
 Deck::Deck(int numOfCards)
 {
 	for (int i = 1; i <= numOfCards; i++)
