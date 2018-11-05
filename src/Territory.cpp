@@ -8,6 +8,7 @@ Territory::Territory() {
 	coordX = NULL;
 	coordY = NULL;
 	territoryOwner = "";
+	armies = 0;
 }
 
 Territory::Territory(string n, int x, int y, vector<string> v, string s) {
@@ -16,6 +17,7 @@ Territory::Territory(string n, int x, int y, vector<string> v, string s) {
 	coordY = y;
 	neighbors = v;
 	territoryOwner = "";
+	armies = 0;
 }
 
 Territory::~Territory() {}
