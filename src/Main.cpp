@@ -249,7 +249,7 @@ void startupPhase(vector<Player> *vp, Map &map1) {
 
 
 int main() {
-	
+
 	Map gen;
     Map map1;
 	MapLoader loader;
@@ -278,8 +278,7 @@ int main() {
      *
      *
      */
-
-    cout << "************* | MAIN GAME LOOP DEMO | *************" << endl;
+    
     MainGame game{players, map1};
     game.playGame();
 
