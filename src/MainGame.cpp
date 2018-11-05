@@ -2,11 +2,7 @@
 
 using namespace std;
 
-MainGame::MainGame(vector<Player> &players) {
-    playersInGame = players;
-}
-
-void MainGame::playGame() {
+void playGame(vector<Player> playersInGame) {
 
     bool keepPlaying = true;
     int currentPlayer = 0;
