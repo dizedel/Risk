@@ -2,15 +2,14 @@
 // Created by pamel on 2018-10-11.
 //
 #pragma once
-#ifndef PLAYER_H
-#define PLAYER_H
-
+#include "stdafx.h"
 #include <string>
 #include <vector>
 #include "Territory.h"
 #include "Dice.h"
 #include "Hand.h"
 #include "Map.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -32,7 +31,8 @@ class Player {
 
         void addCountry(string);
         void addArmies(int);
-        bool addTerritory(string , Map);
+        void setStartingArmy(int);
+        int getArmies();
 
         void giveArmiesForTerritory();
 
@@ -43,6 +43,8 @@ class Player {
 
         string displayCountries();
 
+		void addTerritory(Territory);
+
     private:
         string playerName;                      //player's name as an identifier
         int numOfExchanges;                     //number of times the player has exchanged his cards for armies
@@ -52,4 +54,3 @@ class Player {
         Dice dice;
 
 };
-#endif

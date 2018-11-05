@@ -4,7 +4,8 @@
  *  Created on: 10 oct. 2018
  *      Author: Aloys
  */
-#include "Dice.h"
+#include "stdafx.h"
+#include "../include/Dice.h"
 #include <cstdlib>
 #include <iostream>
 
