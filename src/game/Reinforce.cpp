@@ -7,8 +7,8 @@ using namespace std;
 
 Reinforce::Reinforce() {}
 
-Reinforce::Reinforce(Player player) {
-    setPlayer(player);
+Reinforce::Reinforce(Player p) {
+    player = p;
 }
 
 Reinforce::~Reinforce()
@@ -89,9 +89,15 @@ void Reinforce::playPhase() {
                          cout << "You have no cards to exchange this round." << endl ;
                          break;
                      }
+                     else{
+                         cout<< "Your cards have been exchanged for " << exchangedCards << " armies";
+                         break;
+                     }
                  }
-                 cout << "No problem, moving along...." << endl;
-                 break;
+                 else if (txtline == "no"){
+                     cout << "No problem, moving along...." << endl;
+                     break;
+                 }
              }
              else {
                  cout << "Not a valid answer. Please answer 'yes' or 'no'";
