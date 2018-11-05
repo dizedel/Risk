@@ -31,38 +31,40 @@ void Reinforce::giveArmiesForTerritory(){
 
 
 bool Reinforce::reinforce(){
-    string txtline;
+    string str;
     /******************
      * REINFORCE LOOP
      *****************/
-    if(player.getArmies()>= 3) {
-        while (player.getArmies() >= 3) {
-            cout <<"You have --- " << player.getArmies() <<" --- armies. Which countries do you wish to reinforce? Enter 'done' if you do not wish to. \n";
-            getline(cin, txtline);
-            if (txtline == "done") {
+    if(player.getArmies()>= 1) {
+        while (player.getArmies()>=1) {
+            cout <<"You have --- " << player.getArmies() <<" --- armies. Which countries do you wish to reinforce? Enter 'done' if you do not wish to." << endl;
+            cin >> str;
+            if (str == "done") {
                 break;
             }
-            else if (player.hasCountry(txtline)) {
+            else if (player.hasCountry(str)) {
                 int numOfArmies = 0;
-                while (true) {
+                bool finished = false;
+                while (!finished) {
                     cout << "How many armies do you wish to place?" << endl;
                     cin >> numOfArmies;
-                    if (numOfArmies < 3) {
-                        cout << "You need to place more than 3 armies per country" << endl;
+                    if (floor(numOfArmies) == numOfArmies && numOfArmies > 0) {
+                        player.setArmies(player.getArmies() - numOfArmies);
+                        player.getCountries().at(player.hasCountry(str)).addArmies(numOfArmies);
+                        finished = true;
                     }
-                    else {
-                        player.getCountries().at(player.hasCountry(txtline)).addArmies(numOfArmies);
-                        break;
-                    }
+                    else
+                        cout << "Please enter a valid output" << endl;
                 }
-
-            } else {
-                cout << "You do not have this country";
+            }
+            else {
+                cout << "Value : " << player.hasCountry(str)<< endl;
+                cout << "You do not have this country" << endl;
             }
         }
     }
     else{
-        cout<< "You do not have enough armies to reinforce at the moment";
+        cout<< "You do not have enough armies to reinforce at the moment" << endl;
     }
     return true;
 }
@@ -77,19 +79,18 @@ void Reinforce::playPhase() {
      * EXCHANGE CARDS
      */
     while (true) {
-
-        cout << "Do you wish to exchange your cards?";
+        cout << "Do you wish to exchange your cards?" << endl;
          cin >> txtline;
 
              if (txtline == "yes" || txtline == "no") {
                  if (txtline == "yes"){
                      int exchangedCards = player.getHand().exchange();
                      if (exchangedCards == 0) {
-                         cout << "You have no cards to exchange this round.";
+                         cout << "You have no cards to exchange this round." << endl ;
                          break;
                      }
                  }
-                 cout << "No problem, moving along....";
+                 cout << "No problem, moving along...." << endl;
                  break;
              }
              else {

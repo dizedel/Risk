@@ -29,9 +29,10 @@ class Player {
         void setHand(Hand);
         void setArmies(int);
 
-        void addCountry(string);
+        void addCountry(Territory);
         void addArmies(int);
-        bool addTerritory(string , Map);
+
+
 
         void giveArmiesForTerritory();
 

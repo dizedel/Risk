@@ -14,6 +14,7 @@ Player::Player() {
     hand = h;
     dice = d;
     armies = 0;
+    countries = {};
 }
 
 Player::Player(string name) {
@@ -23,6 +24,7 @@ Player::Player(string name) {
     hand = h;
     dice = d;
     armies = 0;
+    countries = {};
 }
 
 Player::~Player()
@@ -69,8 +71,8 @@ void Player::addArmies(int numOfArmies) {
    armies+=numOfArmies;
 }
 
-bool Player::addTerritory(string countryName, Map map) {
-    return false;
+void Player::addCountry(Territory t) {
+    countries.push_back(t);
 }
 
 int Player::posOfCountry(string countryName){
