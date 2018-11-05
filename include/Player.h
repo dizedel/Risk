@@ -35,7 +35,6 @@ class Player {
         void addCountry(Territory);
         void addArmies(int);
         void setStartingArmy(int);
-        int getArmies();
 
 
 

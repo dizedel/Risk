@@ -30,4 +30,8 @@ add_executable(Risk
         src/stdafx.cpp
 
         src/stdafx.h
-        src/Territory.cpp include/game/Reinforce.h src/game/Reinforce.cpp src/game/Fortify.cpp include/game/Fortify.h)
+        src/Territory.cpp
+        include/game/Reinforce.h
+        src/game/Reinforce.cpp
+        src/game/Fortify.cpp
+        include/game/Fortify.h)
