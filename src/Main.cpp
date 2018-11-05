@@ -248,7 +248,7 @@ void startupPhase(vector<Player> *vp, Map &map1) {
 
 
 int main() {
-	
+
 	Map gen;
     Map map1;
 	MapLoader loader;
@@ -277,8 +277,9 @@ int main() {
      *
      *
      */
-
-
+    
+    Reinforce r1(players.at(0));
+    r1.playPhase();
 	system("pause");
 
 	return 0;

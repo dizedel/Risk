@@ -24,6 +24,11 @@ bool Fortify::fortify(string countryToFortify, string armyProvider, int){
 
 void Fortify::playPhase(){
     int numOfArmies;
+
+    cout<< endl<< "---------------------------------------------"<< endl;
+    cout<< "It's " << player.getName() <<"'s turn to reinforce!"<<endl;
+    cout<< endl<< "---------------------------------------------"<< endl;
+
     while(true){
         string fortifiedCountry;
         string providerCountry;

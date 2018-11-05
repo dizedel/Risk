@@ -75,6 +75,11 @@ void Reinforce::playPhase() {
 
     giveArmiesForTerritory();
 
+    cout<< endl<< "---------------------------------------------"<< endl;
+    cout<< "It's " << player.getName() <<"'s turn to reinforce!"<<endl;
+    cout<< endl<< "---------------------------------------------"<< endl;
+
+
     /**
      * EXCHANGE CARDS
      */
