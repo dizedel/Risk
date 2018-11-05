@@ -10,6 +10,7 @@ class Deck
 private:
 	vector<Card> cards;
 public:
+	Deck();
 	Deck(int);
 	~Deck();
 	Card draw();
