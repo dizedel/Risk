@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "../include/Deck.h"
 #include "../include/Card.h"
 #include <time.h>

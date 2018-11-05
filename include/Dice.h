@@ -2,9 +2,8 @@
 // Created by Aloys on 18-10-11.
 //
 
-#ifndef UNTITLED_DICE_H
-#define UNTITLED_DICE_H
-
+#pragma once
+#include "stdafx.h"
 class Dice {
 
     public:
@@ -16,7 +15,3 @@ class Dice {
     private:
 
     };
-
-
-
-#endif //UNTITLED_DICE_H
