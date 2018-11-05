@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void playGame(vector<Player> playersInGame) {
+void playGame(vector<Player> &playersInGame) {
 
     bool keepPlaying = true;
     int currentPlayer = 0;
