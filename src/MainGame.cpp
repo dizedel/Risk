@@ -1,6 +1,7 @@
 #include "MainGame.h"
 #include "game/Reinforce.h"
 #include "game/Fortify.h"
+#include "game/Attack.h"
 
 using namespace std;
 
@@ -24,6 +25,10 @@ void MainGame::playGame() {
         reinforceVector.push_back(Reinforce{playersInGame[i]});
     }
 
+    for(int k = 0; k < playersInGame.size(); k++){
+        attackVector.push_back(Attack{playersInGame[k], playersInGame});
+    }
+
     for (int j = 0; j < playersInGame.size(); j++)
     {
         fortifyVector.push_back(Fortify{playersInGame[j]});
@@ -35,7 +40,7 @@ void MainGame::playGame() {
         cout<< "Player " << currentPlayer + 1 << " -- Reinforce::playPhase() called" << endl;
         reinforceVector[currentPlayer].playPhase();
         cout<< "Player" << currentPlayer + 1 << " attack() called" << endl;
-
+        attackVector[currentPlayer].attack();
         cout<< "Player" << currentPlayer + 1 << " -- Fortify::playPhase() called" << endl;
         fortifyVector[currentPlayer].playPhase();
 

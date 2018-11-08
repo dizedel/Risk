@@ -1,0 +1,43 @@
+//
+// Created by aloys on 2018-11-08.
+//
+
+#pragma once
+#ifndef RISK_ATTACK_H
+#define RISK_ATTACK_H
+
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+#include <Player.h>
+#include <Dice.h>
+#include <Territory.h>
+//#include <Map.h>
+
+using namespace std;
+
+class Attack{
+
+public:
+    Attack();
+    Attack(Player, vector<Player>);
+    ~Attack();
+    void attack();
+    bool attackOrNot();
+    Territory attackingCountrySelection();
+    Territory defendingCountry();
+    void diceAttack();
+    bool stopAttack();
+private:
+    vector<Player> pVector;
+    Player attacker;
+    Player defender;
+    Territory attackCountry;
+    Territory defendCountry;
+    int numberOfArmiesAttack;
+    int numberOfArmiesDefend;
+};
+
+
+#endif //RISK_ATTACK_H

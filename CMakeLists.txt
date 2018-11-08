@@ -36,5 +36,5 @@ add_executable(Risk
         src/MapLoader.cpp
         src/Player.cpp
         src/stdafx.cpp
-        src/stdafx.h
-        src/Territory.cpp)
+        include/stdafx.h
+        src/Territory.cpp src/game/Attack.cpp include/game/Attack.h)
