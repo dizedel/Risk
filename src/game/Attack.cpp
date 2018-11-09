@@ -86,6 +86,7 @@ Territory Attack::attackingCountrySelection(){
             int countryPosTemp = attacker.posOfCountry(nameOfAttackCountry);
             tempAttackCountry = attackCountriesVector.at(countryPosTemp);
             if(tempAttackCountry.getArmies() < 2){
+                cout << "Number of armies in attack : " << tempAttackCountry.getArmies() << endl;
                 notEnoughArmies = true;
                 cout << "Not enough armies on this territory." << endl;
             }else{
