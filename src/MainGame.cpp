@@ -26,7 +26,7 @@ void MainGame::playGame() {
     }
 
     for(int k = 0; k < playersInGame.size(); k++){
-        attackVector.push_back(Attack{playersInGame[k], playersInGame});
+        attackVector.push_back(Attack{playersInGame[k], playersInGame, map});
     }
 
     for (int j = 0; j < playersInGame.size(); j++)

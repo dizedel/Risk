@@ -8,10 +8,10 @@ using namespace std;
 
 Attack::Attack(){}
 
-Attack::Attack(Player p, vector<Player> pV){
+Attack::Attack(Player p, vector<Player> pV, Map m){
     attacker = p;
     pVector = pV;
-
+    map = m;
 }
 
 Attack::~Attack()
@@ -30,12 +30,12 @@ void Attack::attack() {
         return;
     }
     // Player selects country to attack from neighbors of selected country
-    defendCountry = defendingCountry();
+    defendCountry = map.matchTerritory(defendingCountry());
     // Get the number of armies on each territory (Defense and Attack)
-    numberOfArmiesAttack = attacker.getArmies();
-    cout << "Attacker has :" << numberOfArmiesAttack << " armies" << endl;
-    numberOfArmiesDefend = defender.getArmies();
-    cout << "Defender has :" << numberOfArmiesDefend << " armies." << endl;
+    numberOfArmiesAttack = attackCountry.getArmies();
+    cout << "Attacker has : " << numberOfArmiesAttack << " armies" << endl;
+    numberOfArmiesDefend = defendCountry.getArmies();
+    cout << "Defender has : " << numberOfArmiesDefend << " armies." << endl;
     if(stopAttack()){
         return;
     }
@@ -82,9 +82,12 @@ Territory Attack::attackingCountrySelection(){
         if(attacker.posOfCountry(nameOfAttackCountry) == -1){
             cout << "You do not own that country. Try Again." << endl;
         }else{
+            /*
             vector<Territory> attackCountriesVector = attacker.getCountries();
             int countryPosTemp = attacker.posOfCountry(nameOfAttackCountry);
             tempAttackCountry = attackCountriesVector.at(countryPosTemp);
+             */
+            tempAttackCountry = map.matchTerritory(nameOfAttackCountry);
             if(tempAttackCountry.getArmies() < 2){
                 cout << "Number of armies in attack : " << tempAttackCountry.getArmies() << endl;
                 notEnoughArmies = true;
@@ -98,54 +101,52 @@ Territory Attack::attackingCountrySelection(){
     return tempAttackCountry;
 }
 
-Territory Attack::defendingCountry(){
-    vector<string> attackCountryNeighborsList = attackCountry.getNeighbors();
-    cout << "List of countries you can attack : " << endl;
+string Attack::defendingCountry(){
+    // Countries that player can attack are listed
+    vector<string> attackCountryNeighborsList = filterNeighbors(attackCountry.getNeighbors());
+    cout << "List of countries you can attack : " << endl << endl;
     for(auto i : attackCountryNeighborsList){
         cout << i << endl;
     }
-
+    //
     bool countryIsNeighbor = false;
     string nameOfDefendCountry;
     while(!countryIsNeighbor) {
         cout << "Which country would you like to attack?" << endl;
-        cin >> nameOfDefendCountry;
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        getline(cin,nameOfDefendCountry);
         for(auto i : attackCountryNeighborsList ){
             if(i == nameOfDefendCountry){
                 countryIsNeighbor = true;
-            }else{
-                cout << "Country is not a neighbor or does not exist. Please check your spelling." << endl;
+                break;
             }
         }
-    }
-    // Find the defend country territory object
-    Territory tempDefendCountry;
-    for( auto i : pVector){
-        vector<Territory> pTemp = i.getCountries();
-        if(i.hasCountry(nameOfDefendCountry)){
-            int pos = i.posOfCountry(nameOfDefendCountry);
-            tempDefendCountry = pTemp[pos];
-            defender = i;
+        if(!countryIsNeighbor){
+            cout << "Your entry is invalid, please try again." << endl;
         }
     }
-    return tempDefendCountry;
+    return nameOfDefendCountry;
  }
 
  void Attack::diceAttack(){
      int numberOfAttackDice = 0;
-     while(numberOfAttackDice <= 0 || numberOfAttackDice > numberOfArmiesAttack-1 || numberOfAttackDice > 3){
+     while(numberOfAttackDice <= 0 || numberOfAttackDice >= numberOfArmiesAttack-1 || numberOfAttackDice > 3){
          cout << "How many dice would the attacker like to roll? (1 to 3, max: Armies-1)" << endl;
          cin >> numberOfAttackDice;
      }
      int numberOfDefendDice = 0;
-     while(numberOfDefendDice <= 0 || numberOfAttackDice > numberOfArmiesDefend-1 || numberOfAttackDice > 2){
+     while(numberOfDefendDice <= 0 || numberOfDefendDice >= numberOfArmiesDefend-1 || numberOfDefendDice > 2){
          cout << "How many dice would the defender like to roll? (1 to 2, max: Armies-1)" << endl;
          cin >> numberOfDefendDice;
      }
      Dice attackerDice = attacker.getDice();
      Dice defenderDice = defender.getDice();
 
+     int count = 0;
+
      while(numberOfArmiesAttack != 0 && numberOfArmiesDefend != 0){
+         count++;
+         cout << "ROLL # " << count << endl;
          vector<int> attackerDiceV = attackerDice.rolls(numberOfAttackDice);
          vector<int> defenderDiceV = defenderDice.rolls(numberOfDefendDice);
          // sorted both vectors of dice
@@ -170,6 +171,8 @@ Territory Attack::defendingCountry(){
              }
          }
      }
+     cout << "Number of armies on attacking country left : " << numberOfArmiesAttack << endl;
+     cout << "Number of armies on defending country left : " << numberOfArmiesDefend << endl;
      attackCountry.setArmies(numberOfArmiesAttack);
      defendCountry.setArmies(numberOfArmiesDefend);
      if(numberOfArmiesAttack == 0){
@@ -178,9 +181,13 @@ Territory Attack::defendingCountry(){
          cout << "Attacker " << attacker.getName() << " has won this round of attack! They now own : " << defendCountry.getName() << endl;
          // Set Territory to have new owner and then remove from defender's territory vector
          defendCountry.setTerritoryOwner(attacker.getName());
-         int tempPos = defender.posOfCountry(defendCountry.getName());
+        // int tempPos = defender.posOfCountry(defendCountry.getName());
          vector<Territory> tempCountryVectorDefender = defender.getCountries();
-         tempCountryVectorDefender.erase(tempCountryVectorDefender.begin()+tempPos);
+         for( vector<Territory>::iterator i = tempCountryVectorDefender.begin(); i != tempCountryVectorDefender.end(); i++){
+             if(i->getName() == defendCountry.getName()) {
+                 tempCountryVectorDefender.erase(i);
+             }
+         }
          defender.setCountries(tempCountryVectorDefender);
          // Set Territory to attacker
          attacker.addCountry(defendCountry);
@@ -193,8 +200,22 @@ bool Attack::stopAttack(){
     string answer;
     cin >> answer;
     if(answer=="STOP"){
-        return false;
-    }else{
+        cout << "Stopping attack..." << endl;
         return true;
+    }else{
+        cout << "Ok, continuing attack..." << endl;
+        return false;
     }
+}
+
+vector<string> Attack::filterNeighbors(vector<string> neighbors){
+    vector<Territory> tempVector = attacker.getCountries();
+    for(auto i : tempVector){
+        for(int j = 0; j < size(neighbors); j++){
+            if(i.getName() == neighbors[j]){
+                neighbors.erase(neighbors.begin()+j);
+            }
+        }
+    }
+    return neighbors;
 }

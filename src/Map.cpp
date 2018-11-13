@@ -31,6 +31,15 @@ vector<Territory>& Map::getTerritory()
 	return t;
 }
 
+Territory Map::matchTerritory(string name){
+    for(auto i : t){
+        if(i.getName() == name){
+            return i;
+        }
+    }
+    return Territory();
+}
+
 int Map::getNbTerritories()
 {
 	return t.size();

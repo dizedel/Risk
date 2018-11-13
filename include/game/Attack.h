@@ -21,14 +21,15 @@ class Attack{
 
 public:
     Attack();
-    Attack(Player, vector<Player>);
+    Attack(Player, vector<Player>, Map);
     ~Attack();
     void attack();
     bool attackOrNot();
     Territory attackingCountrySelection();
-    Territory defendingCountry();
+    string defendingCountry();
     void diceAttack();
     bool stopAttack();
+    vector<string> filterNeighbors(vector<string>);
 private:
     vector<Player> pVector;
     Player attacker;
@@ -37,6 +38,7 @@ private:
     Territory defendCountry;
     int numberOfArmiesAttack;
     int numberOfArmiesDefend;
+    Map map;
 };
 
 
