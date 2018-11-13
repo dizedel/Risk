@@ -147,6 +147,8 @@ string Attack::defendingCountry(){
      while(numberOfArmiesAttack != 0 && numberOfArmiesDefend != 0){
          count++;
          cout << "ROLL # " << count << endl;
+         cout << "Number of armies attacker : " << numberOfArmiesAttack << endl;
+         cout << "Number of armies defender : " << numberOfArmiesDefend << endl;
          vector<int> attackerDiceV = attackerDice.rolls(numberOfAttackDice);
          vector<int> defenderDiceV = defenderDice.rolls(numberOfDefendDice);
          // sorted both vectors of dice
@@ -191,6 +193,27 @@ string Attack::defendingCountry(){
          defender.setCountries(tempCountryVectorDefender);
          // Set Territory to attacker
          attacker.addCountry(defendCountry);
+
+         bool numberOfArmiesBool = false;
+         while(!numberOfArmiesBool) {
+             int numberOfArmiesToAdd = 0;
+             cout << "How many armies do you wish to move to your new conquest?" << endl;
+             cout << "Number of armies left on attacking country : " << attackCountry.getArmies() << endl;
+             cin >> numberOfArmiesToAdd;
+             if(numberOfArmiesToAdd == 0){
+                 break;
+             }else if (numberOfArmiesToAdd > attackCountry.getArmies() - 1 || numberOfArmiesToAdd < 0) {
+                 cout << "Invalid, you must leave at least one army on attacking country and must be positive." << endl;
+             }else{
+                 attackCountry.setArmies(attackCountry.getArmies()-numberOfArmiesToAdd);
+                 defendCountry.setArmies(numberOfArmiesToAdd);
+                 numberOfArmiesBool = true;
+             }
+         }
+
+         cout << "Number of armies on attacking country : " << attackCountry.getArmies() << endl;
+         cout << "Number of armies on defending country : " << defendCountry.getArmies() << endl;
+
      }
 }
 
