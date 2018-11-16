@@ -17,6 +17,7 @@
 #include <vector>
 #include "Player.h"
 #include "game/Fortify.h"
+#include "game/Attack.h"
 #include "Dice.h"
 #include "game/Reinforce.h"
 #include "MainGame.h"
@@ -31,7 +32,7 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
     cout << "Would you like to start a game ? (Y or N)" << endl;
     cin >> startGame;
 
-    if (startGame == 'Y')
+    if (startGame == 'Y' || startGame == 'y')
     {
         //open directory and display and let player select
         ifstream inputFileStream("../maps/listOfMaps.txt");
@@ -290,16 +291,16 @@ void startupPhase(vector<Player> *vp, Map &map1) {
 
 int main() {
 
-	Map gen;
+    Map gen;
     Map map1;
-	MapLoader loader;
-	Hand hand;
-	Deck deck;
+    MapLoader loader;
+    Hand hand;
+    Deck deck;
     vector<Player> players;
 
-	// assignment 2 demo
+    // assignment 2 demo
 
-	//Part 1
+    //Part 1
     GameStart(&players, loader, map1, deck, hand);
 
     //Part 2
@@ -313,12 +314,11 @@ int main() {
         cout << map1.getTerritory().at(i).getName() << " is owned by " << map1.getTerritory().at(i).getTerritoryOwner()
              << " and it currently has " << map1.getTerritory().at(i).getArmies() << " armies" << endl;
     }
-    
+
     MainGame game(players, map1);
     game.playGame();
 
-	system("pause");
+    system("pause");
 
-	return 0;
+    return 0;
 }
-

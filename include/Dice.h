@@ -3,15 +3,18 @@
 //
 
 #pragma once
-#include "stdafx.h"
+#include <vector>
+
+using namespace std;
+
 class Dice {
 
-    public:
-        int OneRoll();
-        int askNumOfDice();
-        int *rolls();
-        void rollPercentage(int x);
-        void displayPercentage();
-    private:
+public:
+    int OneRoll();
+    int askNumOfDice();
+    vector<int> rolls(int);
+    void rollPercentage(int x);
+    void displayPercentage();
+private:
 
-    };
+};
