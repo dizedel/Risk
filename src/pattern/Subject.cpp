@@ -1,4 +1,4 @@
-// code taken from Dr. Joey Paquet's code posted on website
+// parts of code taken from Dr. Joey Paquet's code posted on website
 #include "pattern/Subject.h"
 #include "pattern/Observer.h"
 
