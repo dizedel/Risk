@@ -1,14 +1,22 @@
 //
 // Created by aloys on 2018-11-17.
 //
-
+#include <vector>
+#include "Player.h"
+#include "Map.h"
 #include "pattern/PlayerView.h"
 
 using namespace std;
 
-// UNFINISHED
+PlayerView::PlayerView(Map m){
+    theMap = m.getTerritory();
+}
+
 void PlayerView::Update(){
-    
+    for(auto i : theMap){
+        cout << i.getName() << " - Number Of Armies : " << i.getArmies()
+             << " and owned by : " << i.getTerritoryOwner() << endl;
+    }
 }
 
 void PlayerView::headerUpdate(Player p, string phase){

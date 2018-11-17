@@ -7,6 +7,7 @@
 
 #include "pattern/Observer.h"
 #include "Player.h"
+#include "Map.h"
 #include "Territory.h"
 
 using namespace std;
@@ -15,11 +16,14 @@ class PlayerView : public Observer{
 public:
     PlayerView();
     ~PlayerView();
+    PlayerView(Map);
     void Update();
     void headerUpdate(Player, string);
     void attackUpdate(Player, Player, bool, Territory, Territory);
     void fortifyUpdate(Player, Territory, Territory, int);
     void reinforceUpdate(Player, Territory, int);
+private:
+    vector<Territory> theMap;
 
 };
 
