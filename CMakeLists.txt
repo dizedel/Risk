@@ -22,6 +22,10 @@ add_executable(Risk
         include/stdafx.h
         include/targetver.h
         include/Territory.h
+        include/AggressivePlayer.h
+        include/PlayerStrategy.h
+        include/game/Attack.h
+        include/BenevolentPlayer.h
         src/game/Fortify.cpp
         src/game/Reinforce.cpp
         src/Card.cpp
@@ -36,5 +40,8 @@ add_executable(Risk
         src/MapLoader.cpp
         src/Player.cpp
         src/stdafx.cpp
-        include/stdafx.h
-        src/Territory.cpp src/game/Attack.cpp include/game/Attack.h)
+        src/Territory.cpp
+        src/game/Attack.cpp
+        src/PlayerStrategy.cpp
+        src/BenevolentPlayer.cpp
+        src/AggressivePlayer.cpp)
