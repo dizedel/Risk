@@ -6,6 +6,6 @@ HumanPlayer::~HumanPlayer() {
 
 }
 
-void HumanPlayer::playPhase() {
+void HumanPlayer::takeTurn() {
 
 }

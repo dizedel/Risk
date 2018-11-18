@@ -4,6 +4,6 @@
 
 class PlayerStrategy {
 public:
-    virtual void playPhase();
+    virtual void takeTurn();
 };
 

@@ -5,5 +5,5 @@ class HumanPlayer : public PlayerStrategy{
 public:
     HumanPlayer();
     virtual ~HumanPlayer();
-    virtual void playPhase();
+    virtual void takeTurn();
 };

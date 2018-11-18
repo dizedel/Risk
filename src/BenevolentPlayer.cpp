@@ -8,6 +8,6 @@ BenevolentPlayer::~BenevolentPlayer() {
 
 }
 
-void BenevolentPlayer::playPhase() {
+void BenevolentPlayer::takeTurn() {
 
 }

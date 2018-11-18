@@ -8,6 +8,6 @@ AggressivePlayer::~AggressivePlayer() {
 
 }
 
-void AggressivePlayer::playPhase() {
-    
+void AggressivePlayer::takeTurn() {
+
 }
