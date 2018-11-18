@@ -7,6 +7,6 @@
 
 class PlayerStrategy {
 public:
-    virtual void takeTurn();
+    virtual void takeTurn(Player&);
 };
 

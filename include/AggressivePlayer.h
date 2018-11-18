@@ -6,5 +6,5 @@ class AggressivePlayer : public PlayerStrategy{
 public:
     AggressivePlayer();
     virtual ~AggressivePlayer();
-    virtual void takeTurn();
+    virtual void takeTurn(Player&);
 };

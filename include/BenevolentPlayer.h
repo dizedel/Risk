@@ -6,5 +6,5 @@ class BenevolentPlayer : public PlayerStrategy{
 public:
     BenevolentPlayer();
     virtual ~BenevolentPlayer();
-    virtual void takeTurn();
+    virtual void takeTurn(Player&);
 };

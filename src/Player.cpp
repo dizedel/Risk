@@ -127,6 +127,6 @@ int Player::getInitialArmies(){
 }
 
 void Player::play() {
-    kind.takeTurn();
+    kind.takeTurn(this);
 }
 
