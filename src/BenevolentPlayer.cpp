@@ -7,3 +7,7 @@ BenevolentPlayer::BenevolentPlayer() {
 BenevolentPlayer::~BenevolentPlayer() {
 
 }
+
+void BenevolentPlayer::playPhase() {
+
+}

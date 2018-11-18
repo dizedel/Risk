@@ -7,3 +7,7 @@ AggressivePlayer::AggressivePlayer() {
 AggressivePlayer::~AggressivePlayer() {
 
 }
+
+void AggressivePlayer::playPhase() {
+    
+}
