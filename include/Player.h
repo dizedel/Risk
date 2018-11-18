@@ -11,6 +11,7 @@
 #include "Hand.h"
 #include "Map.h"
 #include "Player.h"
+#include "PlayerStrategy.h"
 
 using namespace std;
 
@@ -26,13 +27,16 @@ class Player {
         Hand getHand();
         vector<Territory> getCountries();
         int getArmies();
+        PlayerStrategy kind;
 
         void setName(string);
         void setCountries(vector<Territory>);
         void setHand(Hand);
         void setArmies(int);
 
-        void addCountry(Territory);
+    void setKind(PlayerStrategy);
+
+    void addCountry(Territory);
         void addArmies(int);
         void setStartingArmy(int);
 

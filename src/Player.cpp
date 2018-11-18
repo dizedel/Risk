@@ -53,6 +53,10 @@ void Player::setName(string name) {
     playerName = name;
 }
 
+void Player::setKind(PlayerStrategy kindOfPlayer) {
+    kind = kindOfPlayer;
+}
+
 void Player::setHand(Hand h) {
     hand = h;
 }
@@ -119,3 +123,4 @@ void Player::assignInitialArmyToCountry(int n){
 int Player::getInitialArmies(){
     return initialArmies;
 }
+

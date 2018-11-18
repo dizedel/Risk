@@ -26,6 +26,7 @@ add_executable(Risk
         include/PlayerStrategy.h
         include/game/Attack.h
         include/BenevolentPlayer.h
+        src/HumanPlayer.h
         src/game/Fortify.cpp
         src/game/Reinforce.cpp
         src/Card.cpp
@@ -44,4 +45,5 @@ add_executable(Risk
         src/game/Attack.cpp
         src/PlayerStrategy.cpp
         src/BenevolentPlayer.cpp
-        src/AggressivePlayer.cpp)
+        src/AggressivePlayer.cpp
+        src/HumanPlayer.cpp)
