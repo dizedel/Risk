@@ -6,6 +6,8 @@
 #include <vector>
 #include <iostream>
 #include <Map.h>
+#include <Player.h>
+
 
 using namespace std;
 Player::Player() {
@@ -122,5 +124,9 @@ void Player::assignInitialArmyToCountry(int n){
 
 int Player::getInitialArmies(){
     return initialArmies;
+}
+
+void Player::play() {
+    kind.takeTurn();
 }
 

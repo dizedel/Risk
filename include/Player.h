@@ -29,14 +29,15 @@ class Player {
         int getArmies();
         PlayerStrategy kind;
 
+        void play();
+
         void setName(string);
         void setCountries(vector<Territory>);
         void setHand(Hand);
         void setArmies(int);
+        void setKind(PlayerStrategy);
 
-    void setKind(PlayerStrategy);
-
-    void addCountry(Territory);
+        void addCountry(Territory);
         void addArmies(int);
         void setStartingArmy(int);
 
