@@ -11,10 +11,9 @@
 using namespace std;
 
 void BenevolentPlayer::executeReinforce(Player* p) {
-
+    playPhase(p);
 }
 void BenevolentPlayer::executeAttack(Player *) {
-
     cout << "The player does not wish to attack." << endl;
 }
 void BenevolentPlayer::executeFortify(Player *) {
@@ -65,7 +64,8 @@ bool BenevolentPlayer::reinforceLoop(Player* player){
                 while (!finished) {
                     int n;
                     cout << "How many armies do you wish to place?" << endl;
-                    cin>>n;
+                    //cin>>n;
+                    n = 2;
                     if (floor(n) == n && n > 0) {
                         player->setArmies(player->getArmies() - n);
                         player->getCountries().at(countryPos)->addArmies(n);
