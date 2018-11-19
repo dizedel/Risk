@@ -8,15 +8,27 @@
 
 using namespace std;
 
-PlayerView::PlayerView(Map m){
+/*PlayerView::PlayerView(Map m){
     theMap = m.getTerritory();
+}*/
+
+PlayerView::PlayerView(Player *p) {
+   _player = p;
+   _player ->Attach(this);
 }
 
 void PlayerView::Update(){
-    for(auto i : theMap){
+    /*for(auto i : theMap){
         cout << i.getName() << " - Number Of Armies : " << i.getArmies()
-             << " and owned by : " << i.getTerritoryOwner() << endl;
-    }
+             << " and owned by : " << i.getTerritoryOwner() << endl;*/
+
+    //}
+
+    cout << "player values has updated";
+    cout << "name: " << _player->getName();
+    cout << "countries owned: " << _player->displayCountries();
+    cout << "armies owned: " << _player ->getArmies();
+
 }
 
 void PlayerView::headerUpdate(Player p, string phase){

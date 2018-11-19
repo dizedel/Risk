@@ -1,3 +1,4 @@
+#include <Continent.h>
 #include "stdafx.h"
 #include "../include/Territory.h"
 

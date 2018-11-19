@@ -16,5 +16,5 @@ class Subject {
 	Subject();
 	~Subject();
   private:
-	list<Observer*> *_observers;
+	list<Observer*> _observers;
 };

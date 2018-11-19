@@ -5,7 +5,7 @@
 #ifndef RISK_PLAYERVIEW_H
 #define RISK_PLAYERVIEW_H
 
-#include "pattern/Observer.h"
+#include "Pattern/Observer.h"
 #include "Player.h"
 #include "Map.h"
 #include "Territory.h"
@@ -15,6 +15,7 @@ using namespace std;
 class PlayerView : public Observer{
 public:
     PlayerView();
+    PlayerView(Player* p);
     ~PlayerView();
     PlayerView(Map);
     void Update();
@@ -24,6 +25,7 @@ public:
     void reinforceUpdate(Player, Territory, int);
 private:
     vector<Territory> theMap;
+    Player* _player;
 
 };
 

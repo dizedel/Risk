@@ -11,10 +11,13 @@
 #include "Hand.h"
 #include "Map.h"
 #include "Player.h"
+#include "Pattern/Subject.h"
 
 using namespace std;
 
-class Player {
+class PlayerView;
+
+class Player: public Subject {
 
     public:
         Player();
@@ -55,6 +58,7 @@ class Player {
         void assignInitialArmyToCountry(int);
 
 
+
     private:
         string playerName;                      //player's name as an identifier
         int numOfExchanges;                     //number of times the player has exchanged his cards for armies
@@ -63,5 +67,7 @@ class Player {
         Hand hand;
         Dice dice;
         int initialArmies=0;
+
+
 
 };

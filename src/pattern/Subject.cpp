@@ -3,19 +3,19 @@
 #include "pattern/Observer.h"
 
 Subject::Subject(){
-	_observers = new list<Observer*>;
+	//_observers = new list<Observer*>;
 }
 Subject::~Subject(){ 
-	delete _observers;
+	//delete _observers;
 }
 void Subject::Attach(Observer* o){
-  _observers->push_back(o);
+  _observers.push_back(o);
 };
 void Subject::Detach(Observer* o){
-  _observers->remove(o);
+  _observers.remove(o);
 };
 void Subject::Notify(){
-  list<Observer *>::iterator i = _observers->begin();
-  for (; i != _observers->end(); ++i)
+  list<Observer *>::iterator i = _observers.begin();
+  for (; i != _observers.end(); ++i)
 	(*i)->Update(); 
 };
