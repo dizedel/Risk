@@ -17,11 +17,11 @@ Player::Player(string name) {
     playerName = name;
     Hand h;
     Dice d;
-    HumanPlayer human;
+    HumanPlayer* human;
     hand = h;
     dice = d;
     armies = 0;
-    strategy = &human;
+    strategy = human;
 }
 
 Player::Player(string name, Strategy* strat) {
