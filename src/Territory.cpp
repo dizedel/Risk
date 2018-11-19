@@ -85,6 +85,7 @@ string Territory::getTerritoryOwner() {
 
 void Territory::setTerritoryOwner(string s) {
 	territoryOwner = s;
+	Notify();
 }
 
 

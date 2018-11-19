@@ -307,29 +307,28 @@ int main() {
     Deck deck;
     vector<Player> players;
 
-    // assignment 2 demo
-
-    //Part 1
     GameStart(&players, loader, map1, deck, hand);
 
-    //Part 2
     startupPhase(&players, map1);
-    /*cout << "====== Territory Ownerships ======" << endl;
+    cout << "====== Territory Ownerships ======" << endl;
     for (Player& p : players){
         cout << p.getName() << " owns " << p.getCountries().size() << " territories:" << endl;
         cout << p.displayCountries() << endl;
     }
-    for(int i=0; i<map1.getTerritory().size(); i++){
+    for(int i=0; i<map1.getTerritory().size(); i++) {
         cout << map1.getTerritory().at(i).getName() << " is owned by " << map1.getTerritory().at(i).getTerritoryOwner()
              << " and it currently has " << map1.getTerritory().at(i).getArmies() << " armies" << endl;
-    //the notify function should display this info
+    }
 
-    //MainGame game(players, map1);
-    //game.playGame();
+    MainGame game(players, map1);
+    game.playGame();
 
     system("pause");
 
+
+
     return 0;
+
 }
 
 

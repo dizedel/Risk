@@ -4,12 +4,13 @@
 #include "Continent.h"
 #include <string>
 #include <vector>
+#include "Pattern/Subject.h"
 
 //#include "Continent.h"
 
 using namespace std;
 
-class Territory {
+class Territory : public Subject{
 
 public:
 	Territory();

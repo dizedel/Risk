@@ -60,3 +60,10 @@ void MainGame::playGame() {
     }
 }
 
+vector<Player> MainGame::getPlayers() {
+    return playersInGame;
+}
+
+Map MainGame::getMap() {
+    return map;
+}
