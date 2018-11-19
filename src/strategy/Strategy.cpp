@@ -1,14 +1,14 @@
 #include "strategy/Strategy.h"
 
-void Strategy::reinforce(Player* player) {
+void Strategy::executeReinforce(Player *) {
 
 }
 
-void Strategy::attack(Player* player) {
+void Strategy::executeAttack(Player *) {
 
 }
 
-void Strategy::fortify(Player* player) {
+void Strategy::executeFortify(Player *) {
 
 }
 

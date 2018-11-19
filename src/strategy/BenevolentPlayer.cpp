@@ -3,12 +3,12 @@
 //
 
 #include "strategy/BenevolentPlayer.h"
-void BenevolentPlayer::reinforce(Player* p) {
+void BenevolentPlayer::executeReinforce(Player *) {
 
 }
-void BenevolentPlayer::attack(Player* p) {
+void BenevolentPlayer::executeAttack(Player *) {
 
 }
-void BenevolentPlayer::fortify(Player* p) {
+void BenevolentPlayer::executeFortify(Player *) {
 
 }

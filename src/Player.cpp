@@ -6,29 +6,29 @@
 
 
 Player::Player() {
-    Hand h;
+    Hand *h = new Hand();
     Dice d;
-    hand = h;
+    hand = *h;
     dice = d;
     armies = 0;
 }
 
 Player::Player(string name) {
     playerName = name;
-    Hand h;
+    Hand *h = new Hand();
     Dice d;
-    HumanPlayer* human;
-    hand = h;
+    hand = *h;
     dice = d;
     armies = 0;
+    HumanPlayer* human;
     strategy = human;
 }
 
 Player::Player(string name, Strategy* strat) {
     playerName = name;
-    Hand h;
+    Hand *h = new Hand();
     Dice d;
-    hand = h;
+    hand = *h;
     dice = d;
     armies = 0;
     setStrategy(strat);
@@ -134,6 +134,7 @@ int Player::getInitialArmies(){
 }
 
 void Player::doReinforce(Player * p) {
+    //TODO:Could add GiveArmiesFromLand in here
     strategy->reinforce(this);
 }
 

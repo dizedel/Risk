@@ -10,6 +10,7 @@
 #include <Map.h>
 #include <Hand.h>
 #include <Player.h>
+#include <MainGame.h>
 
 using namespace std;
 
@@ -17,18 +18,23 @@ class Reinforce{
 
 public:
     Reinforce();
-    Reinforce(Player);
+    Reinforce(Map*);
+    Reinforce(Player*, int, string, Map*);
     ~Reinforce();
 
-    void setPlayer(Player);
-
-    void giveArmiesForTerritory();
     void playPhase();
     bool reinforce();
 
+    void setCountryToReinforce(string);
+    void setNumOfArmiesToPutDown(int);
+    void setMap(Map*);
+
 
 private:
-    Player player;
+    string countryToReinforce;
+    int numOfArmiesToPutDown;
+    Player* player;
+    Map* map;
 
 };
 #endif

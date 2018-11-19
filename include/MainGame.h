@@ -1,10 +1,12 @@
 #pragma once
 
 #include "Player.h"
-#include "game/Reinforce.h"
+//#include "game/Reinforce.h"
 #include "game/Fortify.h"
 #include "game/Attack.h"
 #include <vector>
+
+using namespace std;
 
 class MainGame {
 
@@ -13,7 +15,7 @@ private:
     vector<Player> playersInGame;
     vector<Fortify> fortifyVector;
     vector<Attack> attackVector;
-    vector<Reinforce> reinforceVector;
+    //vector<Reinforce> reinforceVector;
     Map map;
 
 public:
@@ -21,6 +23,8 @@ public:
     MainGame(vector<Player>&, Map&);
     ~MainGame();
     void playGame();
+
+    Map getMap();
 
 };
 

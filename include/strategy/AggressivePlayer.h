@@ -10,9 +10,9 @@
 
 class AggressivePlayer : public Strategy {
 
-    void reinforce(Player *);
-    void attack(Player *);
-    void fortify(Player *);
+    void executeReinforce(Player *);
+    void executeAttack(Player *);
+    void executeFortify(Player *);
 
 };
 

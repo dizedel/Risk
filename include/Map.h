@@ -27,6 +27,7 @@ class Map {
 		vector<Continent>& getContinents(); //return continents in the map
 		vector<Territory>& getTerritory(); // return territories found in the map
 		Territory matchTerritory(string); // returns territory that matches string name, if it doesn't exist returns empty territory
+		bool hasTerritory(string);
 		int getNbTerritories();  //return number of territories stored in the container; returns size of Territories container
 
 		void setAuthor(string);

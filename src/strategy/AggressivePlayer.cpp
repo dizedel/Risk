@@ -3,12 +3,14 @@
 //
 
 #include "strategy/AggressivePlayer.h"
-void AggressivePlayer::reinforce(Player* p) {
+void AggressivePlayer::executeReinforce(Player *) {
 
 }
-void AggressivePlayer::attack(Player* p) {
+
+
+void AggressivePlayer::executeAttack(Player *) {
 
 }
-void AggressivePlayer::fortify(Player* p) {
+void AggressivePlayer::executeFortify(Player *) {
 
 }
