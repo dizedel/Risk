@@ -135,15 +135,15 @@ int Player::getInitialArmies(){
 
 void Player::doReinforce(Player * p) {
     //TODO:Could add GiveArmiesFromLand in here
-    strategy->reinforce(this);
+    strategy->executeReinforce(this);
 }
 
 void Player::doAttack(Player * p) {
-    strategy->attack(this);
+    strategy->executeAttack(this);
 
 }
 
 void Player::doFortify(Player * p) {
-    strategy->fortify(this);
+    strategy->executeFortify(this);
 
 }
