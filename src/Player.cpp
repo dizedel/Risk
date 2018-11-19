@@ -42,7 +42,8 @@ Player::~Player()
 string Player::getName(){
     return Player::playerName;
 }
-vector<Territory> Player::getCountries(){
+
+vector<Territory*> Player::getCountries(){
     return countries;
 }
 
@@ -66,7 +67,7 @@ void Player::setHand(Hand h) {
     hand = h;
 }
 
-void Player::setCountries(vector<Territory> c) {
+void Player::setCountries(vector<Territory*> c) {
     countries = c;
 }
 
@@ -78,13 +79,13 @@ void Player::addArmies(int numOfArmies) {
     armies+=numOfArmies;
 }
 
-void Player::addCountry(Territory t) {
+void Player::addCountry(Territory* t) {
     countries.push_back(t);
 }
 
 int Player::posOfCountry(string countryName){
     for (int i = 0; i < countries.size(); i++) {
-        if (countries.at(i).getName() == countryName){
+        if (countries.at(i)->getName() == countryName){
             return i;
         }
     }
@@ -101,7 +102,7 @@ bool Player::hasCountry(string countryName){
 string Player::displayCountries() {
     string str = "";
     for (int i =0; i<countries.size(); i++){
-        str += countries.at(i).getName();
+        str += countries.at(i)->getName();
         str += "\n";
     }
     return str;
@@ -113,7 +114,7 @@ void Player::giveArmiesForTerritory(){
     //TODO: give armies for entire continent
 }
 
-void Player::addTerritory(Territory t) {
+void Player::addTerritory(Territory* t) {
     countries.push_back(t);
 }
 

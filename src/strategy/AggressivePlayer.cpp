@@ -3,7 +3,13 @@
 //
 
 #include "strategy/AggressivePlayer.h"
-void AggressivePlayer::executeReinforce(Player *) {
+void AggressivePlayer::executeReinforce(Player * p) {
+
+    //Find strongest territory
+    vector<Territory*> countries = p->getCountries();
+    for(int i ; i<countries.size(); i++){
+        countries.at(i)->getArmies();
+    }
 
 }
 
