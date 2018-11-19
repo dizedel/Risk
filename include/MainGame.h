@@ -29,7 +29,5 @@ public:
     vector<Player> getPlayers();
     Map getMap();
 
-    Map getMap();
-
 };
 
