@@ -10,8 +10,6 @@
 
 using namespace std;
 
-
-
 void BenevolentPlayer::executeReinforce(Player* p) {
 
 }

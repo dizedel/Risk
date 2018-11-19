@@ -3,6 +3,9 @@
 #define RISK_STRATEGY_H
 
 #include "Player.h"
+#include "game/Reinforce.h"
+#include "game/Attack.h"
+#include "game/Fortify.h"
 
 class Player;
 

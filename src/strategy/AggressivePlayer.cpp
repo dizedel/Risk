@@ -5,6 +5,7 @@
 #include "strategy/AggressivePlayer.h"
 void AggressivePlayer::executeReinforce(Player * p) {
 
+    Reinforce r;
     //Find strongest territory
     vector<Territory*> countries = p->getCountries();
     Territory* max = p->getCountries()[0];
@@ -14,8 +15,9 @@ void AggressivePlayer::executeReinforce(Player * p) {
             max = p->getCountries()[i];
     }
     string strongestCountry = max->getName();
-
-
+    r.setCountryToReinforce(strongestCountry);
+    r.setNumOfArmiesToPutDown(p->getArmies());
+    r.reinforce();
 }
 
 
