@@ -52,7 +52,7 @@ void Fortify::playPhase(){
                 if (!player.hasCountry(providerCountry)) {
                     cout << "You do not have that country";
                 }
-                else if ( player.getCountries().at(player.posOfCountry(providerCountry)).getArmies() <= 1) {
+                else if ( player.getCountries().at(player.posOfCountry(providerCountry))->getArmies() <= 1) {
                     cout << "You do not have enough armies to take from this country";
                 }
                 else {
@@ -64,8 +64,8 @@ void Fortify::playPhase(){
                         cout << "Choose a number of Armies lower than " << providerCountryArmies;
                         cin >> numOfArmies;
                     }
-                    player.getCountries().at(player.posOfCountry(fortifiedCountry)).addArmies(numOfArmies);              //Add armies to fortified country
-                    player.getCountries().at(player.posOfCountry(providerCountry)).setArmies(providerCountryArmies - numOfArmies); // Remove armies from provider country
+                    player.getCountries().at(player.posOfCountry(fortifiedCountry))->addArmies(numOfArmies);              //Add armies to fortified country
+                    player.getCountries().at(player.posOfCountry(providerCountry))->setArmies(providerCountryArmies - numOfArmies); // Remove armies from provider country
                     break;
                 }
             }
