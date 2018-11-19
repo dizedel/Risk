@@ -8,10 +8,7 @@ Continent::Continent() {
 	territoryCount = NULL;
 }
 
-Continent::Continent(string n, int tc) {
-	name = n;
-	territoryCount = tc;
-}
+
 
 Continent::~Continent() {}
 

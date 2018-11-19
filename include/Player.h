@@ -12,10 +12,15 @@
 #include "Dice.h"
 #include "Hand.h"
 #include "Map.h"
+#include "Player.h"
+#include "Pattern/Subject.h"
 
 class Strategy;
 
-class Player {
+class PlayerView;
+
+class Player: public Subject {
+
     public:
         Player();
         Player(string);
@@ -59,6 +64,7 @@ class Player {
         void assignInitialArmyToCountry(int);
 
 
+
     private:
         string playerName;                      //player's name as an identifier
         int numOfExchanges;                     //number of times the player has exchanged his cards for armies
@@ -72,3 +78,5 @@ class Player {
 };
 
 #endif
+
+

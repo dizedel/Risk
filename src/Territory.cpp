@@ -1,3 +1,4 @@
+#include <Continent.h>
 #include "stdafx.h"
 #include "../include/Territory.h"
 
@@ -84,6 +85,7 @@ string Territory::getTerritoryOwner() {
 
 void Territory::setTerritoryOwner(string s) {
 	territoryOwner = s;
+	Notify();
 }
 
 

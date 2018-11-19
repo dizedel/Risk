@@ -8,12 +8,13 @@
 
 using namespace std;
 
+class Territory;
+
 class Continent {
 
 public:
 	//vector<Territory> containingTerritories; 
 	Continent();
-	Continent(string, int); //name and territory count
 	~Continent();
 
 	string getName();
