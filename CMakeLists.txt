@@ -37,4 +37,5 @@ add_executable(Risk
         src/Player.cpp
         src/stdafx.cpp
         include/stdafx.h
-        src/Territory.cpp src/game/Attack.cpp include/game/Attack.h)
+        src/Territory.cpp src/game/Attack.cpp include/game/Attack.h src/pattern/Subject.cpp include/Pattern/Subject.h src/pattern/Observer.cpp include/pattern/Observer.h src/pattern/PlayerView.cpp include/pattern/PlayerView.h)
+

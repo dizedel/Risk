@@ -51,6 +51,7 @@ int Player::getArmies() {
 
 void Player::setName(string name) {
     playerName = name;
+
 }
 
 void Player::setHand(Hand h) {
@@ -63,10 +64,12 @@ void Player::setCountries(vector<Territory> c) {
 
 void Player::setArmies(int a){
     armies = a;
+
 }
 
 void Player::addArmies(int numOfArmies) {
     armies+=numOfArmies;
+    Notify();
 }
 
 void Player::addCountry(Territory t) {
@@ -106,6 +109,7 @@ void Player::giveArmiesForTerritory(){
 
 void Player::addTerritory(Territory t) {
     countries.push_back(t);
+    Notify();
 }
 
 void Player::setInitialArmies(int n){
