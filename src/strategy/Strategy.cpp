@@ -5,7 +5,6 @@
 
 Strategy::Strategy()
 {
-    p = null;
 }
 
 
