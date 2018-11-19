@@ -18,8 +18,7 @@ class Reinforce{
 
 public:
     Reinforce();
-    Reinforce(Map*);
-    Reinforce(Player*, int, string, Map*);
+    Reinforce(Player*, int, string);
     ~Reinforce();
 
     void playPhase();
@@ -27,14 +26,13 @@ public:
 
     void setCountryToReinforce(string);
     void setNumOfArmiesToPutDown(int);
-    void setMap(Map*);
+
 
 
 private:
     string countryToReinforce;
     int numOfArmiesToPutDown;
     Player* player;
-    Map* map;
 
 };
 #endif

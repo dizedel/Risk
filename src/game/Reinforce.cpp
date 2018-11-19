@@ -7,14 +7,10 @@ using namespace std;
 
 Reinforce::Reinforce() {}
 
-Reinforce::Reinforce(Map* m) {
-    map= m;
-}
 
-Reinforce::Reinforce(Player* player, int numOfArmies, string ctry, Map* m) {
+Reinforce::Reinforce(Player* player, int numOfArmies, string ctry) {
     numOfArmiesToPutDown = numOfArmies;
     countryToReinforce = ctry;
-    map = m;
     this->player = player;
 }
 
@@ -24,8 +20,9 @@ Reinforce::~Reinforce() {
 
 bool Reinforce::reinforce(){
     bool executed;
-    if(map->hasTerritory(countryToReinforce)){
-        map->matchTerritory(countryToReinforce).addArmies(numOfArmiesToPutDown);
+    if(player->hasCountry(countryToReinforce)){
+        player->getCountries().at(player->posOfCountry(countryToReinforce))->addArmies(numOfArmiesToPutDown);
+        player->setArmies(player->getArmies()-numOfArmiesToPutDown); //Remove armies from player after putting them down
         return true;
     }
     else{
@@ -36,11 +33,11 @@ bool Reinforce::reinforce(){
 void Reinforce::setNumOfArmiesToPutDown(int i) {
     numOfArmiesToPutDown = i;
 }
-void Reinforce::setMap(Map* m){
-    map = m;
-};
 
 
+void Reinforce::setCountryToReinforce(string) {
+
+}
 
 
 

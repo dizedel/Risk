@@ -3,6 +3,8 @@
 //
 
 #include "strategy/AggressivePlayer.h"
+
+
 void AggressivePlayer::executeReinforce(Player * p) {
 
     Reinforce r;

@@ -68,9 +68,9 @@ bool BenevolentPlayer::reinforceLoop(Player* player){
                     cin>>n;
                     if (floor(n) == n && n > 0) {
                         player->setArmies(player->getArmies() - n);
-                        player->getCountries().at(countryPos).addArmies(n);
+                        player->getCountries().at(countryPos)->addArmies(n);
                         //cout << "You have added " << n << "armies to " << player.getCountries().at(countryPos).getName() <<endl;
-                        cout << player->getCountries().at(countryPos).getName() << " now has " << player->getCountries().at(countryPos).getArmies() << " armies \n";
+                        cout << player->getCountries().at(countryPos)->getName() << " now has " << player->getCountries().at(countryPos)->getArmies() << " armies \n";
                         finished = true;
                     }
                     else{
@@ -105,7 +105,7 @@ void BenevolentPlayer::playPhase(Player* player) {
     cout << player->getName() << " current armies: " << player->getArmies() << endl;
     player->addArmies(armiesFromLand);
     cout << player->getName() << " was given: " << armiesFromLand << " armies" << endl;
-    cout << "Player has a total of " << player.getArmies() << endl;
+    cout << "Player has a total of " << player->getArmies() << endl;
 
     /**
      * EXCHANGE CARDS
