@@ -5,4 +5,12 @@
 #ifndef RISK_HUMANPLAYER_H
 #define RISK_HUMANPLAYER_H
 
+
+#include "Strategy.h"
+
+class HumanPlayer : public Strategy {
+
+};
+
+
 #endif //RISK_HUMANPLAYER_H

@@ -1,6 +1,7 @@
 //
 // Created by pamel on 2018-10-11.
 //
+#include <strategy/HumanPlayer.h>
 #include "Player.h"
 
 
@@ -10,16 +11,27 @@ Player::Player() {
     hand = h;
     dice = d;
     armies = 0;
-    Strategy s;
 }
 
 Player::Player(string name) {
     playerName = name;
     Hand h;
     Dice d;
+    HumanPlayer human;
     hand = h;
     dice = d;
     armies = 0;
+    strategy = &human;
+}
+
+Player::Player(string name, Strategy* strat) {
+    playerName = name;
+    Hand h;
+    Dice d;
+    hand = h;
+    dice = d;
+    armies = 0;
+    setStrategy(strat);
 }
 
 Player::~Player()
@@ -109,10 +121,26 @@ void Player::setInitialArmies(int n){
     initialArmies=n;
 }
 
+void Player::setStrategy(Strategy *strat) {
+    strategy = strat;
+}
+
 void Player::assignInitialArmyToCountry(int n){
     initialArmies-=n;
 }
 
 int Player::getInitialArmies(){
     return initialArmies;
+}
+
+void Player::reinforce(Player *) {
+
+}
+
+void Player::attack(Player *) {
+
+}
+
+void Player::fortify(Player *) {
+
 }

@@ -1,0 +1,8 @@
+//
+// Created by pamel on 2018-11-18.
+//
+
+#ifndef RISK_BENEVOLENTPLAYER_H
+#define RISK_BENEVOLENTPLAYER_H
+
+#endif //RISK_BENEVOLENTPLAYER_H

@@ -12,13 +12,14 @@
 #include "Dice.h"
 #include "Hand.h"
 #include "Map.h"
-#include "strategy/Strategy.h"
 
+class Strategy;
 
 class Player {
     public:
         Player();
         Player(string);
+        Player(string, Strategy *);
         ~Player();
 
         string getName();
@@ -31,20 +32,23 @@ class Player {
         void setCountries(vector<Territory>);
         void setHand(Hand);
         void setArmies(int);
+        void setStartingArmy(int);
+        void setStrategy(Strategy *strategy);
+
+
 
         void addCountry(Territory);
         void addArmies(int);
-        void setStartingArmy(int);
-
 
 
         void giveArmiesForTerritory();
 
         bool hasCountry(string);
         int posOfCountry(string);
-        void reinforce();
-        void attack(int, string);
-        void fortify(int, string);
+
+        void reinforce(Player*);
+        void attack(Player*);
+        void fortify(Player*);
 
         string displayCountries();
 
@@ -63,7 +67,7 @@ class Player {
         Hand hand;
         Dice dice;
         int initialArmies=0;
-        Strategy strategy;
+        Strategy *strategy;
 
 };
 
