@@ -1,4 +1,4 @@
-#include "stdafx.h"
+/*#include "stdafx.h"
 #include <iostream>
 #include <vector>
 #include <random>
@@ -330,7 +330,4 @@ int main() {
     return 0;
 
 }
-
-
-
 

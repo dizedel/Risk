@@ -40,6 +40,14 @@ Territory Map::matchTerritory(string name){
     return Territory();
 }
 
+bool Map::hasTerritory(string name){
+	for(auto i : t){
+		if(i.getName() == name){
+			return true;
+		}
+	}
+	return false;
+}
 int Map::getNbTerritories()
 {
 	return t.size();

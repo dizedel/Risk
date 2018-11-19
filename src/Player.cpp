@@ -1,28 +1,37 @@
 //
 // Created by pamel on 2018-10-11.
 //
+#include <strategy/HumanPlayer.h>
 #include "Player.h"
-#include "Territory.h"
-#include <vector>
-#include <iostream>
-#include <Map.h>
 
-using namespace std;
+
 Player::Player() {
-    Hand h;
+    Hand *h = new Hand();
     Dice d;
-    hand = h;
+    hand = *h;
     dice = d;
     armies = 0;
 }
 
 Player::Player(string name) {
     playerName = name;
-    Hand h;
+    Hand *h = new Hand();
     Dice d;
-    hand = h;
+    hand = *h;
     dice = d;
     armies = 0;
+    HumanPlayer* human;
+    strategy = human;
+}
+
+Player::Player(string name, Strategy* strat) {
+    playerName = name;
+    Hand *h = new Hand();
+    Dice d;
+    hand = *h;
+    dice = d;
+    armies = 0;
+    setStrategy(strat);
 }
 
 Player::~Player()
@@ -33,7 +42,8 @@ Player::~Player()
 string Player::getName(){
     return Player::playerName;
 }
-vector<Territory> Player::getCountries(){
+
+vector<Territory*> Player::getCountries(){
     return countries;
 }
 
@@ -58,7 +68,7 @@ void Player::setHand(Hand h) {
     hand = h;
 }
 
-void Player::setCountries(vector<Territory> c) {
+void Player::setCountries(vector<Territory*> c) {
     countries = c;
 }
 
@@ -72,13 +82,13 @@ void Player::addArmies(int numOfArmies) {
     Notify();
 }
 
-void Player::addCountry(Territory t) {
+void Player::addCountry(Territory* t) {
     countries.push_back(t);
 }
 
 int Player::posOfCountry(string countryName){
     for (int i = 0; i < countries.size(); i++) {
-        if (countries.at(i).getName() == countryName){
+        if (countries.at(i)->getName() == countryName){
             return i;
         }
     }
@@ -95,7 +105,7 @@ bool Player::hasCountry(string countryName){
 string Player::displayCountries() {
     string str = "";
     for (int i =0; i<countries.size(); i++){
-        str += countries.at(i).getName();
+        str += countries.at(i)->getName();
         str += "\n";
     }
     return str;
@@ -107,7 +117,7 @@ void Player::giveArmiesForTerritory(){
     //TODO: give armies for entire continent
 }
 
-void Player::addTerritory(Territory t) {
+void Player::addTerritory(Territory* t) {
     countries.push_back(t);
     Notify();
 }
@@ -116,10 +126,29 @@ void Player::setInitialArmies(int n){
     initialArmies=n;
 }
 
+void Player::setStrategy(Strategy *strat) {
+    strategy = strat;
+}
+
 void Player::assignInitialArmyToCountry(int n){
     initialArmies-=n;
 }
 
 int Player::getInitialArmies(){
     return initialArmies;
+}
+
+void Player::doReinforce(Player * p) {
+    //TODO:Could add GiveArmiesFromLand in here
+    strategy->executeReinforce(this);
+}
+
+void Player::doAttack(Player * p) {
+    strategy->executeAttack(this);
+
+}
+
+void Player::doFortify(Player * p) {
+    strategy->executeFortify(this);
+
 }

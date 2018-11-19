@@ -184,15 +184,15 @@ string Attack::defendingCountry(){
          // Set Territory to have new owner and then remove from defender's territory vector
          defendCountry.setTerritoryOwner(attacker.getName());
         // int tempPos = defender.posOfCountry(defendCountry.getName());
-         vector<Territory> tempCountryVectorDefender = defender.getCountries();
-         for( vector<Territory>::iterator i = tempCountryVectorDefender.begin(); i != tempCountryVectorDefender.end(); i++){
-             if(i->getName() == defendCountry.getName()) {
-                 tempCountryVectorDefender.erase(i);
-             }
+         vector<Territory*> tempCountryVectorDefender = defender.getCountries();
+         for( vector<Territory*>::iterator i = tempCountryVectorDefender.begin(); i != tempCountryVectorDefender.end(); i++){
+             //if(i->getName() == defendCountry.getName()) {
+              //   tempCountryVectorDefender.erase(i);
+             //}
          }
          defender.setCountries(tempCountryVectorDefender);
          // Set Territory to attacker
-         attacker.addCountry(defendCountry);
+         attacker.addCountry(&defendCountry);
 
          bool numberOfArmiesBool = false;
          while(!numberOfArmiesBool) {
@@ -232,10 +232,10 @@ bool Attack::stopAttack(){
 }
 
 vector<string> Attack::filterNeighbors(vector<string> neighbors){
-    vector<Territory> tempVector = attacker.getCountries();
+    vector<Territory*> tempVector = attacker.getCountries();
     for(auto i : tempVector){
         for(int j = 0; j < size(neighbors); j++){
-            if(i.getName() == neighbors[j]){
+            if(i->getName() == neighbors[j]){
                 neighbors.erase(neighbors.begin()+j);
             }
         }
