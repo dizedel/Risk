@@ -120,7 +120,7 @@ void BenevolentPlayer::playReinforce(Player* player) {
     giveArmiesForTerritory(player);
 
     cout<< endl<< "---------------------------------------------"<< endl;
-    cout<< "It's " << player->getName() <<"'s turn to reinforceLoop!"<<endl;
+    cout<< "It's " << player->getName() <<"'s turn to reinforce!"<<endl;
     cout<< endl<< "---------------------------------------------"<< endl;
 
     int armiesFromLand = floor(double(player->getCountries().size()/3));
