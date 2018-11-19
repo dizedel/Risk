@@ -2,20 +2,20 @@
 // Created by pamel on 2018-10-11.
 //
 #pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
 #include "stdafx.h"
-
 #include <string>
 #include <vector>
+#include <iostream>
 #include "Territory.h"
 #include "Dice.h"
 #include "Hand.h"
 #include "Map.h"
-#include "Player.h"
+#include "strategy/Strategy.h"
 
-using namespace std;
 
 class Player {
-
     public:
         Player();
         Player(string);
@@ -63,5 +63,8 @@ class Player {
         Hand hand;
         Dice dice;
         int initialArmies=0;
+        Strategy strategy;
 
 };
+
+#endif

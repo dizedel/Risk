@@ -2,18 +2,15 @@
 // Created by pamel on 2018-10-11.
 //
 #include "Player.h"
-#include "Territory.h"
-#include <vector>
-#include <iostream>
-#include <Map.h>
 
-using namespace std;
+
 Player::Player() {
     Hand h;
     Dice d;
     hand = h;
     dice = d;
     armies = 0;
+    Strategy s;
 }
 
 Player::Player(string name) {
