@@ -37,4 +37,4 @@ add_executable(Risk
         src/Player.cpp
         src/stdafx.cpp
         include/stdafx.h
-        src/Territory.cpp src/game/Attack.cpp include/game/Attack.h src/strategy/Strategy.cpp include/strategy/Strategy.h src/strategy/HumanPlayer.cpp include/strategy/HumanPlayer.h src/strategy/BenevolentPlayer.cpp include/strategy/BenevolentPlayer.h)
+        src/Territory.cpp src/game/Attack.cpp include/game/Attack.h src/strategy/Strategy.cpp include/strategy/Strategy.h src/strategy/HumanPlayer.cpp include/strategy/HumanPlayer.h src/strategy/BenevolentPlayer.cpp include/strategy/BenevolentPlayer.h src/strategy/AggressivePlayer.cpp include/strategy/AggressivePlayer.h)

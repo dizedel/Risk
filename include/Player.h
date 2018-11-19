@@ -46,9 +46,9 @@ class Player {
         bool hasCountry(string);
         int posOfCountry(string);
 
-        void reinforce(Player*);
-        void attack(Player*);
-        void fortify(Player*);
+        void doReinforce(Player*);
+        void doAttack(Player*);
+        void doFortify(Player*);
 
         string displayCountries();
 

@@ -133,14 +133,16 @@ int Player::getInitialArmies(){
     return initialArmies;
 }
 
-void Player::reinforce(Player *) {
+void Player::doReinforce(Player * p) {
+    strategy->reinforce(this);
+}
+
+void Player::doAttack(Player * p) {
+    strategy->attack(this);
 
 }
 
-void Player::attack(Player *) {
-
-}
-
-void Player::fortify(Player *) {
+void Player::doFortify(Player * p) {
+    strategy->fortify(this);
 
 }

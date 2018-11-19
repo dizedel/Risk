@@ -10,6 +10,9 @@
 
 class HumanPlayer : public Strategy {
 
+    void reinforce(Player*);
+    void attack(Player* );
+    void fortify(Player*);
 };
 
 

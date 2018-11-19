@@ -3,3 +3,13 @@
 //
 
 #include "strategy/HumanPlayer.h"
+
+void HumanPlayer::reinforce(Player* p) {
+
+}
+void HumanPlayer::attack(Player* p) {
+
+}
+void HumanPlayer::fortify(Player* p) {
+
+}

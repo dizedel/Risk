@@ -2,17 +2,18 @@
 // Created by pamel on 2018-11-18.
 //
 
-#ifndef RISK_BENEVOLENTPLAYER_H
-#define RISK_BENEVOLENTPLAYER_H
+#ifndef RISK_AGGRESSIVEPLAYER_H
+#define RISK_AGGRESSIVEPLAYER_H
 
 
 #include "Strategy.h"
 
-class BenevolentPlayer : public Strategy {
+class AggressivePlayer : public Strategy {
 
     void reinforce(Player *);
     void attack(Player *);
     void fortify(Player *);
 
 };
-#endif //RISK_BENEVOLENTPLAYER_H
+
+#endif //RISK_AGGRESSIVEPLAYER_H
