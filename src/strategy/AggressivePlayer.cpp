@@ -7,9 +7,14 @@ void AggressivePlayer::executeReinforce(Player * p) {
 
     //Find strongest territory
     vector<Territory*> countries = p->getCountries();
-    for(int i ; i<countries.size(); i++){
-        countries.at(i)->getArmies();
+    Territory* max = p->getCountries()[0];
+    for (int i = 0; p->getCountries().size(); i++)
+    {
+        if (p->getCountries()[i]->getArmies() > max->getArmies())
+            max = p->getCountries()[i];
     }
+    string strongestCountry = max->getName();
+
 
 }
 

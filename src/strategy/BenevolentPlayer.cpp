@@ -10,8 +10,8 @@
 
 using namespace std;
 
-void BenevolentPlayer::reinforce(Player* p) {
-    playPhase(p);
+void BenevolentPlayer::executeReinforce(Player *) {
+
 }
 void BenevolentPlayer::executeAttack(Player *) {
 
@@ -34,15 +34,15 @@ void BenevolentPlayer::giveArmiesForTerritory(Player* player){
 
 string BenevolentPlayer::weakestCountry(Player* player) {
 
-    Territory min = player->getCountries()[0];
+    Territory* min = player->getCountries()[0];
 
     for (int i = 0; player->getCountries().size(); i++)
     {
-        if (player->getCountries()[i].getArmies() < min.getArmies())
+        if (player->getCountries()[i]->getArmies() < min->getArmies())
             min = player->getCountries()[i];
     }
 
-    return min.getName();
+    return min->getName();
 }
 
 

@@ -58,7 +58,7 @@ void Fortify::playPhase(){
                 else {
                     cout<<"How many armies should we fortify with?";
                     cin >> numOfArmies;
-                    int providerCountryArmies = player.getCountries().at(player.posOfCountry(providerCountry)).getArmies();
+                    int providerCountryArmies = player.getCountries().at(player.posOfCountry(providerCountry))->getArmies();
                     while(numOfArmies >= providerCountryArmies){
                         cout << "Provider country only has " << providerCountryArmies << " armies.";
                         cout << "Choose a number of Armies lower than " << providerCountryArmies;
