@@ -10,13 +10,12 @@
 
 using namespace std;
 
-void BenevolentPlayer::reinforce(Player* p) {
+void BenevolentPlayer::executeReinforce(Player* p) {
     playPhase(p);
 }
 void BenevolentPlayer::executeAttack(Player *) {
 
     cout << "The player does not wish to attack." << endl;
-
 }
 void BenevolentPlayer::executeFortify(Player *) {
 
