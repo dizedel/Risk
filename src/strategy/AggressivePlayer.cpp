@@ -9,7 +9,6 @@ void AggressivePlayer::executeReinforce(Player * p) {
 
     Reinforce r;
     //Find strongest territory
-    vector<Territory*> countries = p->getCountries();
     Territory* max = p->getCountries()[0];
     for (int i = 0; p->getCountries().size(); i++)
     {
@@ -24,8 +23,12 @@ void AggressivePlayer::executeReinforce(Player * p) {
 
 
 void AggressivePlayer::executeAttack(Player *) {
+    
 
 }
 void AggressivePlayer::executeFortify(Player *) {
+
+    Fortify f;
+
 
 }
