@@ -1,4 +1,5 @@
-/*#include "stdafx.h"
+/*
+#include "stdafx.h"
 #include <iostream>
 #include <vector>
 #include <random>
@@ -27,6 +28,7 @@
 using namespace std;
 
 int Hand::exchangedHands = 0;
+
 
 void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, Hand &hand1) {
     char startGame;
@@ -190,33 +192,39 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
         string territoryName = "";
 
         cout << "====== Randomly assigning territories to players ======" << endl;
-        for (Territory te : tempTVect) {
-            std::shuffle(tempTVect.begin(), tempTVect.end(), rng);
+        for(int i=0; i<terrCount; i++){
+            int randomT = rand() % tempTVect.size();
+            Territory territoryToBeAssigned = tempTVect.at(randomT);
+            Player player = vp->at(playerIndex);
 
             ownerName = vp->at(playerIndex).getName();  //gets name of player
-            territoryName = tempTVect.back().getName(); //gets name of territory
+            territoryName = territoryToBeAssigned.getName(); //gets name of territory
 
-            vp->at(playerIndex).addTerritory(tempTVect.back());  //adding a territory to a player from the player vector vp, added a notify()
-            tempTVect.back().setTerritoryOwner(ownerName);      //sets the territory owner
-            occupiedTerritories.push_back(tempTVect.back());    //adds the territory into occupied territories
+            vp->at(playerIndex).addCountry(territoryToBeAssigned);
+            territoryToBeAssigned.setTerritoryOwner(ownerName);      //sets the territory owner
+            occupiedTerritories.push_back(territoryToBeAssigned);
 
-            cout << ownerName << " was assigned " << territoryName << " (" << tempTVect.back().getX() << ","
-                 << tempTVect.back().getY() << "), now they have " << vp->at(playerIndex).getCountries().size()
+            cout << ownerName << " was assigned " << territoryToBeAssigned.getName() << " (" << territoryToBeAssigned.getX() << ","
+                 << territoryToBeAssigned.getY() << "), now they have " << vp->at(playerIndex).getCountries().size()
                  << " countries." << endl;
 
             playerIndex = (playerIndex + 1) % playerCount;
-
-            tempTVect.pop_back();
+            tempTVect.erase(tempTVect.begin() + randomT);
         }
 
         cout << endl;
 
         // assign ownership to territories on the original map
+        Territory territoryInPlaceholder;
+        Territory territoryInActualMap;
+        string occupier="";
         for (int i = 0; i < map1.getTerritory().size(); i++) {
             for (int j = 0; j < occupiedTerritories.size(); j++) {
-                if (occupiedTerritories.at(j).getName() == map1.getTerritory().at(i).getName()) {
-                    string occupier = occupiedTerritories.at(j).getTerritoryOwner();
-                    map1.getTerritory().at(i).setTerritoryOwner(occupier);  //added a notify in its function definition
+                territoryInPlaceholder = occupiedTerritories.at(j);
+                territoryInActualMap = map1.getTerritory().at(i);
+                if (territoryInPlaceholder.getName() == territoryInActualMap.getName()) {
+                    occupier = territoryInPlaceholder.getTerritoryOwner();
+                    territoryInActualMap.setTerritoryOwner(occupier);  //added a notify in its function definition
                 }
             }
         }
@@ -330,5 +338,4 @@ int main() {
     return 0;
 
 }
-
 */
