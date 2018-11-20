@@ -9,13 +9,13 @@ void AggressivePlayer::executeReinforce(Player * p) {
 
     Reinforce r;
     //Find strongest territory
-    Territory* max = p->getCountries()[0];
+    Territory max = p->getCountries()[0];
     for (int i = 0; p->getCountries().size(); i++)
     {
-        if (p->getCountries()[i]->getArmies() > max->getArmies())
+        if (p->getCountries()[i].getArmies() > max.getArmies())
             max = p->getCountries()[i];
     }
-    string strongestCountry = max->getName();
+    string strongestCountry = max.getName();
     r.setCountryToReinforce(strongestCountry);
     r.setNumOfArmiesToPutDown(p->getArmies());
     r.reinforce();
@@ -23,7 +23,7 @@ void AggressivePlayer::executeReinforce(Player * p) {
 
 
 void AggressivePlayer::executeAttack(Player *) {
-    
+
 
 }
 void AggressivePlayer::executeFortify(Player *) {

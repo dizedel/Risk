@@ -21,7 +21,7 @@ Reinforce::~Reinforce() {
 bool Reinforce::reinforce(){
     bool executed;
     if(player->hasCountry(countryToReinforce)){
-        player->getCountries().at(player->posOfCountry(countryToReinforce))->addArmies(numOfArmiesToPutDown);
+        player->getCountries().at(player->posOfCountry(countryToReinforce)).addArmies(numOfArmiesToPutDown);
         player->setArmies(player->getArmies()-numOfArmiesToPutDown); //Remove armies from player after putting them down
         return true;
     }

@@ -30,11 +30,11 @@ class Player: public Subject {
         string getName();
         Dice getDice();
         Hand getHand();
-        vector<Territory*> getCountries();
+        vector<Territory> getCountries();
         int getArmies();
 
         void setName(string);
-        void setCountries(vector<Territory*>);
+        void setCountries(vector<Territory>);
         void setHand(Hand);
         void setArmies(int);
         void setStartingArmy(int);
@@ -42,7 +42,7 @@ class Player: public Subject {
 
 
 
-        void addCountry(Territory*);
+        void addCountry(Territory);
         void addArmies(int);
 
 
@@ -57,7 +57,7 @@ class Player: public Subject {
 
         string displayCountries();
 
-        void addTerritory(Territory*);
+        void addTerritory(Territory);
 
         void setInitialArmies(int);
         int getInitialArmies();
@@ -69,7 +69,7 @@ class Player: public Subject {
         string playerName;                      //player's name as an identifier
         int numOfExchanges;                     //number of times the player has exchanged his cards for armies
         int armies=0;
-        vector<Territory*> countries;
+        vector<Territory> countries;
         Hand hand;
         Dice dice;
         int initialArmies=0;

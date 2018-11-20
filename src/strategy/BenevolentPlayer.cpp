@@ -33,15 +33,15 @@ void BenevolentPlayer::giveArmiesForTerritory(Player* player){
 
 string BenevolentPlayer::weakestCountry(Player* player) {
 
-    Territory* min = player->getCountries()[0];
+    Territory min = player->getCountries()[0];
 
     for (int i = 0; player->getCountries().size(); i++)
     {
-        if (player->getCountries()[i]->getArmies() < min->getArmies())
+        if (player->getCountries()[i].getArmies() < min.getArmies())
             min = player->getCountries()[i];
     }
 
-    return min->getName();
+    return min.getName();
 }
 
 
@@ -68,9 +68,9 @@ bool BenevolentPlayer::reinforceLoop(Player* player){
                     cin>>n;
                     if (floor(n) == n && n > 0) {
                         player->setArmies(player->getArmies() - n);
-                        player->getCountries().at(countryPos)->addArmies(n);
+                        player->getCountries().at(countryPos).addArmies(n);
                         //cout << "You have added " << n << "armies to " << player.getCountries().at(countryPos).getName() <<endl;
-                        cout << player->getCountries().at(countryPos)->getName() << " now has " << player->getCountries().at(countryPos)->getArmies() << " armies \n";
+                        cout << player->getCountries().at(countryPos).getName() << " now has " << player->getCountries().at(countryPos).getArmies() << " armies \n";
                         finished = true;
                     }
                     else{

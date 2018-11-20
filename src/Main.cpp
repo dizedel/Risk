@@ -111,7 +111,7 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
         PlayerView *pvPlayer2 = new PlayerView(pPlayer2);
 
 
-        /*if (playerCount < numberOfPlayers)
+        if (playerCount < numberOfPlayers)
          {
              Player player3("player3");
              vp->push_back(player3);
@@ -134,7 +134,7 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
              Player player6("player6");
              vp->push_back(player6);
              playerCount++;
-         }*/
+         }
 
          //print player names
          cout << "Player names : " << endl;
@@ -331,3 +331,4 @@ int main() {
 
 }
 
+*/
