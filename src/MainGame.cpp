@@ -6,6 +6,15 @@
 
 using namespace std;
 
+// applying singleton pattern to MainGame
+MainGame* MainGame::instance=0;
+MainGame* MainGame::getInstance(){
+    if(instance==0){
+        instance=new MainGame();
+    }
+    return instance;
+}
+
 MainGame::MainGame(){}
 
 MainGame::MainGame(vector<Player> &players, Map &mapRef) {

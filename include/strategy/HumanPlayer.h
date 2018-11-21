@@ -9,6 +9,7 @@
 #include "Player.h"
 #include <string>
 #include "Strategy.h"
+#include "MainGame.h"
 using namespace std;
 
 class HumanPlayer  : public Strategy{

@@ -54,8 +54,9 @@ void HumanPlayer::executeReinforce(Player* p){
     if(p->getArmies()>= 1) {
         while (p->getArmies()>=1) {
             cout <<"You have --- " << p->getArmies() <<" --- armies. Which countries do you wish to reinforce? Enter 'done' if you do not wish to." << endl;
-            getline(cin, str);
+            cin >> str;
             if (str == "done") {
+                cout << "k" << endl;
                 break;
             }
             else if (p->hasCountry(str)) {
@@ -68,6 +69,7 @@ void HumanPlayer::executeReinforce(Player* p){
                     cin>>n;
                     if (floor(n) == n && n > 0) {
                         r.setNumOfArmiesToPutDown(numOfArmies);
+                        r.reinforce();
                         finished = true;
                     }
                     else{
@@ -84,11 +86,19 @@ void HumanPlayer::executeReinforce(Player* p){
     else{
         cout<< "You do not have enough armies to reinforce at the moment" << endl;
     }
-    r.reinforce();
 
 }
 void HumanPlayer::executeAttack(Player* p) {
     cout << "Attack";
+    Attack* a = new Attack();
+    MainGame* m = MainGame::getInstance();
+    Map m1 = m->getMap();
+    vector<Player> vp = m->getPlayers();
+
+    a->setAttacker(*p);
+    a->setMap(m1);
+    a->setPlayerVector(&vp);
+    a->attack();
 }
 void HumanPlayer::executeFortify(Player* p) {
     Fortify* f = new Fortify();

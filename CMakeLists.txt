@@ -20,7 +20,6 @@ add_executable(Risk
         include/strategy/AggressivePlayer.h
         include/strategy/BenevolentPlayer.h
         include/strategy/HumanPlayer.h
-        include/Strategy.h
         include/Card.h
         include/Continent.h
         include/Deck.h
@@ -31,6 +30,7 @@ add_executable(Risk
         include/MapLoader.h
         include/Player.h
         include/stdafx.h
+        include/Strategy.h
         include/targetver.h
         include/Territory.h
         src/driver/Main2.cpp

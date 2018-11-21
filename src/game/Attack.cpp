@@ -14,6 +14,18 @@ Attack::Attack(Player p, vector<Player>* pV, Map &m){
     map = m;
 }
 
+void Attack::setAttacker(Player p){
+    attacker=p;
+}
+
+void Attack::setPlayerVector(vector<Player>* pV){
+    pVector=pV;
+}
+
+void Attack::setMap(Map &m){
+    map=m;
+}
+
 Attack::~Attack()
 {
 }

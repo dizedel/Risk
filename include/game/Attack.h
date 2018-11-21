@@ -31,6 +31,10 @@ public:
     bool stopAttack();
     vector<string> filterNeighbors(vector<string>);
     bool wasTerritoryConquered();
+    void setAttacker(Player);
+    void setPlayerVector(vector<Player>*);
+    void setMap(Map&);
+
 private:
     vector<Player>* pVector;
     Player attacker;

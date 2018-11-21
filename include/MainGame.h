@@ -21,14 +21,15 @@ private:
     vector<Fortify> fortifyVector;
     vector<Attack> attackVector;
     Map map;
+    static MainGame* instance;
+    MainGame();
 
 public:
-    MainGame();
     MainGame(vector<Player>&, Map&);
     ~MainGame();
     void playGame();
     vector<Player>& getPlayers();
-
     Map getMap();
+    static MainGame* getInstance();
 
 };
