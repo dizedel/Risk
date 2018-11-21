@@ -16,10 +16,16 @@ class BenevolentPlayer : public Strategy {
     void executeAttack(Player *);
     void executeFortify(Player *);
 
+    int randomInput(Player*);
+    int randomInput2(Player*, int);
     void giveArmiesForTerritory(Player*);
     string weakestCountry(Player*);
     bool reinforceLoop(Player*);
-    void playPhase(Player*);
+    void playReinforce(Player*);
+    bool fortify(string, string, int, Player*);
+    void playFortify(Player*);
+    string strongestCountry(Player*);
+
 
 };
 #endif //RISK_BENEVOLENTPLAYER_H
