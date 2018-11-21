@@ -12,4 +12,8 @@ void Strategy::executeFortify(Player *) {
 
 }
 
+string Strategy::toString(){
+    return "General Strategy Object";
+}
+
 Strategy::~Strategy() {}

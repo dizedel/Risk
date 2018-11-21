@@ -16,6 +16,8 @@ public:
     void executeAttack(Player *);
     void executeFortify(Player *);
 
+    string toString();
+
     virtual ~Strategy();
 };
 

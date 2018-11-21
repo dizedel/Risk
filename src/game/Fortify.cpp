@@ -11,66 +11,34 @@ using namespace std;
 
 Fortify::Fortify(){}
 
-Fortify::Fortify(Player p){
+Fortify::Fortify(Player* p, int numOfArmies, string providerCountry, string fortifiedCountry){
     player = p;
+    numOfArmiesToUse = numOfArmies;
+    countryToTakeFrom = providerCountry;
+    countryToFortify = fortifiedCountry;
+}
+
+Fortify::Fortify(Player* player, Map map) {
+    this->player = player;
+    this->map= map;
 }
 
 Fortify::~Fortify(){}
 
-bool Fortify::fortify(string countryToFortify, string armyProvider, int){
-
-    if (!player.hasCountry(countryToFortify) || !player.hasCountry(armyProvider))
-        return false;
-    else{
-        return true;
-    }
+bool Fortify::fortify(){
+    player->getCountries().at(player->posOfCountry(countryToFortify)).addArmies(numOfArmiesToUse);   //Add armies to fortified country
+    player->getCountries().at(player->posOfCountry(countryToTakeFrom)).setArmies(-numOfArmiesToUse); // Remove armies from provider country
+    return true;
 }
 
-void Fortify::playPhase(){
-    int numOfArmies;
-
-    cout<< endl<< "---------------------------------------------"<< endl;
-    cout<< "It's " << player.getName() <<"'s turn to reinforce!"<<endl;
-    cout<< endl<< "---------------------------------------------"<< endl;
-
-    while(true){
-        string fortifiedCountry;
-        string providerCountry;
-
-        cout<< "Which country do you wish to fortify? If you are done, say 'done'";
-        cin >> fortifiedCountry;
-
-        if(fortifiedCountry == "done")
-            break;
-        else if (!player.hasCountry(fortifiedCountry)) {
-            cout << "You do not have that country";
-        }
-        else{
-            while(true) {
-                cout << "Which country do you want to take armies from?" << endl;
-                cin >> providerCountry;
-                if (!player.hasCountry(providerCountry)) {
-                    cout << "You do not have that country";
-                }
-                else if ( player.getCountries().at(player.posOfCountry(providerCountry)).getArmies() <= 1) {
-                    cout << "You do not have enough armies to take from this country";
-                }
-                else {
-                    cout<<"How many armies should we fortify with?";
-                    cin >> numOfArmies;
-                    int providerCountryArmies = player.getCountries().at(player.posOfCountry(providerCountry)).getArmies();
-                    while(numOfArmies >= providerCountryArmies){
-                        cout << "Provider country only has " << providerCountryArmies << " armies.";
-                        cout << "Choose a number of Armies lower than " << providerCountryArmies;
-                        cin >> numOfArmies;
-                    }
-                    player.getCountries().at(player.posOfCountry(fortifiedCountry)).addArmies(numOfArmies);              //Add armies to fortified country
-                    player.getCountries().at(player.posOfCountry(providerCountry)).setArmies(providerCountryArmies - numOfArmies); // Remove armies from provider country
-                    break;
-                }
-            }
-        }
-    }
-
+void Fortify::setCountryToTakeFrom(string c) {
+    countryToTakeFrom = c;
 }
 
+void Fortify::setCountryToFortify(string c) {
+    countryToFortify = c;
+}
+
+void Fortify::setNumOfTransferArmies(int i) {
+    numOfArmiesToUse = i;
+}

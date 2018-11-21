@@ -9,10 +9,11 @@
 #include "Strategy.h"
 
 class HumanPlayer : public Strategy {
-
+public:
     void executeReinforce(Player *);
     void executeAttack(Player *);
     void executeFortify(Player *);
+    string toString();
 
 };
 

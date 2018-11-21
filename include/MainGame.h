@@ -4,6 +4,7 @@
 //#include "game/Reinforce.h"
 #include "game/Fortify.h"
 #include "game/Attack.h"
+#include <game/Reinforce.h>
 #include <vector>
 #include "Pattern/Subject.h"
 
@@ -16,9 +17,9 @@ class MainGame : public Subject{
 private:
 
     vector<Player> playersInGame;
+    //vector<Reinforce> reinforceVector;
     vector<Fortify> fortifyVector;
     vector<Attack> attackVector;
-    //vector<Reinforce> reinforceVector;
     Map map;
 
 public:

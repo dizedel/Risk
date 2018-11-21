@@ -16,6 +16,9 @@
 #include "Card.h"
 #include "Deck.h"
 #include <vector>
+#include <strategy/BenevolentPlayer.h>
+#include <strategy/AggressivePlayer.h>
+#include <strategy/HumanPlayer.h>
 #include "Player.h"
 #include "game/Fortify.h"
 #include "game/Attack.h"
@@ -195,8 +198,14 @@ void testGameStats(){
     map1=loader1.getMap();
     cout << "creating map" << endl;
     map1.createMap(map1);
+    BenevolentPlayer* benevolent = new BenevolentPlayer();
+    HumanPlayer* human = new HumanPlayer();
+    AggressivePlayer* aggressive = new AggressivePlayer;
     Player p1("Apple");
+    p1.setStrategy(human);
     Player p2("Orange");
+    p2.setStrategy(human);
+    cout << "p2 strat " << p2.getStrategy().toString();
     vector<Player> vp;
     Hand hand1;
     Deck deck1(map1.getTerritory().size());

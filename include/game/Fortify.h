@@ -16,15 +16,22 @@ class Fortify{
 
 public:
     Fortify();
-    Fortify(Player);
+    Fortify(Player*, int , string, string);
+    Fortify(Player*, Map);
     ~Fortify();
 
-    bool fortify(string, string, int);
-    void playPhase();
-    void giveArmiesForTerritory();
+    void setCountryToFortify(string);
+    void setCountryToTakeFrom(string);
+    void setNumOfTransferArmies(int);
+
+    bool fortify();
 
 private:
-    Player player;
+    Player* player;
+    string countryToFortify;
+    string countryToTakeFrom;
+    int numOfArmiesToUse;
+    Map map;
 
 };
 

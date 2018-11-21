@@ -18,10 +18,10 @@ class Reinforce{
 
 public:
     Reinforce();
-    Reinforce(Player*, int, string);
+    Reinforce(Player*, int, string, Map);
+    Reinforce(Player*, Map);
     ~Reinforce();
 
-    void playPhase();
     bool reinforce();
 
     void setCountryToReinforce(string);
@@ -33,6 +33,7 @@ private:
     string countryToReinforce;
     int numOfArmiesToPutDown;
     Player* player;
+    Map map;
 
 };
 #endif

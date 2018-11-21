@@ -16,15 +16,14 @@
 #include "Pattern/Subject.h"
 
 class Strategy;
-
 class PlayerView;
+
 
 class Player: public Subject {
 
     public:
         Player();
         Player(string);
-        Player(string, Strategy *);
         ~Player();
 
         string getName();
@@ -32,13 +31,14 @@ class Player: public Subject {
         Hand getHand();
         vector<Territory> getCountries();
         int getArmies();
+        Strategy getStrategy();
 
         void setName(string);
         void setCountries(vector<Territory>);
         void setHand(Hand);
         void setArmies(int);
         void setStartingArmy(int);
-        void setStrategy(Strategy *strategy);
+        void setStrategy(Strategy*);
 
 
 
@@ -73,7 +73,7 @@ class Player: public Subject {
         Hand hand;
         Dice dice;
         int initialArmies=0;
-        Strategy *strategy;
+        Strategy* strategy;
 
 };
 

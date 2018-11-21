@@ -7,11 +7,16 @@ using namespace std;
 
 Reinforce::Reinforce() {}
 
+Reinforce::Reinforce(Player* player, Map map) {
+    this->player = player;
+    this->map= map;
+}
 
-Reinforce::Reinforce(Player* player, int numOfArmies, string ctry) {
+Reinforce::Reinforce(Player* player, int numOfArmies, string ctry, Map map) {
     numOfArmiesToPutDown = numOfArmies;
     countryToReinforce = ctry;
     this->player = player;
+    this->map = map;
 }
 
 Reinforce::~Reinforce() {
@@ -23,6 +28,7 @@ bool Reinforce::reinforce(){
     if(player->hasCountry(countryToReinforce)){
         player->getCountries().at(player->posOfCountry(countryToReinforce)).addArmies(numOfArmiesToPutDown);
         player->setArmies(player->getArmies()-numOfArmiesToPutDown); //Remove armies from player after putting them down
+        cout<<"You reinforced "<< numOfArmiesToPutDown << "on " << countryToReinforce;
         return true;
     }
     else{
@@ -38,6 +44,4 @@ void Reinforce::setNumOfArmiesToPutDown(int i) {
 void Reinforce::setCountryToReinforce(string) {
 
 }
-
-
 

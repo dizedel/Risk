@@ -11,6 +11,7 @@ Player::Player() {
     hand = *h;
     dice = d;
     armies = 0;
+    strategy = NULL;
 }
 
 Player::Player(string name) {
@@ -20,18 +21,7 @@ Player::Player(string name) {
     hand = *h;
     dice = d;
     armies = 0;
-    HumanPlayer* human = new HumanPlayer();
-    strategy = human;
-}
-
-Player::Player(string name, Strategy* strat) {
-    playerName = name;
-    Hand *h = new Hand();
-    Dice d;
-    hand = *h;
-    dice = d;
-    armies = 0;
-    setStrategy(strat);
+    strategy = NULL;
 }
 
 Player::~Player()
@@ -57,6 +47,10 @@ Hand Player::getHand() {
 
 int Player::getArmies() {
     return armies;
+}
+
+Strategy Player::getStrategy() {
+    return *strategy;
 }
 
 void Player::setName(string name) {
@@ -126,7 +120,7 @@ void Player::setInitialArmies(int n){
     initialArmies=n;
 }
 
-void Player::setStrategy(Strategy *strat) {
+void Player::setStrategy(Strategy* strat) {
     strategy = strat;
 }
 

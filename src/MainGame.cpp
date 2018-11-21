@@ -1,6 +1,8 @@
+#include <game/Reinforce.h>
 #include "MainGame.h"
 #include "game/Fortify.h"
 #include "game/Attack.h"
+#include "strategy/Strategy.h"
 
 using namespace std;
 
@@ -23,7 +25,7 @@ void MainGame::playGame() {
 
     for (int i = 0; i < playersInGame.size(); i++)
     {
-        //reinforceVector.push_back(Reinforce{playersInGame[i]});
+        //reinforceVector.push_back(Reinforce{&playersInGame[i], map});
     }
 
     for(int k = 0; k < playersInGame.size(); k++){
@@ -32,23 +34,24 @@ void MainGame::playGame() {
 
     for (int j = 0; j < playersInGame.size(); j++)
     {
-        fortifyVector.push_back(Fortify{playersInGame[j]});
+        //fortifyVector.push_back(Fortify{&playersInGame[j], map});
     }
 
 
     while (keepPlaying)
     {
         Notify();
-        cout<< "Player " << currentPlayer + 1 << " -- Reinforce::playPhase() called" << endl;
-        //reinforceVector[currentPlayer].playPhase();
+        cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
+        cout << playersInGame[currentPlayer].getStrategy().toString();
+        playersInGame[currentPlayer].getStrategy().executeReinforce(&playersInGame[currentPlayer]);
+
         cout<< "Player" << currentPlayer + 1 << " attack() called" << endl;
         attackVector[currentPlayer].attack();
         if (attackVector[currentPlayer].wasTerritoryConquered() == true){
             Notify();
         }
         cout<< "Player" << currentPlayer + 1 << " -- Fortify::playPhase() called" << endl;
-        fortifyVector[currentPlayer].playPhase();
-
+       // playersInGame[currentPlayer].doFortify(&playersInGame[currentPlayer]);
         currentPlayer++;
 
         if (currentPlayer == numberOfPlayers)
