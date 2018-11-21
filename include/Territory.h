@@ -15,6 +15,7 @@ class Territory : public Subject{
 public:
 	Territory();
 	Territory(string, int, int, vector<string>, string); // contstructor, Name , X & Y coord, Neighbors, owner
+	Territory& operator=(const Territory& tobecopied); // operator overload
 	~Territory();
 
 	string getName();	//return Name of territory
@@ -35,6 +36,9 @@ public:
 
 	string getTerritoryOwner();
 	void setTerritoryOwner(string);
+
+	void copyTerritory(Territory&, Territory&);
+	void setNeighbors(vector<string>);
 
 private:
 	string territoryName;

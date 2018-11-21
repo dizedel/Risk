@@ -39,6 +39,18 @@ void MainGame::playGame() {
     while (keepPlaying)
     {
         Notify();
+
+        /*
+         * debugging: works
+        for(int i=0; i<playersInGame.size(); i++){
+
+            for(Territory te : playersInGame.at(i).getCountries()){
+                cout << te.getName() << te.getTerritoryOwner() << te.getArmies() << endl;
+            }
+            //cout << playersInGame.at(i).displayCountries() << endl;
+        }
+         */
+
         cout<< "Player " << currentPlayer + 1 << " -- Reinforce::playPhase() called" << endl;
         //reinforceVector[currentPlayer].playPhase();
         cout<< "Player" << currentPlayer + 1 << " attack() called" << endl;
@@ -63,17 +75,13 @@ void MainGame::playGame() {
             }
         }
 
-        for(int i=0; i<playersInGame.size(); i++){
-            cout << playersInGame.at(i).displayCountries() << endl;
-        }
-
     }
 }
 
 
 
 
-vector<Player> MainGame::getPlayers() {
+vector<Player>& MainGame::getPlayers() {
     return playersInGame;
 }
 

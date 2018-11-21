@@ -1,6 +1,7 @@
 #include <Continent.h>
 #include "stdafx.h"
 #include "../include/Territory.h"
+#include <iostream>
 
 using namespace std;
 
@@ -19,6 +20,17 @@ Territory::Territory(string n, int x, int y, vector<string> v, string s) {
 	neighbors = v;
 	territoryOwner = "";
 	armies = 0;
+}
+
+Territory& Territory::operator=(const Territory& te){
+	territoryName = te.territoryName;
+	coordX = te.coordX;
+	coordY = te.coordY;
+	neighbors = te.neighbors;
+	territoryOwner = te.territoryOwner;
+	armies = te.armies;
+	return *this;
+
 }
 
 Territory::~Territory() {}
@@ -87,4 +99,26 @@ void Territory::setTerritoryOwner(string s) {
 	territoryOwner = s;
 }
 
+void Territory::setNeighbors(vector<string> vs){
+	neighbors.erase(neighbors.begin(),neighbors.end());
+	for(string s: vs){
+		neighbors.push_back(s);
+	}
+}
 
+void Territory::copyTerritory(Territory& source, Territory& target) {
+	target.setName(source.getName());
+	target.setTerritoryOwner(source.getTerritoryOwner());
+	target.setX(source.getX());
+	target.setY(source.getY());
+	target.setNeighbors(source.getNeighbors());
+	target.setArmies(source.getArmies());
+	/*
+	 * debugging
+	cout << territoryName << coordX << coordY << territoryOwner <<armies ;
+	for(string s : neighbors){
+		cout << s;
+	}
+	cout << endl;
+	 */
+}

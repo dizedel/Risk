@@ -30,7 +30,7 @@ class Player: public Subject {
         string getName();
         Dice getDice();
         Hand getHand();
-        vector<Territory> getCountries();
+        vector<Territory>& getCountries();
         int getArmies();
 
         void setName(string);
