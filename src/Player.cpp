@@ -138,17 +138,17 @@ int Player::getInitialArmies(){
     return initialArmies;
 }
 
-void Player::doReinforce(Player * p) {
+void Player::doReinforce() {
     //TODO:Could add GiveArmiesFromLand in here
     strategy->executeReinforce(this);
 }
 
-void Player::doAttack(Player * p) {
+void Player::doAttack() {
     strategy->executeAttack(this);
 
 }
 
-void Player::doFortify(Player * p) {
+void Player::doFortify() {
     strategy->executeFortify(this);
 
 }
