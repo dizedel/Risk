@@ -62,15 +62,15 @@ string BenevolentPlayer::weakestCountry(Player* player) {
 
 string BenevolentPlayer::strongestCountry(Player* player) {
 
-    Territory* max = player->getCountries()[0];
+    Territory max = player->getCountries()[0];
 
     for (int i = 0; player->getCountries().size(); i++)
     {
-        if (player->getCountries()[i]->getArmies() > max->getArmies())
+        if (player->getCountries()[i].getArmies() > max.getArmies())
             max = player->getCountries()[i];
     }
 
-    return max->getName();
+    return max.getName();
 }
 
 
@@ -100,9 +100,9 @@ bool BenevolentPlayer::reinforceLoop(Player* player){
                     if (floor(n) == n && n > 0) {
                         player->setArmies(player->getArmies() - n);
 
-                        player->getCountries().at(countryPos)->addArmies(n);
+                        player->getCountries().at(countryPos).addArmies(n);
                         //cout << "You have added " << n << "armies to " << player->getCountries().at(countryPos).getName() <<endl;
-                        cout << player->getCountries().at(countryPos)->getName() << " now has " << player->getCountries().at(countryPos)->getArmies() << " armies \n";
+                        cout << player->getCountries().at(countryPos).getName() << " now has " << player->getCountries().at(countryPos).getArmies() << " armies \n";
 
                         finished = true;
                     }
@@ -209,13 +209,13 @@ void BenevolentPlayer::playFortify(Player* player){
                 if (!player->hasCountry(providerCountry)) {
                     cout << "You do not have that country";
                 }
-                else if ( player->getCountries().at(player->posOfCountry(providerCountry))->getArmies() <= 1) {
+                else if ( player->getCountries().at(player->posOfCountry(providerCountry)).getArmies() <= 1) {
                     cout << "You do not have enough armies to take from this country";
                 }
                 else {
                     cout<<"How many armies should we fortify with?";
                     //cin >> numOfArmies;
-                    int providerCountryArmies = player->getCountries().at(player->posOfCountry(providerCountry))->getArmies();
+                    int providerCountryArmies = player->getCountries().at(player->posOfCountry(providerCountry)).getArmies();
                     numOfArmies = randomInput2(player, providerCountryArmies);
                     while(numOfArmies >= providerCountryArmies){
                         cout << "Provider country only has " << providerCountryArmies << " armies.";
@@ -223,8 +223,8 @@ void BenevolentPlayer::playFortify(Player* player){
                         //cin >> numOfArmies;
                         numOfArmies = randomInput2(player, providerCountryArmies);
                     }
-                    player->getCountries().at(player->posOfCountry(fortifiedCountry))->addArmies(numOfArmies);              //Add armies to fortified country
-                    player->getCountries().at(player->posOfCountry(providerCountry))->setArmies(providerCountryArmies - numOfArmies); // Remove armies from provider country
+                    player->getCountries().at(player->posOfCountry(fortifiedCountry)).addArmies(numOfArmies);              //Add armies to fortified country
+                    player->getCountries().at(player->posOfCountry(providerCountry)).setArmies(providerCountryArmies - numOfArmies); // Remove armies from provider country
                     break;
                 }
             }
