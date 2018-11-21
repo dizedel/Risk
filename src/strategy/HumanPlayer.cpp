@@ -89,15 +89,23 @@ void HumanPlayer::executeReinforce(Player* p){
 
 }
 void HumanPlayer::executeAttack(Player* p) {
-    cout << "Attack";
-    Attack* a = new Attack();
+    cout<< endl<< "---------------------------------------------"<< endl;
+    cout<< "It's HUMAN " << p->getName() <<"'s turn to attack!"<<endl;
+    cout<< endl<< "---------------------------------------------"<< endl;
     MainGame* m = MainGame::getInstance();
+    Attack* a = new Attack();
     Map m1 = m->getMap();
-    vector<Player> vp = m->getPlayers();
+
+    /*
+    cout << m1.getTerritory().size() << "||" << m1.getNbTerritories() << endl;
+    for(Territory te: m1.getTerritory()){
+        cout << "this is bullshit";
+        cout << te.getName() << te.getX() << te.getY() << te.getTerritoryOwner() << te.getArmies() << endl;
+    }*/
 
     a->setAttacker(*p);
     a->setMap(m1);
-    a->setPlayerVector(&vp);
+    a->setPlayerVector(&MainGame::getInstance()->getPlayers());
     a->attack();
 }
 void HumanPlayer::executeFortify(Player* p) {

@@ -10,6 +10,7 @@ using namespace std;
 MainGame* MainGame::instance=0;
 MainGame* MainGame::getInstance(){
     if(instance==0){
+        cout << "Singleton created" << endl;
         instance=new MainGame();
     }
     return instance;
@@ -18,8 +19,12 @@ MainGame* MainGame::getInstance(){
 MainGame::MainGame(){}
 
 MainGame::MainGame(vector<Player> &players, Map &mapRef) {
-    playersInGame = players;
-    map = mapRef;
+    if(instance==0){
+        playersInGame = players;
+        map = mapRef;
+        instance=this;
+        cout << "Singleton created2" << endl;
+    }
 }
 
 MainGame::~MainGame(){}
@@ -59,6 +64,7 @@ void MainGame::playGame() {
         playersInGame[currentPlayer].doReinforce();
         cout << "test";
         playersInGame[currentPlayer].doAttack();
+        Notify();
         playersInGame[currentPlayer].doReinforce();
 
         currentPlayer++;

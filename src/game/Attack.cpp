@@ -301,8 +301,6 @@ string Attack::defendingCountry(){
                      }
                  }
 
-                 map.getTerritory().at(1).setTerritoryOwner("fuck this shit");
-
                  //updates player armies
                  //works
                  int newArmyCount;
