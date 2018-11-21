@@ -33,7 +33,7 @@ string Player::getName(){
     return Player::playerName;
 }
 
-vector<Territory> Player::getCountries(){
+vector<Territory>& Player::getCountries(){
     return countries;
 }
 

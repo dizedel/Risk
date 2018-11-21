@@ -8,7 +8,7 @@ using namespace std;
 
 Attack::Attack(){}
 
-Attack::Attack(Player p, vector<Player>* pV, Map m){
+Attack::Attack(Player p, vector<Player>* pV, Map &m){
     attacker = p;
     pVector = pV;
     map = m;
@@ -207,7 +207,6 @@ string Attack::defendingCountry(){
          for( vector<Territory>::iterator i = tempCountryVectorDefender.begin(); i != tempCountryVectorDefender.end(); i++){
              if(i->getName() == defendCountry.getName()) {
                  tempCountryVectorDefender.erase(i);
-                 cout << "1111111111" << endl;
              }
          }*/
 
@@ -220,9 +219,7 @@ string Attack::defendingCountry(){
              }
          }
 
-         defender.setCountries(tempCountryVectorDefender);
-         // Set Territory to attacker
-         attacker.addCountry(defendCountry);
+
          bool numberOfArmiesBool = false;
          while(!numberOfArmiesBool) {
              int numberOfArmiesToAdd = 0;
@@ -234,39 +231,94 @@ string Attack::defendingCountry(){
              }else if (numberOfArmiesToAdd > attackCountry.getArmies() - 1 || numberOfArmiesToAdd < 0) {
                  cout << "Invalid, you must leave at least one army on attacking country and must be positive." << endl;
              }else{
-                 attackCountry.setArmies(attackCountry.getArmies()-numberOfArmiesToAdd);
+                 cout << numberOfArmiesToAdd << endl;
                  defendCountry.setArmies(numberOfArmiesToAdd);
+                 attackCountry.setArmies(attackCountry.getArmies()-numberOfArmiesToAdd);
+
+                 defender.setCountries(tempCountryVectorDefender); // refreshes defender's country vector
+                 attacker.addCountry(defendCountry); // set newly conquered territory to attacker
+
                  numberOfArmiesBool = true;
 
-                 // assigns ownership in player vectors
-                 Player currentPlayer;
-                 for(int i=0; i<pVector->size(); i++){
-                     currentPlayer=pVector->at(i);
-                     if(currentPlayer.getName()==attacker.getName()){
-                         currentPlayer.setCountries(attacker.getCountries());
-                     }
-                 }
-                 for(int i=0; i<pVector->size(); i++){
-                     currentPlayer=pVector->at(i);
-                     if(currentPlayer.getName()==defender.getName()){
-                         currentPlayer.setCountries(defender.getCountries());
+                // copies
+                 for(int i=0; i<attacker.getCountries().size(); i++){
+                     if(attacker.getCountries().at(i).getName()==attackCountry.getName()){
+                         attacker.getCountries().at(i).copyTerritory(attackCountry, attacker.getCountries().at(i));
                      }
                  }
 
-                 cout << "Attacker has: " << attacker.getCountries().size() << endl;
-                 cout << "Defender has: " << defender.getCountries().size() << endl;
-                 cout << "map has: " << map.getTerritory().size() << endl;
+                 for(int i=0; i<defender.getCountries().size(); i++){
+                     if(defender.getCountries().at(i).getName()==defendCountry.getName()){
+                         defender.getCountries().at(i).copyTerritory(defendCountry, defender.getCountries().at(i));
+                     }
+                 }
+
+                 // assigns ownership in player vectors
+                 for(int i=0; i<pVector->size(); i++){
+                     if(pVector->at(i).getName()==attacker.getName()){
+                         pVector->at(i).setCountries(attacker.getCountries());
+                     }
+                 }
+                 for(int i=0; i<pVector->size(); i++){
+                     if(pVector->at(i).getName()==defender.getName()){
+                         pVector->at(i).setCountries(defender.getCountries());
+                     }
+                 }
 
                  // assigns ownership in territory vectors
+                 Player currentPlayer;
                  for(int i=0; i<map.getTerritory().size(); i++){
                      for(int j=0; j<pVector->size(); j++){
                          currentPlayer=pVector->at(j);
                          for(int k=0; k< currentPlayer.getCountries().size(); k++){
                              if(currentPlayer.getCountries().at(k).getName() == map.getTerritory().at(i).getName()){
-                                 cout << currentPlayer.getCountries().at(k).getName() << " = " << map.getTerritory().at(i).getName() << endl;
                                  map.getTerritory().at(i).setTerritoryOwner(currentPlayer.getName());
                              }
                          }
+                     }
+                 }
+
+                 // assigns army counts
+                 for(int i=0; i<map.getTerritory().size(); i++){
+                     for(int j=0; j<pVector->size(); j++){
+                         for(Territory te : pVector->at(j).getCountries()){
+                             if(te.getName()==map.getTerritory().at(i).getName()){
+                                 map.getTerritory().at(i).copyTerritory(te, map.getTerritory().at(i));
+                             }
+                         }
+                     }
+                 }
+
+                 map.getTerritory().at(1).setTerritoryOwner("fuck this shit");
+
+                 //updates player armies
+                 //works
+                 int newArmyCount;
+                 for(int q=0; q<pVector->size(); q++){
+                     newArmyCount=0;
+                     for(int i=0; i<pVector->at(q).getCountries().size(); i++){
+                         for(int j=0; j<map.getTerritory().size(); j++){
+                             if(pVector->at(q).getCountries().at(i).getName()==map.getTerritory().at(j).getName()){
+                                 newArmyCount+=map.getTerritory().at(j).getArmies();
+                             }
+                         }
+                     }
+                     pVector->at(q).setArmies(newArmyCount);
+                 }
+
+
+                cout<< "##########" <<endl;
+                 //debugging
+                 Territory te;
+                 for(int i=0; i<map.getTerritory().size(); i++){
+                     te = map.getTerritory().at(i);
+                     cout << te.getName() << " | " << te.getArmies() << " | " << te.getTerritoryOwner() << endl;
+                 }
+                 cout<< "##########" <<endl;
+                 //debugging
+                 for(int i=0; i<pVector->size(); i++){
+                     for(int j=0; j<pVector->at(i).getCountries().size(); j++){
+                         cout << pVector->at(i).getCountries().at(j).getName() << " | " << pVector->at(i).getCountries().at(j).getArmies() << endl;
                      }
                  }
 

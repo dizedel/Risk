@@ -41,6 +41,7 @@ void MainGame::playGame() {
     while (keepPlaying)
     {
         Notify();
+
         cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
         cout << playersInGame[currentPlayer].getStrategy().toString();
         playersInGame[currentPlayer].getStrategy().executeReinforce(&playersInGame[currentPlayer]);
@@ -66,17 +67,13 @@ void MainGame::playGame() {
             }
         }
 
-        for(int i=0; i<playersInGame.size(); i++){
-            cout << playersInGame.at(i).displayCountries() << endl;
-        }
-
     }
 }
 
 
 
 
-vector<Player> MainGame::getPlayers() {
+vector<Player>& MainGame::getPlayers() {
     return playersInGame;
 }
 

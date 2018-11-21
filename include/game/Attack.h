@@ -21,7 +21,7 @@ class Attack{
 
 public:
     Attack();
-    Attack(Player, vector<Player>*, Map);
+    Attack(Player, vector<Player>*, Map&);
     ~Attack();
     void attack();
     bool attackOrNot();

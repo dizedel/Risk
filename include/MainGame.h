@@ -27,7 +27,7 @@ public:
     MainGame(vector<Player>&, Map&);
     ~MainGame();
     void playGame();
-    vector<Player> getPlayers();
+    vector<Player>& getPlayers();
     Map getMap();
 
 };

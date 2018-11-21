@@ -54,6 +54,7 @@ using namespace std;
         // randomizes all players
         std::shuffle(vp->begin(), vp->end(), rng);
 
+
         vector<Territory> tempTVect = map1.getTerritory(); // will eventually be empty when all countries are assigned
         vector<Territory> occupiedTerritories; // placeholder vector
         int terrCount = tempTVect.size();
@@ -72,6 +73,8 @@ using namespace std;
 
             ownerName = vp->at(playerIndex).getName();  //gets name of player
             territoryName = territoryToBeAssigned.getName(); //gets name of territory
+
+            territoryToBeAssigned.setTerritoryOwner(ownerName);
 
             for(int j=0;i<terrCount;j++){
                 if(map1.getTerritory().at(j).getName()==territoryName){
@@ -95,16 +98,12 @@ using namespace std;
         cout << endl;
 
         // assign ownership to territories on the original map
-        Territory territoryInPlaceholder;
-        Territory territoryInActualMap;
         string occupier="";
         for (int i = 0; i < map1.getTerritory().size(); i++) {
             for (int j = 0; j < occupiedTerritories.size(); j++) {
-                territoryInPlaceholder = occupiedTerritories.at(j);
-                territoryInActualMap = map1.getTerritory().at(i);
-                if (territoryInPlaceholder.getName() == territoryInActualMap.getName()) {
-                    occupier = territoryInPlaceholder.getTerritoryOwner();
-                    territoryInActualMap.setTerritoryOwner(occupier);  //added a notify in its function definition
+                if (occupiedTerritories.at(j).getName() == map1.getTerritory().at(i).getName()) {
+                    occupier = occupiedTerritories.at(j).getTerritoryOwner();
+                    map1.getTerritory().at(i).setTerritoryOwner(occupier);  //added a notify in its function definition
                 }
             }
         }
@@ -166,6 +165,17 @@ using namespace std;
                                     if (map1.getTerritory().at(k).getName() == chosenTerritory) {
                                         map1.getTerritory().at(k).addArmies(armySize); // assigns armies to territory on map
                                         vp->at(j).assignInitialArmyToCountry(armySize); // removes initial army count from player
+
+                                        for(int l=0; l<vp->at(j).getCountries().size();l++){
+                                            if(vp->at(j).getCountries().at(l).getName()==chosenTerritory){
+                                                vp->at(j).getCountries().at(l).copyTerritory(map1.getTerritory().at(k), vp->at(j).getCountries().at(l));
+
+                                                //debugging
+                                                //cout << map1.getTerritory().at(k).getArmies() << map1.getTerritory().at(k).getTerritoryOwner() << endl;
+                                                //cout << vp->at(j).getCountries().at(l).getArmies() << vp->at(j).getCountries().at(l).getTerritoryOwner() << endl;
+                                            }
+                                        }
+
                                         cout << "You now have " << vp->at(j).getInitialArmies() << " left to assign."
                                              << endl;
                                         cout << "####### Army assigned, next player's turn! #######" << endl;
