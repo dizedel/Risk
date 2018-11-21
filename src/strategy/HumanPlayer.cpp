@@ -88,7 +88,7 @@ void HumanPlayer::executeReinforce(Player* p){
 
 }
 void HumanPlayer::executeAttack(Player* p) {
-
+    cout << "Attack";
 }
 void HumanPlayer::executeFortify(Player* p) {
     Fortify* f = new Fortify();

@@ -45,10 +45,10 @@ void MainGame::playGame() {
 
         cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
         cout << playersInGame[currentPlayer].getStrategy()->toString();
-        playersInGame[currentPlayer].getStrategy()->executeReinforce(&playersInGame[currentPlayer]);
 
 
         playersInGame[currentPlayer].doReinforce();
+        cout << "test";
         playersInGame[currentPlayer].doAttack();
         playersInGame[currentPlayer].doReinforce();
 

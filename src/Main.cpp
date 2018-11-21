@@ -79,6 +79,7 @@ using namespace std;
             for(int j=0;i<terrCount;j++){
                 if(map1.getTerritory().at(j).getName()==territoryName){
                     map1.getTerritory().at(j).setTerritoryOwner(ownerName);
+                    //vp->at(playerIndex).getCountries().push_back(map1.getTerritory().at(j));
                     break;
                 }
             }

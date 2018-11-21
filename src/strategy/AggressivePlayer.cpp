@@ -11,15 +11,14 @@
 void AggressivePlayer::executeReinforce(Player * p) {
 
     Reinforce r;
+
     //Find strongest territory
     Territory max = p->getCountries()[0];
-    for (int i = 0; p->getCountries().size(); i++)
-    {
+    for (int i = 0; p->getCountries().size(); i++) {
         if (p->getCountries()[i].getArmies() > max.getArmies())
             max = p->getCountries()[i];
     }
-    string strongestCountry = max.getName();
-    r.setCountryToReinforce(strongestCountry);
+    r.setCountryToReinforce(max.getName());
     r.setNumOfArmiesToPutDown(p->getArmies());
     r.reinforce();
 }
@@ -60,7 +59,8 @@ void AggressivePlayer::executeFortify(Player * p) {
     else{
         cout << "There are no countries to take armies from" << endl << "Moving along...";
     }
+}
 
-
-
+string AggressivePlayer::toString() {
+    return "Aggressive Player";
 }
