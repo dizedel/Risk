@@ -16,21 +16,24 @@ void GameStats::Update(){
 }
 
 void GameStats::Display(){
-    cout << "####### Game Stat View #######" << endl;
-    cout << "Player #\t Armies #\t Territories #\t Percentage of map Occupied";
-
     vector<Player> players = mainGame->getPlayers();
-    int territoryCount = mainGame->getMap().getNbTerritories();
+    int territoriesOnMap = mainGame->getMap().getNbTerritories();
+    float percentageOccupied;
 
+    cout << "####### Game Stat View #######" << endl;
+    cout << "Territories on map: " << territoriesOnMap << endl;
+    cout << "Player         Armies      Territories      Percentage of map Occupied" << endl;
     for(int i=0; i<players.size(); i++){
-        Player p =players.at(i);
+        Player p = players.at(i);
 
-        double percentageOccupied = (p.getCountries().size())/territoryCount;
+        int territoriesOccupied = players.at(i).getCountries().size();
+        percentageOccupied = ((float)(territoriesOccupied)/(float)territoriesOnMap)*100;
 
         cout << p.getName() << " \t";
-        cout << " " << p.getArmies() << " \t";
-        cout << " " << p.getCountries().size() << " \t";
-        cout << " " << percentageOccupied << endl;
+        cout << " " << p.getArmies() << " \t\t";
+        cout << " " << territoriesOccupied << " \t\t\t";
+        cout << " " << percentageOccupied << "%" << endl;
     }
+    cout << "##############################" << endl;
 }
 

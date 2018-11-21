@@ -20,7 +20,7 @@ Player::Player(string name) {
     hand = *h;
     dice = d;
     armies = 0;
-    HumanPlayer* human;
+    HumanPlayer* human = new HumanPlayer();
     strategy = human;
 }
 

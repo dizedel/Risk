@@ -8,7 +8,7 @@ using namespace std;
 
 Attack::Attack(){}
 
-Attack::Attack(Player p, vector<Player> pV, Map m){
+Attack::Attack(Player p, vector<Player>* pV, Map m){
     attacker = p;
     pVector = pV;
     map = m;
@@ -54,6 +54,7 @@ void Attack::attack() {
 
 }
 
+
 bool Attack::attackOrNot(){
     cout << "Would " + attacker.getName() + " like to attack ? (Y or N)" << endl;
     string answer;
@@ -93,6 +94,7 @@ Territory Attack::attackingCountrySelection(){
                 notEnoughArmies = true;
                 cout << "Not enough armies on this territory." << endl;
             }else{
+                sourceCountryName=nameOfAttackCountry;
                 notEnoughArmies = false;
             }
         }
@@ -113,11 +115,22 @@ string Attack::defendingCountry(){
     string nameOfDefendCountry;
     while(!countryIsNeighbor) {
         cout << "Which country would you like to attack?" << endl;
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        getline(cin,nameOfDefendCountry);
+        cin >> nameOfDefendCountry;
         for(auto i : attackCountryNeighborsList ){
             if(i == nameOfDefendCountry){
                 countryIsNeighbor = true;
+                targetCountryName=nameOfDefendCountry;
+
+
+                for(int j=0; j<pVector->size(); j++){
+                    for(int k=0; k<pVector->at(j).getCountries().size(); k++){
+                        if(targetCountryName==pVector->at(j).getCountries().at(k).getName()){
+                            defender=pVector->at(j);
+                        }
+                    }
+                }
+
+
                 break;
             }
         }
@@ -180,20 +193,36 @@ string Attack::defendingCountry(){
      if(numberOfArmiesAttack == 0){
          cout << "Defender " << defender.getName() << " has won this round of attack! Both countries keep their respective territories." << endl;
      }else{
+         wasConquered=true;
          cout << "Attacker " << attacker.getName() << " has won this round of attack! They now own : " << defendCountry.getName() << endl;
          // Set Territory to have new owner and then remove from defender's territory vector
+
+
          defendCountry.setTerritoryOwner(attacker.getName());
         // int tempPos = defender.posOfCountry(defendCountry.getName());
          vector<Territory> tempCountryVectorDefender = defender.getCountries();
+
+         /*
+          * Aloys's code
          for( vector<Territory>::iterator i = tempCountryVectorDefender.begin(); i != tempCountryVectorDefender.end(); i++){
              if(i->getName() == defendCountry.getName()) {
                  tempCountryVectorDefender.erase(i);
+                 cout << "1111111111" << endl;
+             }
+         }*/
+
+        //new
+         for(int i=0; i<pVector->size(); i++){
+             for(int j=0; j<tempCountryVectorDefender.size(); j++){
+                 if(targetCountryName==tempCountryVectorDefender.at(j).getName()){
+                     tempCountryVectorDefender.erase(tempCountryVectorDefender.begin()+j);
+                 }
              }
          }
+
          defender.setCountries(tempCountryVectorDefender);
          // Set Territory to attacker
          attacker.addCountry(defendCountry);
-
          bool numberOfArmiesBool = false;
          while(!numberOfArmiesBool) {
              int numberOfArmiesToAdd = 0;
@@ -208,6 +237,39 @@ string Attack::defendingCountry(){
                  attackCountry.setArmies(attackCountry.getArmies()-numberOfArmiesToAdd);
                  defendCountry.setArmies(numberOfArmiesToAdd);
                  numberOfArmiesBool = true;
+
+                 // assigns ownership in player vectors
+                 Player currentPlayer;
+                 for(int i=0; i<pVector->size(); i++){
+                     currentPlayer=pVector->at(i);
+                     if(currentPlayer.getName()==attacker.getName()){
+                         currentPlayer.setCountries(attacker.getCountries());
+                     }
+                 }
+                 for(int i=0; i<pVector->size(); i++){
+                     currentPlayer=pVector->at(i);
+                     if(currentPlayer.getName()==defender.getName()){
+                         currentPlayer.setCountries(defender.getCountries());
+                     }
+                 }
+
+                 cout << "Attacker has: " << attacker.getCountries().size() << endl;
+                 cout << "Defender has: " << defender.getCountries().size() << endl;
+                 cout << "map has: " << map.getTerritory().size() << endl;
+
+                 // assigns ownership in territory vectors
+                 for(int i=0; i<map.getTerritory().size(); i++){
+                     for(int j=0; j<pVector->size(); j++){
+                         currentPlayer=pVector->at(j);
+                         for(int k=0; k< currentPlayer.getCountries().size(); k++){
+                             if(currentPlayer.getCountries().at(k).getName() == map.getTerritory().at(i).getName()){
+                                 cout << currentPlayer.getCountries().at(k).getName() << " = " << map.getTerritory().at(i).getName() << endl;
+                                 map.getTerritory().at(i).setTerritoryOwner(currentPlayer.getName());
+                             }
+                         }
+                     }
+                 }
+
              }
          }
 
@@ -241,4 +303,8 @@ vector<string> Attack::filterNeighbors(vector<string> neighbors){
         }
     }
     return neighbors;
+}
+
+bool Attack::wasTerritoryConquered(){
+    return wasConquered;
 }

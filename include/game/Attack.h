@@ -21,7 +21,7 @@ class Attack{
 
 public:
     Attack();
-    Attack(Player, vector<Player>, Map);
+    Attack(Player, vector<Player>*, Map);
     ~Attack();
     void attack();
     bool attackOrNot();
@@ -30,8 +30,9 @@ public:
     void diceAttack();
     bool stopAttack();
     vector<string> filterNeighbors(vector<string>);
+    bool wasTerritoryConquered();
 private:
-    vector<Player> pVector;
+    vector<Player>* pVector;
     Player attacker;
     Player defender;
     Territory attackCountry;
@@ -39,6 +40,9 @@ private:
     int numberOfArmiesAttack;
     int numberOfArmiesDefend;
     Map map;
+    bool wasConquered=false;
+    string sourceCountryName="";
+    string targetCountryName="";
 };
 
 

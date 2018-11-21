@@ -1,4 +1,4 @@
-/*
+
 #include "stdafx.h"
 #include <iostream>
 #include <vector>
@@ -23,142 +23,12 @@
 #include "game/Reinforce.h"
 #include "MainGame.h"
 #include "Pattern/PlayerView.h"
+#include "Pattern/GameStats.h"
 
 
 using namespace std;
 
-int Hand::exchangedHands = 0;
-
-
-void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, Hand &hand1) {
-    char startGame;
-    cout << "Would you like to start a game ? (Y or N)" << endl;
-    cin >> startGame;
-
-    if (startGame == 'Y' || startGame == 'y') {
-        //open directory and  display and let player select
-        ifstream inputFileStream("../maps/listOfMaps.txt");
-
-        if (inputFileStream.fail()) {
-            cout << "error opening directory" << endl;
-        }
-
-        //store lines of string into a vector and display it
-        vector<string> directoryContent;
-        string temp; // to load all the maps in the directory into the vector
-
-        while (getline(inputFileStream, temp)) {
-            directoryContent.push_back(temp);
-        }
-
-        for (int i = 0; i < directoryContent.size(); i++) {
-            cout << i << ". " << directoryContent.at(i) << endl;
-        }
-
-        if (inputFileStream.eof())
-            cout << " \nEnd of directory \n " << endl;
-
-        //player selects map
-        int playerChoice;
-        string mapName;
-        cout << " \nPlease select a map to load (0,1,2,......)" << endl;
-        cin >> playerChoice;
-        cout << "\nMap selected: " << directoryContent.at(playerChoice) << endl;
-        mapName = directoryContent.at(playerChoice);
-        cout << '\n' << mapName << endl;
-
-        //player selects number of players
-        int numberOfPlayers;
-        cout << "\n Select number of players between 2 and 6" << endl;
-        cin >> numberOfPlayers;
-        if (numberOfPlayers < 2 || numberOfPlayers > 6) {
-            cout << "invalid number of players please select a valid range \n";
-            while ((numberOfPlayers < 2 || numberOfPlayers > 6) == true) {
-                cin >> numberOfPlayers;
-                cout << "invalid number of players please select a valid range \n";
-            }
-        }
-        cout << "number of players: " << numberOfPlayers << endl;
-
-        //load map
-        loader1.loadMapFile(mapName);
-
-        //create map
-        map1 = loader1.getMap();
-        map1.createMap(map1);
-        cout << " \n \n \n";
-        map1.checkIfValid(map1);
-        map1.printContainedTerritories(); //same problem as A1 doesnt print contained territories in each content
-
-        //create players, each player is instantiated with a dice object
-
-        int playerCount = 0;
-
-        //create the players and create their respective observers(playerView) and attach them to the observerList
-        Player  player1("player1");
-        vp->push_back(player1);
-        playerCount++;
-
-        //create playerview
-        Player *pPlayer1 = &player1;
-        PlayerView *pvPlayer1 = new PlayerView(pPlayer1);
-
-
-        Player player2("player2");
-        vp->push_back(player2);
-        playerCount++;
-
-        //create playerview
-        Player *pPlayer2 = &player2;
-        PlayerView *pvPlayer2 = new PlayerView(pPlayer2);
-
-
-        if (playerCount < numberOfPlayers)
-         {
-             Player player3("player3");
-             vp->push_back(player3);
-             playerCount++;
-         }
-         if (playerCount < numberOfPlayers)
-         {
-             Player player4("player4");
-             vp->push_back(player4);
-             playerCount++;
-         }
-         if (playerCount < numberOfPlayers)
-         {
-             Player player5("player5");
-             vp->push_back(player5);
-             playerCount++;
-         }
-         if (playerCount < numberOfPlayers)
-         {
-             Player player6("player6");
-             vp->push_back(player6);
-             playerCount++;
-         }
-
-         //print player names
-         cout << "Player names : " << endl;
-         for (int i = 0; i < vp->size(); i++)
-         {
-             cout << vp->at(i).getName() << endl;
-         }
-
-         //create deck of cards
-         Deck tempdeck(map1.getTerritory().size());
-         deck1=tempdeck;
-
-         cout << "Number of cards: " << deck1.getCards().size() << endl;
-
-         //assign empty hand to each player
-         for (int i = 0; i < vp->size(); i++)
-         {
-             vp->at(i).setHand(hand1);
-         }
-     }
-
-    }
+    int Hand::exchangedHands = 0;
 
     bool allArmiesAssigned(vector<Player> *vp) {
         for (Player p : *vp) {
@@ -170,7 +40,7 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
     }
 
     void startupPhase(vector<Player> *vp, Map &map1) {
-        cout << "STARTING UP" << endl;
+        cout << "####### STARTING UP #######" << endl;
 
         int playerCount = vp->size();
 
@@ -181,7 +51,6 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
         // randomizes all players
         std::shuffle(vp->begin(), vp->end(), rng);
 
-        // randomly distribute territories
         vector<Territory> tempTVect = map1.getTerritory(); // will eventually be empty when all countries are assigned
         vector<Territory> occupiedTerritories; // placeholder vector
         int terrCount = tempTVect.size();
@@ -191,7 +60,8 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
         string ownerName = "";
         string territoryName = "";
 
-        cout << "====== Randomly assigning territories to players ======" << endl;
+        // randomly distribute territories
+        cout << "####### Randomly distributing unoccupied territories #######" << endl;
         for(int i=0; i<terrCount; i++){
             int randomT = rand() % tempTVect.size();
             Territory territoryToBeAssigned = tempTVect.at(randomT);
@@ -199,6 +69,13 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
 
             ownerName = vp->at(playerIndex).getName();  //gets name of player
             territoryName = territoryToBeAssigned.getName(); //gets name of territory
+
+            for(int j=0;i<terrCount;j++){
+                if(map1.getTerritory().at(j).getName()==territoryName){
+                    map1.getTerritory().at(j).setTerritoryOwner(ownerName);
+                    break;
+                }
+            }
 
             vp->at(playerIndex).addCountry(territoryToBeAssigned);
             territoryToBeAssigned.setTerritoryOwner(ownerName);      //sets the territory owner
@@ -247,17 +124,17 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
         cout << endl;
 
         // assign armies to territories
-        // maybe this should be done using reinforce(), will fix when pam is done with her part
         bool doneAssigning = false;
+        cout << "####### Begin assigning initial armies to territories #######" << endl;
         while (!doneAssigning) {
             for (int j = 0; j < playerCount; j++) {
                 bool successfulTurn = false;
 
                 int userinput = 0;
-                while (!successfulTurn) {
+                while (!successfulTurn && vp->at(j).getInitialArmies()>0) {
                     cout << vp->at(j).getName() << "s turn to assign initial armies." << endl;
 
-                    cout << "Enter the territory number where you want to add armies:" << endl;
+                    cout << "Enter the territory number where you want to add armies, reminder that you have " << vp->at(j).getInitialArmies() << " armies left to assign." << endl;
                     for (int k = 0; k < map1.getNbTerritories(); k++) {
                         for (int l = 0; l < vp->at(j).getCountries().size(); l++) {
                             if (map1.getTerritory().at(k).getName() == vp->at(j).getCountries().at(l).getName()) {
@@ -271,8 +148,8 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
                     if (userinput >= map1.getNbTerritories()) {
                         cout << "Invalid territory number." << endl;
                     } else {
-                        string tempstr = map1.getTerritory().at(userinput).getName();
-                        if (vp->at(j).hasCountry(tempstr)) {
+                        string chosenTerritory = map1.getTerritory().at(userinput).getName();
+                        if (vp->at(j).hasCountry(chosenTerritory)) {
                             int armySize;
                             cout << "How many armies do you want to assign to this territory?" << endl;
                             cin >> armySize;
@@ -283,12 +160,12 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
                                 cin.sync();
                             } else {
                                 for (int k = 0; k < map1.getTerritory().size(); k++) {
-                                    if (map1.getTerritory().at(k).getName() == tempstr) {
-                                        map1.getTerritory().at(k).addArmies(armySize);
-                                        vp->at(j).assignInitialArmyToCountry(armySize);
-                                        cout << "You only have " << vp->at(j).getInitialArmies() << " left to assign."
+                                    if (map1.getTerritory().at(k).getName() == chosenTerritory) {
+                                        map1.getTerritory().at(k).addArmies(armySize); // assigns armies to territory on map
+                                        vp->at(j).assignInitialArmyToCountry(armySize); // removes initial army count from player
+                                        cout << "You now have " << vp->at(j).getInitialArmies() << " left to assign."
                                              << endl;
-                                        cout << "Army assigned, next player's turn!" << endl;
+                                        cout << "####### Army assigned, next player's turn! #######" << endl;
                                         cin.clear();
                                         cin.sync();
                                         successfulTurn = true;
@@ -303,39 +180,49 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
                 doneAssigning = allArmiesAssigned(vp);
             }
         }
-        cout << "Army assignments done." << endl;
+
+        for(Territory te : map1.getTerritory()){
+            cout << te.getName() << " occupied by " << te.getTerritoryOwner() << " has " << te.getArmies() <<  " armies stationed." << endl;
+        }
+        cout << "####### Army assignments done #######" << endl;
     }
+
+
+void testGameStats(){
+    Map map1;
+    MapLoader loader1;
+    loader1.loadMapFile("../maps/mini.map");
+    map1=loader1.getMap();
+    cout << "creating map" << endl;
+    map1.createMap(map1);
+    Player p1("Apple");
+    Player p2("Orange");
+    vector<Player> vp;
+    Hand hand1;
+    Deck deck1(map1.getTerritory().size());
+
+    vp.push_back(p1);
+    vp.push_back(p2);
+
+    cout << "Number of cards: " << deck1.getCards().size() << endl;
+
+    for (int i = 0; i < vp.size(); i++)
+    {
+        vp.at(i).setHand(hand1);
+    }
+
+    startupPhase(&vp, map1);
+    MainGame game(vp, map1);
+    GameStats gs(&game);
+    game.playGame();
+    cout << "####### End of Demo #######" << endl;
+}
 
 int main() {
-
-    Map gen;
-    Map map1;
-    MapLoader loader;
-    Hand hand;
-    Deck deck;
-    vector<Player> players;
-
-    GameStart(&players, loader, map1, deck, hand);
-
-    startupPhase(&players, map1);
-    cout << "====== Territory Ownerships ======" << endl;
-    for (Player& p : players){
-        cout << p.getName() << " owns " << p.getCountries().size() << " territories:" << endl;
-        cout << p.displayCountries() << endl;
-    }
-    for(int i=0; i<map1.getTerritory().size(); i++) {
-        cout << map1.getTerritory().at(i).getName() << " is owned by " << map1.getTerritory().at(i).getTerritoryOwner()
-             << " and it currently has " << map1.getTerritory().at(i).getArmies() << " armies" << endl;
-    }
-
-    MainGame game(players, map1);
-    game.playGame();
+    testGameStats();
 
     system("pause");
-
-
 
     return 0;
 
 }
-*/

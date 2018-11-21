@@ -14,7 +14,7 @@ Asia=7
 Australia=2
 
 [Territories]
-Alaska,70,126,North America,Northwest Territory,Alberta
+Alaska,70,126,North America,Northwest Territory,Alberta,Greenland
 Northwest Territory,148,127,North America,Alaska,Alberta,Greenland
-Alberta,147,163,North America,Alaska,Northwest Territory
-Greenland,324,76,North America,Northwest Territory
+Alberta,147,163,North America,Alaska,Northwest Territory,Greenland
+Greenland,324,76,North America,Northwest Territory,Alaska,Alberta

@@ -32,7 +32,7 @@ vector<Territory>& Map::getTerritory()
 }
 
 Territory Map::matchTerritory(string name){
-    for(auto i : t){
+    for(Territory i : t){
         if(i.getName() == name){
             return i;
         }
@@ -184,4 +184,3 @@ void Map::checkIfValid(Map m)
 void Map::setTerritoryCount(int tc) {
 	territoryCount = tc;
 }
-
