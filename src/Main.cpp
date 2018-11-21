@@ -135,7 +135,7 @@ void GameStart(vector<Player> *vp, MapLoader &loader1, Map &map1, Deck &deck1, H
              vp->push_back(player6);
              playerCount++;
          }*/
-/*
+
          //print player names
          cout << "Player names : " << endl;
          for (int i = 0; i < vp->size(); i++)
@@ -330,4 +330,4 @@ int main() {
     return 0;
 
 }
-*/
+

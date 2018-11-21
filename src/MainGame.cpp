@@ -18,7 +18,7 @@ void MainGame::playGame() {
     bool keepPlaying = true;
     int currentPlayer = 0;
     int numberOfPlayers = playersInGame.size();
-/*
+
     for (int i = 0; i < playersInGame.size(); i++)
     {
         //reinforceVector.push_back(Reinforce{playersInGame[i]});
@@ -32,22 +32,16 @@ void MainGame::playGame() {
     {
         fortifyVector.push_back(Fortify{playersInGame[j]});
     }
-*/
+
 
     while (keepPlaying)
     {
-        /*
         cout<< "Player " << currentPlayer + 1 << " -- Reinforce::playPhase() called" << endl;
         //reinforceVector[currentPlayer].playPhase();
         cout<< "Player" << currentPlayer + 1 << " attack() called" << endl;
         attackVector[currentPlayer].attack();
         cout<< "Player" << currentPlayer + 1 << " -- Fortify::playPhase() called" << endl;
         fortifyVector[currentPlayer].playPhase();
-        */
-
-        playersInGame[currentPlayer].doReinforce();
-        playersInGame[currentPlayer].doAttack();
-        playersInGame[currentPlayer].doReinforce();
 
         currentPlayer++;
 
