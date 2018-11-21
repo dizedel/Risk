@@ -2,23 +2,39 @@
 // Created by pamel on 2018-11-18.
 //
 #include <iostream>
-#include <Player.h>
-#include <strategy/BenevolentPlayer.h>
-
+#include "Player.h"
+#include <time.h>
 #include "strategy/BenevolentPlayer.h"
 
 
 using namespace std;
 
-void BenevolentPlayer::executeReinforce(Player* p) {
-
+void BenevolentPlayer::executeReinforce(Player* player) {
+    playReinforce(player);
 }
 void BenevolentPlayer::executeAttack(Player *) {
-
     cout << "The player does not wish to attack." << endl;
 }
-void BenevolentPlayer::executeFortify(Player *) {
+void BenevolentPlayer::executeFortify(Player * player) {
+    playFortify(player);
+}
 
+int BenevolentPlayer::randomInput(Player* player)
+{
+    srand(time(NULL));
+
+    int randomNumber = rand() % (player->getArmies()+ 1);
+
+    return randomNumber;
+}
+
+int BenevolentPlayer::randomInput2(Player* player, int max)
+{
+    srand(time(NULL));
+
+    int randomNumber = rand() % (max + 1);
+
+    return randomNumber;
 }
 
 
@@ -44,6 +60,19 @@ string BenevolentPlayer::weakestCountry(Player* player) {
     return min.getName();
 }
 
+string BenevolentPlayer::strongestCountry(Player* player) {
+
+    Territory* max = player->getCountries()[0];
+
+    for (int i = 0; player->getCountries().size(); i++)
+    {
+        if (player->getCountries()[i]->getArmies() > max->getArmies())
+            max = player->getCountries()[i];
+    }
+
+    return max->getName();
+}
+
 
 bool BenevolentPlayer::reinforceLoop(Player* player){
     string str;
@@ -65,12 +94,16 @@ bool BenevolentPlayer::reinforceLoop(Player* player){
                 while (!finished) {
                     int n;
                     cout << "How many armies do you wish to place?" << endl;
-                    cin>>n;
+                    //cin>>n;
+                    n = randomInput(player);
+                    //DEMO
                     if (floor(n) == n && n > 0) {
                         player->setArmies(player->getArmies() - n);
-                        player->getCountries().at(countryPos).addArmies(n);
-                        //cout << "You have added " << n << "armies to " << player.getCountries().at(countryPos).getName() <<endl;
-                        cout << player->getCountries().at(countryPos).getName() << " now has " << player->getCountries().at(countryPos).getArmies() << " armies \n";
+
+                        player->getCountries().at(countryPos)->addArmies(n);
+                        //cout << "You have added " << n << "armies to " << player->getCountries().at(countryPos).getName() <<endl;
+                        cout << player->getCountries().at(countryPos)->getName() << " now has " << player->getCountries().at(countryPos)->getArmies() << " armies \n";
+
                         finished = true;
                     }
                     else{
@@ -91,14 +124,14 @@ bool BenevolentPlayer::reinforceLoop(Player* player){
     return true;
 }
 
-void BenevolentPlayer::playPhase(Player* player) {
+void BenevolentPlayer::playReinforce(Player* player) {
     string txtline;
     bool answered = false;
 
     giveArmiesForTerritory(player);
 
     cout<< endl<< "---------------------------------------------"<< endl;
-    cout<< "It's " << player->getName() <<"'s turn to reinforceLoop!"<<endl;
+    cout<< "It's " << player->getName() <<"'s turn to reinforce!"<<endl;
     cout<< endl<< "---------------------------------------------"<< endl;
 
     int armiesFromLand = floor(double(player->getCountries().size()/3));
@@ -138,4 +171,64 @@ void BenevolentPlayer::playPhase(Player* player) {
     }
 
     reinforceLoop(player);
+}
+
+bool BenevolentPlayer::fortify(string countryToFortify, string armyProvider, int, Player* player){
+
+    if (!player->hasCountry(countryToFortify) || !player->hasCountry(armyProvider))
+        return false;
+    else{
+        return true;
+    }
+}
+
+void BenevolentPlayer::playFortify(Player* player){
+    int numOfArmies;
+
+    cout<< endl<< "---------------------------------------------"<< endl;
+    cout<< "It's " << player->getName() <<"'s turn to reinforce!"<<endl;
+    cout<< endl<< "---------------------------------------------"<< endl;
+
+    while(true){
+        string fortifiedCountry;
+        string providerCountry;
+
+        cout<< "Which country do you wish to fortify? If you are done, say 'done'";
+        //cin >> fortifiedCountry;
+        fortifiedCountry = weakestCountry(player);
+        if(fortifiedCountry == "done")
+            break;
+        else if (!player->hasCountry(fortifiedCountry)) {
+            cout << "You do not have that country";
+        }
+        else{
+            while(true) {
+                cout << "Which country do you want to take armies from?" << endl;
+                //cin >> providerCountry;
+                providerCountry = strongestCountry(player);
+                if (!player->hasCountry(providerCountry)) {
+                    cout << "You do not have that country";
+                }
+                else if ( player->getCountries().at(player->posOfCountry(providerCountry))->getArmies() <= 1) {
+                    cout << "You do not have enough armies to take from this country";
+                }
+                else {
+                    cout<<"How many armies should we fortify with?";
+                    //cin >> numOfArmies;
+                    int providerCountryArmies = player->getCountries().at(player->posOfCountry(providerCountry))->getArmies();
+                    numOfArmies = randomInput2(player, providerCountryArmies);
+                    while(numOfArmies >= providerCountryArmies){
+                        cout << "Provider country only has " << providerCountryArmies << " armies.";
+                        cout << "Choose a number of Armies lower than " << providerCountryArmies;
+                        //cin >> numOfArmies;
+                        numOfArmies = randomInput2(player, providerCountryArmies);
+                    }
+                    player->getCountries().at(player->posOfCountry(fortifiedCountry))->addArmies(numOfArmies);              //Add armies to fortified country
+                    player->getCountries().at(player->posOfCountry(providerCountry))->setArmies(providerCountryArmies - numOfArmies); // Remove armies from provider country
+                    break;
+                }
+            }
+        }
+    }
+
 }

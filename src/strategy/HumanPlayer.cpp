@@ -127,6 +127,7 @@ void HumanPlayer::executeFortify(Player* p) {
                         cout << "Choose a number of Armies lower than " << providerCountryArmies;
                         cin >> num;
                     }
+                    f->setNumOfTransferArmies(num);
                     f->fortify();
                     break;
                 }

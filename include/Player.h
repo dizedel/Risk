@@ -51,9 +51,9 @@ class Player: public Subject {
         bool hasCountry(string);
         int posOfCountry(string);
 
-        void doReinforce(Player*);
-        void doAttack(Player*);
-        void doFortify(Player*);
+        void doReinforce();
+        void doAttack();
+        void doFortify();
 
         string displayCountries();
 
