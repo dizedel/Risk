@@ -28,6 +28,15 @@ int BenevolentPlayer::randomInput(Player* player)
     return randomNumber;
 }
 
+int BenevolentPlayer::randomInput2(Player* player, int max)
+{
+    srand(time(NULL));
+
+    int randomNumber = rand() % (max + 1);
+
+    return randomNumber;
+}
+
 
 void BenevolentPlayer::giveArmiesForTerritory(Player* player){
     //Todo: round down
@@ -204,13 +213,13 @@ void BenevolentPlayer::playFortify(Player* player){
                 else {
                     cout<<"How many armies should we fortify with?";
                     //cin >> numOfArmies;
-                    numOfArmies = randomInput(player);
-                    //DEMO
                     int providerCountryArmies = player->getCountries().at(player->posOfCountry(providerCountry))->getArmies();
+                    numOfArmies = randomInput2(player, providerCountryArmies);
                     while(numOfArmies >= providerCountryArmies){
                         cout << "Provider country only has " << providerCountryArmies << " armies.";
                         cout << "Choose a number of Armies lower than " << providerCountryArmies;
-                        cin >> numOfArmies;
+                        //cin >> numOfArmies;
+                        numOfArmies = randomInput2(player, providerCountryArmies);
                     }
                     player->getCountries().at(player->posOfCountry(fortifiedCountry))->addArmies(numOfArmies);              //Add armies to fortified country
                     player->getCountries().at(player->posOfCountry(providerCountry))->setArmies(providerCountryArmies - numOfArmies); // Remove armies from provider country

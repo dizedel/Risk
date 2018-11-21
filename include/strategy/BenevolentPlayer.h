@@ -17,6 +17,7 @@ class BenevolentPlayer : public Strategy {
     void executeFortify(Player *);
 
     int randomInput(Player*);
+    int randomInput2(Player*, int);
     void giveArmiesForTerritory(Player*);
     string weakestCountry(Player*);
     bool reinforceLoop(Player*);
