@@ -14,8 +14,9 @@
 #include "Map.h"
 #include "Player.h"
 #include "Pattern/Subject.h"
+#include "Strategy.h"
 
-class Strategy;
+
 class PlayerView;
 
 
@@ -31,14 +32,14 @@ class Player: public Subject {
         Hand getHand();
         vector<Territory>& getCountries();
         int getArmies();
-        Strategy getStrategy();
+        Strategy* getStrategy();
 
         void setName(string);
         void setCountries(vector<Territory>);
         void setHand(Hand);
         void setArmies(int);
         void setStartingArmy(int);
-        void setStrategy(Strategy*);
+        void setStrategy(Strategy *s);
 
 
 
@@ -73,7 +74,7 @@ class Player: public Subject {
         Hand hand;
         Dice dice;
         int initialArmies=0;
-        Strategy* strategy;
+        Strategy *strategy;
 
 };
 

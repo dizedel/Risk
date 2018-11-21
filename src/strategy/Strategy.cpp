@@ -1,6 +1,10 @@
-#include "strategy/Strategy.h"
+#include <iostream>
+#include "Strategy.h"
 
-void Strategy::executeReinforce(Player *) {
+Strategy::Strategy() {
+    cout << "Initializing strategy";
+}
+void Strategy::executeReinforce(Player*) {
 
 }
 

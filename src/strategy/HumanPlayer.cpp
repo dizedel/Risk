@@ -4,10 +4,13 @@
 
 #include "strategy/HumanPlayer.h"
 #include <iostream>
+#include "game/Reinforce.h"
+#include "game/Attack.h"
+#include "game/Fortify.h"
 
 using namespace std;
 
-void HumanPlayer::executeReinforce(Player* p) {
+void HumanPlayer::executeReinforce(Player* p){
     cout<< endl<< "---------------------------------------------"<< endl;
     cout<< "It's HUMAN " << p->getName() <<"'s turn to reinforce!"<<endl;
     cout<< endl<< "---------------------------------------------"<< endl;

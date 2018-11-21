@@ -6,9 +6,12 @@
 #define RISK_HUMANPLAYER_H
 
 
+#include "Player.h"
+#include <string>
 #include "Strategy.h"
+using namespace std;
 
-class HumanPlayer : public Strategy {
+class HumanPlayer  : public Strategy{
 public:
     void executeReinforce(Player *);
     void executeAttack(Player *);

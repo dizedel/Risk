@@ -6,7 +6,10 @@
 #define RISK_AGGRESSIVEPLAYER_H
 
 
+#include "Player.h"
+#include <string>
 #include "Strategy.h"
+using namespace std;
 
 class AggressivePlayer : public Strategy {
 

@@ -20,7 +20,7 @@ add_executable(Risk
         include/strategy/AggressivePlayer.h
         include/strategy/BenevolentPlayer.h
         include/strategy/HumanPlayer.h
-        include/strategy/Strategy.h
+        include/Strategy.h
         include/Card.h
         include/Continent.h
         include/Deck.h

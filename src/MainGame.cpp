@@ -2,7 +2,7 @@
 #include "MainGame.h"
 #include "game/Fortify.h"
 #include "game/Attack.h"
-#include "strategy/Strategy.h"
+#include "Strategy.h"
 
 using namespace std;
 
@@ -44,8 +44,8 @@ void MainGame::playGame() {
         Notify();
 
         cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
-        cout << playersInGame[currentPlayer].getStrategy().toString();
-        playersInGame[currentPlayer].getStrategy().executeReinforce(&playersInGame[currentPlayer]);
+        cout << playersInGame[currentPlayer].getStrategy()->toString();
+        playersInGame[currentPlayer].getStrategy()->executeReinforce(&playersInGame[currentPlayer]);
 
 
         playersInGame[currentPlayer].doReinforce();

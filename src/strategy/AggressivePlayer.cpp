@@ -3,6 +3,9 @@
 //
 
 #include "strategy/AggressivePlayer.h"
+#include "game/Reinforce.h"
+#include "game/Attack.h"
+#include "game/Fortify.h"
 
 
 void AggressivePlayer::executeReinforce(Player * p) {

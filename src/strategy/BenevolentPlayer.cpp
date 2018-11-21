@@ -2,10 +2,11 @@
 // Created by pamel on 2018-11-18.
 //
 #include <iostream>
-#include "Player.h"
 #include <time.h>
 #include "strategy/BenevolentPlayer.h"
-
+#include "game/Reinforce.h"
+#include "game/Attack.h"
+#include "game/Fortify.h"
 
 using namespace std;
 
