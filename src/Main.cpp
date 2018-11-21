@@ -1,4 +1,4 @@
-/*
+
 #include "stdafx.h"
 #include <iostream>
 #include <vector>
@@ -215,7 +215,7 @@ void testGameStats(){
     p1.setStrategy(human);
     Player p2("Orange");
     p2.setStrategy(human);
-    cout << "p2 strat " << p2.getStrategy().toString();
+    cout << "p2 strat " << p2.getStrategy()->toString();
     vector<Player> vp;
     Hand hand1;
     Deck deck1(map1.getTerritory().size());
@@ -245,4 +245,3 @@ int main() {
     return 0;
 
 }
-*/
