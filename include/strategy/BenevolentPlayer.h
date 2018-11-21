@@ -5,12 +5,13 @@
 #ifndef RISK_BENEVOLENTPLAYER_H
 #define RISK_BENEVOLENTPLAYER_H
 
+#include "Player.h"
 #include <string>
 #include "Strategy.h"
 
 using namespace std;
 
-class BenevolentPlayer : public Strategy {
+class BenevolentPlayer : public Strategy{
 
     void executeReinforce(Player *);
     void executeAttack(Player *);
