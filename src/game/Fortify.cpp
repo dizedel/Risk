@@ -30,7 +30,7 @@ void Fortify::playPhase(){
     int numOfArmies;
 
     cout<< endl<< "---------------------------------------------"<< endl;
-    cout<< "It's " << player.getName() <<"'s turn to reinforce!"<<endl;
+    cout<< "It's " << player.getName() <<"'s turn to fortify!"<<endl;
     cout<< endl<< "---------------------------------------------"<< endl;
 
     while(true){
