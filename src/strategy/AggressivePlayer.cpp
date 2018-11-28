@@ -51,7 +51,7 @@ void AggressivePlayer::executeFortify(Player * p) {
         else if (p->getCountries()[i].getArmies() > max.getArmies())
             max = p->getCountries()[i];
     }
-    if(max.getArmies() >= 1){
+    if(max.getArmies() > 1){
         f.setCountryToTakeFrom(max.getName());
         f.setNumOfTransferArmies(p->getArmies());
         f.fortify();
