@@ -19,7 +19,7 @@ void RandomPlayer::executeReinforce(Player *p){
     r.setCountryToReinforce(randTerr.getName());
     r.setNumOfArmiesToPutDown(p->getArmies());
     r.reinforce();
-    
+
 }
 
 // Not implemented right now
