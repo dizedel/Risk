@@ -57,4 +57,4 @@ add_executable(Risk
         src/MapLoader.cpp
         src/Player.cpp
         src/stdafx.cpp
-        src/Territory.cpp)
+        src/Territory.cpp include/tournament.h src/tournament.cpp)

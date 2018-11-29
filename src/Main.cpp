@@ -27,6 +27,7 @@
 #include "MainGame.h"
 #include "Pattern/PlayerView.h"
 #include "Pattern/GameStats.h"
+#include <tournament.h>
 
 
 using namespace std;
@@ -239,8 +240,9 @@ void testGameStats(){
 }
 
 int main() {
-    testGameStats();
-
+   // testGameStats();
+    tournament t = tournament();
+    t;
     system("pause");
 
     return 0;
