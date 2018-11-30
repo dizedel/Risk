@@ -60,7 +60,7 @@ void MainGame::playGame() {
         cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
         cout << playersInGame[currentPlayer].getStrategy()->toString();
 
-
+        cout << " am i reaching this "<<endl;
         playersInGame[currentPlayer].doReinforce();
         cout << "test";
         playersInGame[currentPlayer].doAttack();

@@ -7,6 +7,7 @@
 #include <strategy/BenevolentPlayer.h>
 #include <strategy/AggressivePlayer.h>
 #include <random>
+#include <MainGame.h>
 
 
 tournament::tournament() {
@@ -127,7 +128,12 @@ tournament::tournament() {
             //========================startup Phase, Assigning armies=============================================
             startupPhase(playersVector, map);
 
-            
+
+            //========================play the game===============================================================
+            vector<Player> &playersVector1 = *playersVector;
+            MainGame mainGame = MainGame(playersVector1, map);
+
+            mainGame.playGame();
     }
 }
 
