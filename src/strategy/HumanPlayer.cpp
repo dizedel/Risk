@@ -89,48 +89,24 @@ void HumanPlayer::executeReinforce(Player* p){
 
 }
 void HumanPlayer::executeAttack(Player* p) {
-    Attack a;
-    cout << "Attack";
-    string answer;
-    bool attackOrNot = NULL;
-    while (attackOrNot == NULL){
-        cout << "Would " + p->getName() + " like to attack ? (Y or N)" << endl;
-        cin >> answer;
-        if(answer == "Y" || answer == "y"){
-            attackOrNot = true;
-        }else if(answer == "N" || answer == "n"){
-            attackOrNot = false;
-            break;
-        }else
-            cout << "Please try again. Your entry was not valid." << endl;
+    cout<< endl<< "---------------------------------------------"<< endl;
+    cout<< "It's HUMAN " << p->getName() <<"'s turn to attack!"<<endl;
+    cout<< endl<< "---------------------------------------------"<< endl;
+    MainGame* m = MainGame::getInstance();
+    Attack* a = new Attack();
+    Map m1 = m->getMap();
 
-    }
+    /*
+    cout << m1.getTerritory().size() << "||" << m1.getNbTerritories() << endl;
+    for(Territory te: m1.getTerritory()){
+        cout << "this is bullshit";
+        cout << te.getName() << te.getX() << te.getY() << te.getTerritoryOwner() << te.getArmies() << endl;
+    }*/
 
-    string nameOfAttackCountry;
-    Territory tempAttackCountry;
-    bool notEnoughArmies = true;
-    while(p->posOfCountry(nameOfAttackCountry) == -1 || notEnoughArmies) {
-        cout << "List of countries you own : " << endl;
-        string attackerCountryList = p->displayCountries();
-        cout << attackerCountryList << endl;
-        cout << "Which country do you want to attack from?" << endl;
-        cin >> nameOfAttackCountry;
-        if(p->posOfCountry(nameOfAttackCountry) == -1){
-            cout << "You do not own that country. Try Again." << endl;
-        }else{
-            tempAttackCountry = p->getMap()->matchTerritory(nameOfAttackCountry);
-            if(tempAttackCountry.getArmies() < 2){
-                cout << "Number of armies in attack : " << tempAttackCountry.getArmies() << endl;
-                notEnoughArmies = true;
-                cout << "Not enough armies on this territory." << endl;
-            }else{
-                a.setAttackCountry(nameOfAttackCountry);
-                notEnoughArmies = false;
-                break;
-            }
-        }
-    }
-
+    a->setAttacker(*p);
+    a->setMap(m1);
+    a->setPlayerVector(&MainGame::getInstance()->getPlayers());
+    a->attack();
 }
 void HumanPlayer::executeFortify(Player* p) {
     Fortify* f = new Fortify();
