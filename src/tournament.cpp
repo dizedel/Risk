@@ -8,7 +8,7 @@
 #include <strategy/AggressivePlayer.h>
 #include <random>
 #include <MainGame.h>
-
+#include <GameStats.h>
 
 tournament::tournament() {
     cout << "which mode would you like to select? " << endl;
@@ -133,6 +133,10 @@ tournament::tournament() {
             vector<Player> &playersVector1 = *playersVector;
             MainGame mainGame = MainGame(playersVector1, map);
 
+            //cout << "plase work" << mainGame.getPlayers().size();
+            //cout << mainGame.getMap().getTerritory().size();
+
+            GameStats gs(&mainGame);
             mainGame.playGame();
     }
 }

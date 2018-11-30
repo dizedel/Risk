@@ -62,7 +62,7 @@ void MainGame::playGame() {
 
         cout << " am i reaching this "<<endl;
         playersInGame[currentPlayer].doReinforce();
-        cout << "test";
+        cout << "test" <<endl;
         playersInGame[currentPlayer].doAttack();
         Notify();
         playersInGame[currentPlayer].doReinforce();
