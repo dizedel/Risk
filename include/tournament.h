@@ -11,4 +11,6 @@ private:
 
 public:
     tournament();
+    void startupPhase(vector<Player> *vp, Map &map1);
+    bool allArmiesAssigned(vector<Player> *vp);
 };
