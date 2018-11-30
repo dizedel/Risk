@@ -13,6 +13,7 @@ using namespace std;
 
 class BenevolentPlayer : public Strategy{
 
+
     void executeReinforce(Player *);
     void executeAttack(Player *);
     void executeFortify(Player *);
@@ -27,6 +28,7 @@ class BenevolentPlayer : public Strategy{
     void playFortify(Player*);
     string strongestCountry(Player*);
 
+    string toString();
 
 };
 #endif //RISK_BENEVOLENTPLAYER_H

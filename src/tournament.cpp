@@ -4,6 +4,9 @@
 #include <tournament.h>
 #include <fstream>
 #include <MapLoader.h>
+#include <strategy/BenevolentPlayer.h>
+#include <strategy/AggressivePlayer.h>
+#include <random>
 
 
 tournament::tournament() {
@@ -87,12 +90,34 @@ tournament::tournament() {
         mapLoader.loadMapFile(mapName); //load the map
         Map map = mapLoader.getMap();   //store the loaded map into a map object
 
-        /*
-         * Continue work
-         *
-         *
-         *
-         */
+        //===================Creating Players============================================
+        vector<Player> playersVector;   //a vector to hold all players
+
+        //having troubles with creating strategies, and setting them for the players
+
+        //vector<*Strategy> strategies;
+       //BenevolentPlayer *benevolent ;
+        //AggressivePlayer *aggressive;
+        //CheaterPlayer *cheater;    //to be implemented
+        //RandomPlayer *random;      //to be implemented
+        //strategies->push_back(benevolent);
+        //strategies->push_back(aggressive);
+        //strategies->push_back(cheater);       //to be implemented
+        //strategies->push_back(random);         //to be implemented
+
+        int setter = 0;
+        while(playersVector.size() < numberOfPlayers)
+        {
+            //setter = rand()%strategies.size();
+            Player player;
+            //player.setStrategy(&strategies.at(setter));
+            playersVector.push_back(player);
+        }
+
+
+        cout << "\n \nplayersVector consists of: " << playersVector.size() << "players" <<endl;
+       cout << "with strategies : " << " will fix later"<< endl;
+
 
     }
 }
