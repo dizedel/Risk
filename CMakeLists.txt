@@ -7,7 +7,6 @@ include_directories(include)
 include_directories(include/game)
 include_directories(include/Pattern)
 include_directories(include/strategy)
-include_directories(src)
 
 add_executable(Risk
         include/game/Attack.h

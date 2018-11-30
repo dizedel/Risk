@@ -26,9 +26,15 @@ void Attack::setMap(Map &m){
     map=m;
 }
 
+void Attack::setAttackCountry(string) {
+
+}
+
 Attack::~Attack()
 {
 }
+
+
 
 void Attack::attack() {
     // Player decides if he wishes to attack or pass his turn
@@ -371,4 +377,8 @@ vector<string> Attack::filterNeighbors(vector<string> neighbors){
 
 bool Attack::wasTerritoryConquered(){
     return wasConquered;
+}
+
+void Attack::autoAttack(){
+    attackCountry.setNumber
 }

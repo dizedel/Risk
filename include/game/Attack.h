@@ -25,15 +25,23 @@ public:
     ~Attack();
     void attack();
     bool attackOrNot();
+
     Territory attackingCountrySelection();
     string defendingCountry();
     void diceAttack();
     bool stopAttack();
     vector<string> filterNeighbors(vector<string>);
     bool wasTerritoryConquered();
+
     void setAttacker(Player);
+    void setDefender(Player);
+    void setAttackCountry(string);
+    void setnumberOfArmiesAttack();
+    void setNumberOfArmiesDefend();
     void setPlayerVector(vector<Player>*);
     void setMap(Map&);
+
+    void autoAttack();
 
 private:
     vector<Player>* pVector;

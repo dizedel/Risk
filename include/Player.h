@@ -33,6 +33,7 @@ class Player: public Subject {
         vector<Territory>& getCountries();
         int getArmies();
         Strategy* getStrategy();
+        Map* getMap();
 
         void setName(string);
         void setCountries(vector<Territory>);
@@ -40,7 +41,8 @@ class Player: public Subject {
         void setArmies(int);
         void setStartingArmy(int);
         void setStrategy(Strategy *s);
-
+        void setInitialArmies(int);
+        void setMap(Map*);
 
 
         void addCountry(Territory);
@@ -60,7 +62,6 @@ class Player: public Subject {
 
         void addTerritory(Territory);
 
-        void setInitialArmies(int);
         int getInitialArmies();
         void assignInitialArmyToCountry(int);
 
@@ -71,6 +72,7 @@ class Player: public Subject {
         int numOfExchanges;                     //number of times the player has exchanged his cards for armies
         int armies=0;
         vector<Territory> countries;
+        Map* map;
         Hand hand;
         Dice dice;
         int initialArmies=0;

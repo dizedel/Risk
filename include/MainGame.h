@@ -17,9 +17,6 @@ class MainGame : public Subject{
 private:
 
     vector<Player> playersInGame;
-    //vector<Reinforce> reinforceVector;
-    vector<Fortify> fortifyVector;
-    vector<Attack> attackVector;
     Map map;
     static MainGame* instance;
     MainGame();

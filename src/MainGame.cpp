@@ -31,35 +31,15 @@ void MainGame::playGame() {
     bool keepPlaying = true;
     int currentPlayer = 0;
     int numberOfPlayers = playersInGame.size();
-/*
-    for (int i = 0; i < playersInGame.size(); i++)
-    {
-        //reinforceVector.push_back(Reinforce{&playersInGame[i], map});
-    }
-
-    for(int k = 0; k < playersInGame.size(); k++){
-        attackVector.push_back(Attack{playersInGame[k], &playersInGame, map});
-    }
-
-    for (int j = 0; j < playersInGame.size(); j++)
-    {
-        //fortifyVector.push_back(Fortify{&playersInGame[j], map});
-    }
-*/
 
     while (keepPlaying)
     {
-
         Notify();
-
         cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
         cout << playersInGame[currentPlayer].getStrategy()->toString();
-
-
         playersInGame[currentPlayer].doReinforce();
-        cout << "test";
         playersInGame[currentPlayer].doAttack();
-        playersInGame[currentPlayer].doReinforce();
+        playersInGame[currentPlayer].doFortify();
 
         currentPlayer++;
 

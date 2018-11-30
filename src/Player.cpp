@@ -51,6 +51,10 @@ Strategy* Player::getStrategy() {
     return strategy;
 }
 
+Map* Player::getMap() {
+    return map;
+}
+
 void Player::setName(string name) {
     playerName = name;
 
@@ -122,6 +126,9 @@ void Player::setStrategy(Strategy *strat) {
     strategy = strat;
 }
 
+void Player::setMap(Map* m) {
+    map = m;
+}
 void Player::assignInitialArmyToCountry(int n){
     initialArmies-=n;
 }

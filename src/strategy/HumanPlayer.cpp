@@ -89,16 +89,48 @@ void HumanPlayer::executeReinforce(Player* p){
 
 }
 void HumanPlayer::executeAttack(Player* p) {
+    Attack a;
     cout << "Attack";
-    Attack* a = new Attack();
-    MainGame* m = MainGame::getInstance();
-    Map m1 = m->getMap();
-    vector<Player> vp = m->getPlayers();
+    string answer;
+    bool attackOrNot = NULL;
+    while (attackOrNot == NULL){
+        cout << "Would " + p->getName() + " like to attack ? (Y or N)" << endl;
+        cin >> answer;
+        if(answer == "Y" || answer == "y"){
+            attackOrNot = true;
+        }else if(answer == "N" || answer == "n"){
+            attackOrNot = false;
+            break;
+        }else
+            cout << "Please try again. Your entry was not valid." << endl;
 
-    a->setAttacker(*p);
-    a->setMap(m1);
-    a->setPlayerVector(&vp);
-    a->attack();
+    }
+
+    string nameOfAttackCountry;
+    Territory tempAttackCountry;
+    bool notEnoughArmies = true;
+    while(p->posOfCountry(nameOfAttackCountry) == -1 || notEnoughArmies) {
+        cout << "List of countries you own : " << endl;
+        string attackerCountryList = p->displayCountries();
+        cout << attackerCountryList << endl;
+        cout << "Which country do you want to attack from?" << endl;
+        cin >> nameOfAttackCountry;
+        if(p->posOfCountry(nameOfAttackCountry) == -1){
+            cout << "You do not own that country. Try Again." << endl;
+        }else{
+            tempAttackCountry = p->getMap()->matchTerritory(nameOfAttackCountry);
+            if(tempAttackCountry.getArmies() < 2){
+                cout << "Number of armies in attack : " << tempAttackCountry.getArmies() << endl;
+                notEnoughArmies = true;
+                cout << "Not enough armies on this territory." << endl;
+            }else{
+                a.setAttackCountry(nameOfAttackCountry);
+                notEnoughArmies = false;
+                break;
+            }
+        }
+    }
+
 }
 void HumanPlayer::executeFortify(Player* p) {
     Fortify* f = new Fortify();
