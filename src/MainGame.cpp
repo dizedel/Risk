@@ -1,4 +1,5 @@
 #include <game/Reinforce.h>
+#include <Tournament.h>
 #include "MainGame.h"
 #include "game/Fortify.h"
 #include "game/Attack.h"
@@ -60,9 +61,9 @@ void MainGame::playGame() {
         cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
         cout << playersInGame[currentPlayer].getStrategy()->toString();
 
-
+        cout << " am i reaching this "<<endl;
         playersInGame[currentPlayer].doReinforce();
-        cout << "test";
+        cout << "test" <<endl;
         playersInGame[currentPlayer].doAttack();
         Notify();
         playersInGame[currentPlayer].doReinforce();
@@ -76,11 +77,11 @@ void MainGame::playGame() {
         {
             if (playersInGame[k].getCountries().size() == map.getNbTerritories()) {
                cout<< "WINNER: Player " << k + 1 << endl;
+               Tournament::getInstance()->addWinner(playersInGame[k].getStrategy()->toString());
                 keepPlaying = false;
                 break;
             }
         }
-
     }
 }
 
@@ -93,4 +94,48 @@ vector<Player>& MainGame::getPlayers() {
 
 Map MainGame::getMap() {
     return map;
+}
+
+void MainGame::playGame(int turnLimit) {
+
+    cout << "Game start" << endl;
+    cout << "After " << turnLimit << " turns, the current game will end in a draw!" << endl;
+
+    bool keepPlaying = true;
+    int currentPlayer = 0;
+    int numberOfPlayers = playersInGame.size();
+    int currentTurn=1;
+
+    while (keepPlaying)
+    {
+        Notify();
+
+        cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
+        cout << playersInGame[currentPlayer].getStrategy()->toString();
+
+        playersInGame[currentPlayer].doReinforce();
+        cout << "test" <<endl;
+        playersInGame[currentPlayer].doAttack();
+        Notify();
+        playersInGame[currentPlayer].doReinforce();
+
+        currentPlayer++;
+
+        if (currentPlayer == numberOfPlayers)
+            currentPlayer = 0;
+
+        for (int k = 0; k < playersInGame.size(); k++)
+        {
+            if (playersInGame[k].getCountries().size() == map.getNbTerritories()) {
+                cout<< "WINNER: Player " << k + 1 << endl;
+                Tournament::getInstance()->addWinner(playersInGame[k].getStrategy()->toString());
+                keepPlaying = false;
+                break;
+            }
+        }
+
+        if(currentTurn>turnLimit){
+            Tournament::getInstance()->addWinner("DRAW");
+        }
+    }
 }

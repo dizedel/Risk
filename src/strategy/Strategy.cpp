@@ -21,3 +21,4 @@ string Strategy::toString(){
 }
 
 Strategy::~Strategy() {}
+

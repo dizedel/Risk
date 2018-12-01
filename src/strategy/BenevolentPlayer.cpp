@@ -3,6 +3,8 @@
 //
 #include <iostream>
 #include <time.h>
+#include <strategy/BenevolentPlayer.h>
+
 #include "strategy/BenevolentPlayer.h"
 #include "game/Reinforce.h"
 #include "game/Attack.h"
@@ -232,4 +234,8 @@ void BenevolentPlayer::playFortify(Player* player){
         }
     }
 
+}
+
+string BenevolentPlayer::toString() {
+    return "Benevolent Player";
 }
