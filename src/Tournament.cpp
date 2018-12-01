@@ -262,11 +262,15 @@ void Tournament::startupPhase(vector<Player> *vp, Map &map1) {
 void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
     BenevolentPlayer* benevolent = new BenevolentPlayer();
     AggressivePlayer* aggressive = new AggressivePlayer();
+    string playerName="";
 
     for(int pc=0; pc<playerCount; pc++){
 
+        cout << "\nEnter name for player #" << pc << endl;
+        cin >> playerName;
+
         //Setting up player objects and vector
-        Player player("PLAYER" + to_string(pc));
+        Player player(playerName);
         bool stratSelectSuccess=false;
         int strat=0;
         while(!stratSelectSuccess){
@@ -336,6 +340,7 @@ void Tournament::playTournament(){
 
             //declare winner and save winner into vector for future use
 
+            //cleanup for next game
             tournamentPlayers.clear();
             game.~MainGame();
             cout << "Game over!" << endl;
