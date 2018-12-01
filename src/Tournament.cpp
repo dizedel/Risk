@@ -111,7 +111,6 @@ void Tournament::startupPhase(vector<Player> *vp, Map &map1) {
     // randomizes all players
     std::shuffle(vp->begin(), vp->end(), rng);
 
-
     vector<Territory> tempTVect = map1.getTerritory(); // will eventually be empty when all countries are assigned
     vector<Territory> occupiedTerritories; // placeholder vector
     int terrCount = tempTVect.size();
@@ -271,13 +270,13 @@ void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
         cin >> playerName;
         Player player(playerName);
 
-        // or automatically set playername
+        // or automatically set player names
         // Player player("PLAYER"+to_string(pc));
 
         bool stratSelectSuccess=false;
         int strat=0;
         while(!stratSelectSuccess){
-            cout << "Enter a number to select the strategy for player #" << pc << endl;
+            cout << "Select the strategy for player #" << pc << endl;
             cout << "1: Aggressive" << endl;
             cout << "2: Benevolent" << endl;
             cout << "3: Random" << endl;
