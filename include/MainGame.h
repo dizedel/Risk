@@ -31,5 +31,6 @@ public:
     vector<Player>& getPlayers();
     Map getMap();
     static MainGame* getInstance();
+    void playGame(int);
 
 };

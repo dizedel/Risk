@@ -69,10 +69,6 @@ void Tournament::addToMapList(string s){
     mapList.push_back(s);
 }
 
-void Tournament::setMapList(vector<string> vs) {
-    mapList=vs;
-}
-
 vector<string> Tournament::getMapList() {
     return mapList;
 }
@@ -88,6 +84,10 @@ void Tournament::printMapList(){
         temp= "The map list is empty.";
     }
     cout << temp;
+}
+
+void Tournament::addWinner(string s){
+    winnerList.push_back(s);
 }
 
 bool Tournament::allArmiesAssigned(vector<Player> *vp) {
@@ -266,11 +266,14 @@ void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
 
     for(int pc=0; pc<playerCount; pc++){
 
+        //Setting up player objects and vector
         cout << "\nEnter name for player #" << pc << endl;
         cin >> playerName;
-
-        //Setting up player objects and vector
         Player player(playerName);
+
+        // or automatically set playername
+        // Player player("PLAYER"+to_string(pc));
+
         bool stratSelectSuccess=false;
         int strat=0;
         while(!stratSelectSuccess){
@@ -306,10 +309,10 @@ void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
 }
 
 void Tournament::playTournament(){
-    cout<< "Num of maps: " << getNumMaps() <<endl;
-    cout<< "Num of games: " << getNumGames() <<endl;
-    cout<< "Num of players: " << getNumPlayers() <<endl;
-    cout<< "Num of turns: " << getNumTurns() <<endl;
+    cout<< "Num of maps: " << numOfMaps <<endl;
+    cout<< "Num of games: " << numOfGames <<endl;
+    cout<< "Num of players: " << numOfPlayers <<endl;
+    cout<< "Num of turns: " << numOfTurns <<endl;
     printMapList();
 
     for(int i=0; i<getNumMaps(); i++){
@@ -336,9 +339,9 @@ void Tournament::playTournament(){
             //autoplay
             MainGame game(tournamentPlayers, map1);
             GameStats gs(&game);
-            game.playGame();
+            game.playGame(numOfTurns);
 
-            //declare winner and save winner into vector for future use
+            //winner is declared and stored in MainGame.cpp
 
             //cleanup for next game
             tournamentPlayers.clear();
@@ -347,4 +350,16 @@ void Tournament::playTournament(){
         }
     }
 
+}
+
+void Tournament::displayResults() {
+    // converts list of winners into a 2D array for display purposes
+    int winnerCurrentIndex=0;
+    for(int i=0; i<getNumMaps(); i++){
+        for(int j=0; j<getNumGames(); j++) {
+            winnersInTabularForm[i][j]=winnerList[winnerCurrentIndex];
+            winnerCurrentIndex++;
+        }
+    }
+    // work in progress
 }

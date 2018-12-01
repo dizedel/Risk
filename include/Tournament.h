@@ -42,4 +42,8 @@ public:
     void playTournament();
 
     void setUpPlayers(int,vector<Player>*);
+
+    void addWinner(string);
+
+    void displayResults();
 };
