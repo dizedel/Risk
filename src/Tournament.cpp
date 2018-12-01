@@ -1,7 +1,7 @@
 //
 // Created by ramy on 2018-11-28.
 //
-#include <tournament.h>
+#include <Tournament.h>
 #include <fstream>
 #include <MapLoader.h>
 #include <strategy/BenevolentPlayer.h>
@@ -10,139 +10,96 @@
 #include <MainGame.h>
 #include <GameStats.h>
 
-tournament::tournament() {
-    cout << "which mode would you like to select? " << endl;
-    cout << " 1 for single game. 2 for tournament mode. " << endl;
+// Applying singleton pattern to Tournament
+Tournament* Tournament::instance=0;
 
-    int gameModeSelection;
-    cin >> gameModeSelection;
-    cout << "you have selected : game mode " << gameModeSelection << endl;
+Tournament* Tournament::getInstance(){
+    if(instance==0){
+        cout << "Tournament created" << endl;
+        instance=new Tournament();
+    }
+    return instance;
+}
+Tournament::Tournament(){}
 
-    if (gameModeSelection == 1)
-        cout << "lol not implemented yet" << endl;
-    else {
-
-            //=================selecting a map==============================================
-            string test;    //a temp string to read from the maps txt file
-            int mapSelection = 0;   //which map will the user select
-            int mapSelectionCounter = 0; //counts how many maps are available
-            vector<string> mapNames; //will be used to store map names then used to create the map
-
-            cout << " \n please select a map, enter the number of the map(1, 2, etc....) " << endl;
-            ifstream myFile("C:\\Users\\alway\\Documents\\GitHub\\Risk\\maps\\listOfMaps.txt");
-            if (myFile.is_open())
-                cout << "\n file could be opened" << endl;
-            while (!myFile.eof()) {
-                getline(myFile, test);
-                mapSelectionCounter++;
-                mapNames.push_back(test);
-                cout << mapSelectionCounter << ". " << test << endl;
-            }
-            myFile.close();
-
-            cin >> mapSelection;
-            while (mapSelection <= 0 || mapSelection > mapSelectionCounter) {
-                cout << "you have selected a map that doesnt exist please enter a new number" << endl;
-                cin >> mapSelection;
-            }
-            cout << "loading map : " << mapNames.at(mapSelection - 1) << endl;
-
-
-            //===================selecting how many players ==============================
-            int numberOfPlayers;
-
-            cout << "\n enter how many players would be playing (2-4) " << endl;
-            cin >> numberOfPlayers;
-            while (numberOfPlayers < 2 || numberOfPlayers > 4) {
-                cout << "you have entered an invalid amount of players, enter again" << endl;
-                cin >> numberOfPlayers;
-            }
-            cout << "number of players: " << numberOfPlayers <<endl;
-
-
-            //==================selecting number of games to be played====================
-            int numberOfGames;
-
-            cout << "enter how many games are to be played (1-5): " <<endl;
-            cin >> numberOfGames;
-            while(numberOfGames < 1 || numberOfGames > 5)
-            {
-                cout << "invalid number of games to be played, enter a valid number" <<endl;
-                cin >> numberOfGames;
-            }
-            cout << "number of games to be played : " << numberOfGames <<endl;
-
-            //selecting number of turns
-            int numberOfTurns;
-
-            cout << "enter number of turns to be played, if exceeded game is ended as draw (3 - 50)"<<endl;
-            cin >> numberOfTurns;
-            while(numberOfTurns < 3 || numberOfTurns > 50)
-            {
-                cout << "invalid number of turns, enter valid number" << endl;
-                cin >> numberOfTurns;
-            }
-            cout << "number of turns : " << numberOfTurns << endl;
-
-            //====================loading the map============================================
-            MapLoader mapLoader;
-            string mapName = mapNames.at(mapSelection - 1);
-
-            mapLoader.loadMapFile(mapName); //load the map
-            Map map = mapLoader.getMap();   //store the loaded map into a map object
-
-            //===================Creating Players============================================
-            vector<Player> *playersVector = new vector<Player>;   //a vector to hold all players
-
-            //having troubles with creating strategies, and setting them for the players
-
-            //vector<*Strategy> strategies;
-            BenevolentPlayer *benevolent  = new BenevolentPlayer();
-            AggressivePlayer *aggressive = new AggressivePlayer();
-            //CheaterPlayer *cheater;    //to be implemented
-            //RandomPlayer *random;      //to be implemented
-            //strategies->push_back(benevolent);
-            //strategies->push_back(aggressive);
-            //strategies->push_back(cheater);       //to be implemented
-            //strategies->push_back(random);         //to be implemented
-
-            int setter = 0;
-            for (int i = 0; i < numberOfPlayers ; ++i)
-            {
-                //setter = rand()%strategies.size();
-                string playerName = "player" + to_string(i+1);
-                Player player;
-                player.setName(playerName);
-                //player.setStrategy(&strategies.at(setter));
-                playersVector->push_back(player);
-            }
-
-
-            cout << "\n \nplayersVector consists of: " << playersVector->size() << "players" <<endl;
-           cout << "with strategies : " << " will fix later"<< endl;
-            playersVector->at(0).setStrategy(benevolent);
-            playersVector->at(1).setStrategy(aggressive);
-            cout << " player 0 has strat " << playersVector->at(0).getStrategy()->toString()<<endl;
-            cout << "player 1 has strat " << playersVector->at(1).getStrategy()->toString()<<endl;
-
-            //========================startup Phase, Assigning armies=============================================
-            startupPhase(playersVector, map);
-
-
-            //========================play the game===============================================================
-            vector<Player> &playersVector1 = *playersVector;
-            MainGame mainGame = MainGame(playersVector1, map);
-
-            //cout << "plase work" << mainGame.getPlayers().size();
-            //cout << mainGame.getMap().getTerritory().size();
-
-            GameStats gs(&mainGame);
-            mainGame.playGame();
+Tournament::Tournament(int numMaps, int numPlayers, int numGames, int numTurns) {
+    if(instance==0){
+        numOfMaps=numMaps;
+        numOfPlayers=numPlayers;
+        numOfGames=numGames;
+        numOfTurns=numTurns;
+        instance=this;
+        cout << "Tournament created2" << endl;
     }
 }
 
-void tournament::startupPhase(vector<Player> *vp, Map &map1)
-{
+void Tournament::setNumPlayers(int n) {
+    numOfPlayers=n;
+}
+
+void Tournament::setNumGames(int n){
+    numOfGames=n;
+}
+
+void Tournament::setNumTurns(int n) {
+    numOfTurns=n;
+}
+
+void Tournament::setNumMaps(int n) {
+    numOfMaps=n;
+}
+
+int Tournament::getNumMaps(){
+    return numOfMaps;
+}
+
+int Tournament::getNumPlayers() {
+    return numOfPlayers;
+}
+
+int Tournament::getNumGames(){
+    return numOfGames;
+}
+
+int Tournament::getNumTurns() {
+    return numOfTurns;
+}
+
+void Tournament::addToMapList(string s){
+    mapList.push_back(s);
+}
+
+void Tournament::setMapList(vector<string> vs) {
+    mapList=vs;
+}
+
+vector<string> Tournament::getMapList() {
+    return mapList;
+}
+
+void Tournament::printMapList(){
+    string temp="Maps to be played: \n";
+    if(mapList.size()>0){
+        for(int i=0; i<mapList.size(); i++){
+            temp = temp + to_string(i) + " - " + mapList[i] + "\n";
+        }
+    }
+    else{
+        temp= "The map list is empty.";
+    }
+    cout << temp;
+}
+
+bool Tournament::allArmiesAssigned(vector<Player> *vp) {
+    for (Player p : *vp) {
+        if (p.getInitialArmies() != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void Tournament::startupPhase(vector<Player> *vp, Map &map1) {
     cout << "####### STARTING UP #######" << endl;
 
     int playerCount = vp->size();
@@ -301,13 +258,71 @@ void tournament::startupPhase(vector<Player> *vp, Map &map1)
     cout << "####### Army assignments done #######" << endl;
 }
 
-bool tournament::allArmiesAssigned(vector<Player> *vp) {
-    for (Player p : *vp) {
-        if (p.getInitialArmies() != 0) {
-            return false;
+
+void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
+    BenevolentPlayer* benevolent = new BenevolentPlayer();
+    AggressivePlayer* aggressive = new AggressivePlayer();
+    for(int pc=0; pc<playerCount; pc++){
+
+        //Setting up player objects and vector
+        Player player("PLAYER" + to_string(pc));
+        bool stratSelectSuccess=false;
+        int strat=0;
+        while(!stratSelectSuccess){
+            cout << "Enter a number to select the strategy for player #" << pc << endl;
+            cout << "1: Aggressive" << endl;
+            cout << "2: Benevolent" << endl;
+            cout << "3: Random" << endl;
+            cout << "4: Cheater" << endl;
+            cin >> strat;
+            if(strat<1 || strat>4){
+                cout << "Invalid selection." << endl;
+            }
+            else{
+                stratSelectSuccess=true;
+                switch(strat){
+                    case '1':
+                        player.setStrategy(aggressive);
+                    case '2':
+                        player.setStrategy(benevolent);
+                    case '3':
+                        // STRATEGY IS NOT YET IMPLEMENTED
+                        //player.setStrategy(random);
+                    case '4':
+                        // STRATEGY IS NOT YET IMPLEMENTED
+                        //player.setStrategy(cheater);
+                    default:
+                        break;
+                }
+            }
+            vp->push_back(player);
         }
     }
-    return true;
+}
+
+void Tournament::playTournament(){
+    cout<< "Num of maps: " << getNumMaps() <<endl;
+    cout<< "Num of games: " << getNumGames() <<endl;
+    cout<< "Num of players: " << getNumPlayers() <<endl;
+    cout<< "Num of turns: " << getNumTurns() <<endl;
+    printMapList();
+
+    for(int i=0; i<getNumMaps(); i++){
+        for(int j=0; j<getNumGames(); j++){
+            cout << "Now playing game #" << j << " on map #" << i << endl;
+            setUpPlayers(getNumPlayers(), &tournamentPlayers);
+
+            //startup
+
+            //autoplay
+
+            //declare winner and save winner into vector for future use
+
+            tournamentPlayers.clear();
+            cout << "Game over!" << endl;
+        }
+    }
+
 }
 
 

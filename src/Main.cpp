@@ -1,9 +1,9 @@
-
 #include "stdafx.h"
 #include <iostream>
 #include <vector>
 #include <random>
 #include <algorithm>
+#include <vector>
 
 #include "../include/Map.h"
 #include "../include/MapLoader.h"
@@ -15,35 +15,33 @@
 #include "MapLoader.h"
 #include "Card.h"
 #include "Deck.h"
-#include <vector>
-#include <strategy/BenevolentPlayer.h>
-#include <strategy/AggressivePlayer.h>
-#include <strategy/HumanPlayer.h>
+#include "strategy/BenevolentPlayer.h"
+#include "strategy/AggressivePlayer.h"
+#include "strategy/HumanPlayer.h"
 #include "Player.h"
 #include "game/Fortify.h"
 #include "game/Attack.h"
-#include "Dice.h"
 #include "game/Reinforce.h"
+#include "Dice.h"
 #include "MainGame.h"
 #include "Pattern/PlayerView.h"
 #include "Pattern/GameStats.h"
-#include <tournament.h>
-
+#include "Tournament.h"
 
 using namespace std;
 
-    int Hand::exchangedHands = 0;
+int Hand::exchangedHands = 0;
 
-    bool allArmiesAssigned(vector<Player> *vp) {
-        for (Player p : *vp) {
-            if (p.getInitialArmies() != 0) {
-                return false;
-            }
+bool allArmiesAssigned(vector<Player> *vp) {
+    for (Player p : *vp) {
+        if (p.getInitialArmies() != 0) {
+            return false;
         }
-        return true;
     }
+    return true;
+}
 
-    void startupPhase(vector<Player> *vp, Map &map1) {
+void startupPhase(vector<Player> *vp, Map &map1) {
         cout << "####### STARTING UP #######" << endl;
 
         int playerCount = vp->size();
@@ -200,49 +198,163 @@ using namespace std;
             cout << te.getName() << " occupied by " << te.getTerritoryOwner() << " has " << te.getArmies() <<  " armies stationed." << endl;
         }
         cout << "####### Army assignments done #######" << endl;
+}
+
+void populateMapList(int numOfMaps){
+    //=================selecting a map==============================================
+    string test;    //a temp string to read from the maps txt file
+    int mapSelection = 0;   //which map will the user select
+    int mapSelectionCounter = 0; //counts how many maps are available
+    int numOfMapsToPlay=numOfMaps;
+    vector<string> mapNames; //will be used to store map names then used to create the map
+
+    cout << " \nPlease select a map, enter the number of the map(1, 2, etc....) " << endl;
+    ifstream listOfMaps("../maps/listOfMaps.txt");
+    if(listOfMaps.is_open()){
+        cout << "\nAvailable maps:" << endl;
+        while (!listOfMaps.eof()) {
+            getline(listOfMaps, test);
+            cout << mapSelectionCounter << ". " << test << endl;
+            mapNames.push_back(test);
+            mapSelectionCounter++;
+        }
+        listOfMaps.close();
+        cout << "You have chosen to play " << numOfMapsToPlay << " maps" << endl;
+        for(int i=0; i<numOfMapsToPlay; i++){
+
+            bool selectionSuccess=false;
+            while (!selectionSuccess) {
+                cout << "Now selecting map #" << i << " out of " << numOfMapsToPlay << endl;
+                cin >> mapSelection;
+
+                if(mapSelection < 0 || mapSelection >= mapSelectionCounter){
+                    cout << "You have selected a map that doesnt exist, please enter the right number" << endl;
+                    selectionSuccess=false;
+                }
+                else{
+                    cout << "Map queued." << endl;
+                    Tournament::getInstance()->addToMapList(mapNames[mapSelection]);
+                    selectionSuccess=true;
+                }
+            }
+        }
     }
+    else{
+        cout << "Map list file unavailable." << endl;
+        exit(0);
+    }
+}
 
+void inputTournamentSettings(){
+    //===================selecting how many players ==============================
+    int numberOfMaps;
+    cout << "\nEnter the number of maps to be played (1-5) " << endl;
+    cin >> numberOfMaps;
+    while (numberOfMaps < 1 || numberOfMaps > 5) {
+        cout << "You have entered an invalid amount of maps, enter again" << endl;
+        cin >> numberOfMaps;
+    }
+    cout << "Number of maps: " << numberOfMaps <<endl;
 
-void testGameStats(){
+    //===================selecting how many players ==============================
+    int numberOfPlayers;
+    cout << "\nEnter how many players would be playing (2-4) " << endl;
+    cin >> numberOfPlayers;
+    while (numberOfPlayers < 2 || numberOfPlayers > 4) {
+        cout << "You have entered an invalid amount of players, enter again" << endl;
+        cin >> numberOfPlayers;
+    }
+    cout << "Number of players: " << numberOfPlayers <<endl;
+
+    //==================selecting number of games to be played====================
+    int numberOfGames;
+    cout << "\nEnter how many games are to be played (1-5): " <<endl;
+    cin >> numberOfGames;
+    while(numberOfGames < 1 || numberOfGames > 5)
+    {
+        cout << "Invalid number of games to be played, enter a valid number" <<endl;
+        cin >> numberOfGames;
+    }
+    cout << "Number of games to be played : " << numberOfGames <<endl;
+
+    //==================selecting number of turns==================
+    int numberOfTurns;
+    cout << "\nEnter number of turns to be played, if exceeded game is ended as draw (3 - 50)"<<endl;
+    cin >> numberOfTurns;
+    while(numberOfTurns < 3 || numberOfTurns > 50)
+    {
+        cout << "Invalid number of turns, enter valid number" << endl;
+        cin >> numberOfTurns;
+    }
+    cout << "Number of turns : " << numberOfTurns << endl;
+
+    Tournament tnm(numberOfMaps, numberOfPlayers, numberOfGames, numberOfTurns);
+    populateMapList(numberOfMaps);
+    Tournament::getInstance()->playTournament();
+}
+
+void setupGame(int numOfMaps){
     Map map1;
     MapLoader loader1;
-    loader1.loadMapFile("../maps/mini.map");
-    map1=loader1.getMap();
-    cout << "creating map" << endl;
-    map1.createMap(map1);
-    BenevolentPlayer* benevolent = new BenevolentPlayer();
-    HumanPlayer* human = new HumanPlayer();
-    AggressivePlayer* aggressive = new AggressivePlayer;
-    Player p1("Apple");
-    p1.setStrategy(human);
-    Player p2("Orange");
-    p2.setStrategy(human);
-    cout << "p2 strat " << p2.getStrategy()->toString();
-    vector<Player> vp;
     Hand hand1;
-    Deck deck1(map1.getTerritory().size());
+    vector<Player> vp;
 
-    vp.push_back(p1);
-    vp.push_back(p2);
+    if(numOfMaps==1){ //if user chose to play only 1 game
+        populateMapList(1);
+        //loader1.loadMapFile("../maps/mini.map");
+        loader1.loadMapFile(Tournament::getInstance()->getMapList().at(0));
+        map1=loader1.getMap();
+        cout << "creating map" << endl;
+        map1.createMap(map1);
+        HumanPlayer* human = new HumanPlayer();
+        Player p1("Apple");
+        p1.setStrategy(human);
+        Player p2("Orange");
+        p2.setStrategy(human);
+        cout << "p2 strat " << p2.getStrategy()->toString();
+        Deck deck1(map1.getTerritory().size());
+        vp.push_back(p1);
+        vp.push_back(p2);
+        cout << "Number of cards: " << deck1.getCards().size() << endl;
 
-    cout << "Number of cards: " << deck1.getCards().size() << endl;
+        for (int i = 0; i < vp.size(); i++)
+        {
+            vp.at(i).setHand(hand1);
+        }
 
-    for (int i = 0; i < vp.size(); i++)
-    {
-        vp.at(i).setHand(hand1);
+        startupPhase(&vp, map1);
+        MainGame game(vp, map1);
+        GameStats gs(&game);
+        game.playGame();
+        game.~MainGame();
     }
-
-    startupPhase(&vp, map1);
-    MainGame game(vp, map1);
-    GameStats gs(&game);
-    game.playGame();
+    else{ // if user chose to play tournament mode
+        inputTournamentSettings();
+    }
     cout << "####### End of Demo #######" << endl;
 }
 
 int main() {
-   // testGameStats();
-    tournament t = tournament();
-    t;
+    bool validModeSelection=false;
+    cout << "Which mode would you like to play? " << endl;
+
+    while(!validModeSelection){
+        cout << "Enter 1 for single game. 2 for tournament mode. " << endl;
+        int gameModeSelection;
+        cin >> gameModeSelection;
+        cout << "You have selected:" << gameModeSelection << endl;
+        if (gameModeSelection == 1 || gameModeSelection == 2){
+            validModeSelection=true;
+            setupGame(gameModeSelection);
+        }
+        else {
+            validModeSelection=false;
+            cout << "Invalid mode" << endl;
+        }
+    }
+
+    //setupMap();
+
     system("pause");
 
     return 0;

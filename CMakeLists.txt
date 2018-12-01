@@ -7,7 +7,6 @@ include_directories(include)
 include_directories(include/game)
 include_directories(include/Pattern)
 include_directories(include/strategy)
-include_directories(src)
 
 add_executable(Risk
         include/game/Attack.h
@@ -33,6 +32,7 @@ add_executable(Risk
         include/Strategy.h
         include/targetver.h
         include/Territory.h
+        include/Tournament.h
         src/driver/Main2.cpp
         src/game/Attack.cpp
         src/game/Fortify.cpp
@@ -57,4 +57,5 @@ add_executable(Risk
         src/MapLoader.cpp
         src/Player.cpp
         src/stdafx.cpp
-        src/Territory.cpp include/tournament.h src/tournament.cpp)
+        src/Territory.cpp
+        src/Tournament.cpp)
