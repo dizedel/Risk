@@ -114,23 +114,6 @@ void Map::createMap(Map m)  //method creates the map representation using an adj
 			adjList[i].push_back(m.getTerritory().at(i).getNeighbors().at(j)); // store the neighbors
 		}
 	}
-
-	/* demo for asg1
-	vector<list<string> >::iterator i;  
-	
-	int c = 0;
-	for (vector<list<string> >::iterator i = adjList.begin() ; i != adjList.end(); i++)  //traversing thru the entire adjacency list using iterators.
-	{
-		list<string> li = *i;
-		for (std::list<string>::iterator iter = li.begin(); iter != li.end(); iter++) 
-		{
-			cout << *iter << " ";
-		}
-		cout << endl;
-		c++;
-	}
-	*/
-	
 }
 
 void Map::printContainedTerritories() {
@@ -181,6 +164,15 @@ void Map::checkIfValid(Map m)
 		cout << "map is valid";
 }
 
+vector<Territory*> Map::getPlayerCountries(string playerName){
+	vector<Territory*> playerCountries;
+	for(Territory i : t){
+		if(i.getTerritoryOwner() == playerName){
+			playerCountries.push_back(&i);
+		}
+	}
+	return playerCountries;
+}
 void Map::setTerritoryCount(int tc) {
 	territoryCount = tc;
 }

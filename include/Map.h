@@ -37,10 +37,11 @@ class Map {
 		void setWarn(string);
 		void addContinents(Continent); //add continent to the container
 		void addTerritories(Territory); //add territory to the container
+
 		void createMap(Map m); // create the graph structure to represent the map, using Adjacency List
 		void checkIfValid(Map m);// checks to see every country is only in 1 continent
-		void printContainedTerritories(); //prints 
-
+		void printContainedTerritories(); //prints
+		vector<Territory*> getPlayerCountries(string);
 		void setTerritoryCount(int);
 
 	private:
@@ -55,6 +56,5 @@ class Map {
 		
 		
 };
-
 
 #endif

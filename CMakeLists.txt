@@ -59,4 +59,4 @@ add_executable(Risk
         src/stdafx.cpp
         src/Territory.cpp
         src/strategy/RandomPlayer.cpp
-        include/strategy/RandomPlayer.h)
+        include/strategy/RandomPlayer.h src/strategy/CheaterPlayer.cpp include/strategy/CheaterPlayer.h)

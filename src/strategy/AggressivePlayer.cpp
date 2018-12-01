@@ -24,8 +24,31 @@ void AggressivePlayer::executeReinforce(Player * p) {
 }
 
 
-void AggressivePlayer::executeAttack(Player *) {
+void AggressivePlayer::executeAttack(Player * p) {
+    cout<< "-----An aggressive player is now attacking ---------"<< endl;
+    int diceRolls = 3;
 
+    Attack a;
+    Map map = MainGame::getInstance()->getMap();
+    a.setMap(map);
+    a.setAttacker(*p);
+    vector<Territory*> ownedCountries = (map.getPlayerCountries(p->getName()));
+
+    //Will attack with all countries until it cannot attack anymore
+    for(int i=0; i<ownedCountries.size(); i++){
+        if (ownedCountries.at(i)->getArmies()<=1){                  //Country doesn't have enough armies
+            continue;                                               //If all countries have less than 1 army the turn will be over
+        }
+        else if (ownedCountries.at(i)->getNeighbors().size()==0){   //Country has no neighbours
+            continue;
+        }
+        else{
+            i = 0;                                                  //We will restart the loop
+            int numOfDice = 3;                                      //An aggressive player will always roll 3 dice
+            a.autoAttack(numOfDice);
+        }
+
+    }
 
 }
 void AggressivePlayer::executeFortify(Player * p) {
