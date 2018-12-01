@@ -262,6 +262,7 @@ void Tournament::startupPhase(vector<Player> *vp, Map &map1) {
 void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
     BenevolentPlayer* benevolent = new BenevolentPlayer();
     AggressivePlayer* aggressive = new AggressivePlayer();
+
     for(int pc=0; pc<playerCount; pc++){
 
         //Setting up player objects and vector
@@ -313,12 +314,30 @@ void Tournament::playTournament(){
             setUpPlayers(getNumPlayers(), &tournamentPlayers);
 
             //startup
+            Map map1;
+            MapLoader loader1;
+            Hand hand1;
+            loader1.loadMapFile("../maps/" + mapList[i]);
+            map1=loader1.getMap();
+            cout << "Creating map" << endl;
+            map1.createMap(map1);
+            Deck deck1(map1.getTerritory().size());
+            cout << "Number of cards: " << deck1.getCards().size() << endl;
+            for (int i = 0; i < tournamentPlayers.size(); i++)
+            {
+                tournamentPlayers.at(i).setHand(hand1);
+            }
+            startupPhase(&tournamentPlayers, map1);
 
             //autoplay
+            MainGame game(tournamentPlayers, map1);
+            GameStats gs(&game);
+            game.playGame();
 
             //declare winner and save winner into vector for future use
 
             tournamentPlayers.clear();
+            game.~MainGame();
             cout << "Game over!" << endl;
         }
     }
