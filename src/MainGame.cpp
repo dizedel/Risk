@@ -58,7 +58,7 @@ void MainGame::playGame() {
 
         Notify();
 
-        cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
+        cout<< "Player " << currentPlayer << " -- calling reinforcement phase" << endl;
         cout << playersInGame[currentPlayer].getStrategy()->toString();
 
         cout << " am i reaching this "<<endl;
@@ -110,9 +110,9 @@ void MainGame::playGame(int turnLimit) {
     {
         Notify();
 
-        cout<< "Player " << currentPlayer + 1 << " -- calling reinforcement phase" << endl;
+        cout<< "Player " << currentPlayer << " -- calling reinforcement phase" << endl;
         cout << playersInGame[currentPlayer].getStrategy()->toString();
-
+        cout << " am i reaching this "<<endl;
         playersInGame[currentPlayer].doReinforce();
         cout << "test" <<endl;
         playersInGame[currentPlayer].doAttack();

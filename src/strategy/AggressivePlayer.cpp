@@ -14,7 +14,7 @@ void AggressivePlayer::executeReinforce(Player * p) {
 
     //Find strongest territory
     Territory max = p->getCountries()[0];
-    for (int i = 0; p->getCountries().size(); i++) {
+    for (int i = 0; i < p->getCountries().size(); i++) {
         if (p->getCountries()[i].getArmies() > max.getArmies())
             max = p->getCountries()[i];
     }
@@ -33,7 +33,7 @@ void AggressivePlayer::executeFortify(Player * p) {
     Fortify f;
     //Find strongest territory
     Territory max = p->getCountries()[0];
-    for (int i = 0; p->getCountries().size(); i++)
+    for (int i = 0; i < p->getCountries().size(); i++)
     {
         if (p->getCountries()[i].getArmies() > max.getArmies())
             max = p->getCountries()[i];
@@ -41,7 +41,7 @@ void AggressivePlayer::executeFortify(Player * p) {
     cout << "Aggressive player found " << max.getName() << "to be the strongest Country with "<< max.getArmies();
     f.setCountryToFortify(max.getName());
 
-    for (int i = 0; p->getCountries().size(); i++)
+    for (int i = 0; i < p->getCountries().size(); i++)
     {
         max = p->getCountries()[0];
         if (p->getCountries()[i].getName() == max.getName())            //If the name of the country is the same as the name of the country fortified
