@@ -54,7 +54,7 @@ string BenevolentPlayer::weakestCountry(Player* player) {
 
     Territory min = player->getCountries()[0];
 
-    for (int i = 0; player->getCountries().size(); i++)
+    for (int i = 0; i < player->getCountries().size(); i++)
     {
         if (player->getCountries()[i].getArmies() < min.getArmies())
             min = player->getCountries()[i];
@@ -67,7 +67,7 @@ string BenevolentPlayer::strongestCountry(Player* player) {
 
     Territory max = player->getCountries()[0];
 
-    for (int i = 0; player->getCountries().size(); i++)
+    for (int i = 0; i < player->getCountries().size(); i++)
     {
         if (player->getCountries()[i].getArmies() > max.getArmies())
             max = player->getCountries()[i];
