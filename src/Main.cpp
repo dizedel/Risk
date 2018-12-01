@@ -311,7 +311,8 @@ void setupGame(int numOfMaps){
         p1.setStrategy(human);
         Player p2("Orange");
         p2.setStrategy(human);
-        cout << "p2 strat " << p2.getStrategy()->toString();
+        cout << "p1 strat " << p1.getStrategy()->toString() << endl;
+        cout << "p2 strat " << p2.getStrategy()->toString() << endl;
         Deck deck1(map1.getTerritory().size());
         vp.push_back(p1);
         vp.push_back(p2);

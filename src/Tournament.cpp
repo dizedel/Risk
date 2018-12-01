@@ -1,14 +1,16 @@
 //
 // Created by ramy on 2018-11-28.
 //
-#include <Tournament.h>
 #include <fstream>
-#include <MapLoader.h>
-#include <strategy/BenevolentPlayer.h>
-#include <strategy/AggressivePlayer.h>
 #include <random>
-#include <MainGame.h>
-#include <GameStats.h>
+
+#include "Tournament.h"
+#include "MapLoader.h"
+#include "Strategy.h"
+#include "strategy/BenevolentPlayer.h"
+#include "strategy/AggressivePlayer.h"
+#include "MainGame.h"
+#include "GameStats.h"
 
 // Applying singleton pattern to Tournament
 Tournament* Tournament::instance=0;
@@ -288,20 +290,25 @@ void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
             else{
                 stratSelectSuccess=true;
                 switch(strat){
-                    case '1':
+                    case 1:
                         player.setStrategy(aggressive);
-                    case '2':
+                        break;
+                    case 2:
                         player.setStrategy(benevolent);
-                    case '3':
+                        break;
+                    case 3:
                         // STRATEGY IS NOT YET IMPLEMENTED
                         //player.setStrategy(random);
-                    case '4':
+                        //break;
+                    case 4:
                         // STRATEGY IS NOT YET IMPLEMENTED
                         //player.setStrategy(cheater);
+                        //break;
                     default:
                         break;
                 }
             }
+            cout << player.getStrategy()->toString() << endl;
             vp->push_back(player);
         }
     }
@@ -348,6 +355,8 @@ void Tournament::playTournament(){
             cout << "Game over!" << endl;
         }
     }
+
+    displayResults();
 
 }
 
