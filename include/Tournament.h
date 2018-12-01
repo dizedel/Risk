@@ -16,11 +16,11 @@ private:
     int numOfMaps=0;
     vector<string> mapList;
     vector<Player> tournamentPlayers;
-    vector<vector<string>> winnerStrategies;
+    vector<string> winnerList;
+    vector<vector<string>> winnersInTabularForm;
 
 
 public:
-    static vector<vector<string>> winners;
     Tournament(int,int,int,int);
     static Tournament* getInstance();
 
@@ -34,7 +34,6 @@ public:
     void setNumMaps(int);
 
     vector<string> getMapList();
-    void setMapList(vector<string>);
     void addToMapList(string);
     void printMapList();
 
