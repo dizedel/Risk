@@ -58,4 +58,4 @@ add_executable(Risk
         src/Player.cpp
         src/stdafx.cpp
         src/Territory.cpp
-        src/Tournament.cpp)
+        src/Tournament.cpp src/strategy/RandomPlayer.cpp include/strategy/RandomPlayer.h include/strategy/CheaterPlayer.h src/strategy/CheaterPlayer.cpp)

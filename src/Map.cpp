@@ -184,3 +184,13 @@ void Map::checkIfValid(Map m)
 void Map::setTerritoryCount(int tc) {
 	territoryCount = tc;
 }
+
+vector<Territory*> Map::getPlayerCountries(string playerName){
+	vector<Territory*> playerCountries;
+	for(Territory i : t){
+		if(i.getTerritoryOwner() == playerName){
+			playerCountries.push_back(&i);
+		}
+	}
+	return playerCountries;
+}

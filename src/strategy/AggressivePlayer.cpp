@@ -8,26 +8,52 @@
 #include "game/Fortify.h"
 
 
-void AggressivePlayer::executeReinforce(Player * p) {
+void AggressivePlayer::executeReinforce(Player* p) {
+    cout << "Aggressive player reinforce" << endl;
 
-    Reinforce r;
+    Reinforce r(p, MainGame::getInstance()->getMap());
 
     //Find strongest territory
     Territory max = p->getCountries()[0];
     for (int i = 0; i < p->getCountries().size(); i++) {
-        if (p->getCountries()[i].getArmies() > max.getArmies())
+        if (p->getCountries()[i].getArmies() > max.getArmies()){
             max = p->getCountries()[i];
+        }
     }
+
     r.setCountryToReinforce(max.getName());
     r.setNumOfArmiesToPutDown(p->getArmies());
     r.reinforce();
+    cout << "Reinforce done" << endl;
 }
 
 
-void AggressivePlayer::executeAttack(Player *) {
-
-
+void AggressivePlayer::executeAttack(Player * p) {
+    cout<< "-----An aggressive player is now attacking ---------"<< endl;
+    int diceRolls = 3;
+    Attack* a = new Attack();
+    Map map = MainGame::getInstance()->getMap();
+    a->setMap(map);
+    a->setAttacker(*p);
+    a->setPlayerVector(&MainGame::getInstance()->getPlayers());
+    vector<Territory*> ownedCountries = (map.getPlayerCountries(p->getName()));
+    //Will attack with all countries until it cannot attack anymore
+    for(int i=0; i<ownedCountries.size(); i++){
+        if (ownedCountries.at(i)->getArmies()<=1){                  //Country doesn't have enough armies
+            continue;                                               //If all countries have less than 1 army the turn will be over
+        }
+        else if (ownedCountries.at(i)->getNeighbors().size()==0){   //Country has no neighbours
+            continue;
+        }
+        else{
+            //i = 0;                                                  //We will restart the loop
+            int numOfDice = 3;                                      //An aggressive player will always roll 3 dice
+            cout << "Executing autoattack" << endl;
+            a->autoAttack(numOfDice);
+        }
+    }
 }
+
 void AggressivePlayer::executeFortify(Player * p) {
 
     Fortify f;
@@ -38,7 +64,7 @@ void AggressivePlayer::executeFortify(Player * p) {
         if (p->getCountries()[i].getArmies() > max.getArmies())
             max = p->getCountries()[i];
     }
-    cout << "Aggressive player found " << max.getName() << "to be the strongest Country with "<< max.getArmies();
+    cout << "Aggressive player found " << max.getName() << "to be the strongest Country with "<< max.getArmies() << endl;
     f.setCountryToFortify(max.getName());
 
     for (int i = 0; i < p->getCountries().size(); i++)
@@ -57,7 +83,7 @@ void AggressivePlayer::executeFortify(Player * p) {
         f.fortify();
     }
     else{
-        cout << "There are no countries to take armies from" << endl << "Moving along...";
+        cout << "There are no countries to take armies from" << endl ;
     }
 }
 
