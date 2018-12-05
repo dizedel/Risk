@@ -28,7 +28,7 @@ bool Reinforce::reinforce(){
     if(player->hasCountry(countryToReinforce)){
         player->getCountries().at(player->posOfCountry(countryToReinforce)).addArmies(numOfArmiesToPutDown);
         player->setArmies(player->getArmies()-numOfArmiesToPutDown); //Remove armies from player after putting them down
-        cout<<"You reinforced "<< numOfArmiesToPutDown << "on " << countryToReinforce;
+        cout<<"You reinforced "<< numOfArmiesToPutDown << "on " << countryToReinforce  << endl;
         return true;
     }
     else{
@@ -41,7 +41,7 @@ void Reinforce::setNumOfArmiesToPutDown(int i) {
 }
 
 
-void Reinforce::setCountryToReinforce(string) {
-
+void Reinforce::setCountryToReinforce(string s) {
+    countryToReinforce = s;
 }
 

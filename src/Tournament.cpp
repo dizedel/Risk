@@ -3,12 +3,15 @@
 //
 #include <fstream>
 #include <random>
+#include <iomanip>
 
 #include "Tournament.h"
 #include "MapLoader.h"
 #include "Strategy.h"
 #include "strategy/BenevolentPlayer.h"
 #include "strategy/AggressivePlayer.h"
+#include "strategy/RandomPlayer.h"
+#include "strategy/CheaterPlayer.h"
 #include "MainGame.h"
 #include "GameStats.h"
 
@@ -261,8 +264,11 @@ void Tournament::startupPhase(vector<Player> *vp, Map &map1) {
 
 
 void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
+    cout << "Setting up players" << endl;
     BenevolentPlayer* benevolent = new BenevolentPlayer();
     AggressivePlayer* aggressive = new AggressivePlayer();
+    RandomPlayer* random = new RandomPlayer();
+    //CheaterPlayer* cheater = new CheaterPlayer();
     string playerName="";
 
     for(int pc=0; pc<playerCount; pc++){
@@ -282,9 +288,9 @@ void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
             cout << "1: Aggressive" << endl;
             cout << "2: Benevolent" << endl;
             cout << "3: Random" << endl;
-            cout << "4: Cheater" << endl;
+            //cout << "4: Cheater" << endl;
             cin >> strat;
-            if(strat<1 || strat>4){
+            if(strat<1 || strat>3){
                 cout << "Invalid selection." << endl;
             }
             else{
@@ -298,12 +304,12 @@ void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
                         break;
                     case 3:
                         // STRATEGY IS NOT YET IMPLEMENTED
-                        //player.setStrategy(random);
-                        //break;
+                        player.setStrategy(random);
+                        break;
                     case 4:
                         // STRATEGY IS NOT YET IMPLEMENTED
                         //player.setStrategy(cheater);
-                        //break;
+                        break;
                     default:
                         break;
                 }
@@ -315,21 +321,24 @@ void Tournament::setUpPlayers(int playerCount, vector<Player> *vp){
 }
 
 void Tournament::playTournament(){
+
     cout<< "Num of maps: " << numOfMaps <<endl;
     cout<< "Num of games: " << numOfGames <<endl;
     cout<< "Num of players: " << numOfPlayers <<endl;
     cout<< "Num of turns: " << numOfTurns <<endl;
     printMapList();
+    Map map1;
+    MapLoader loader1;
+    Hand hand1;
 
-    for(int i=0; i<getNumMaps(); i++){
-        for(int j=0; j<getNumGames(); j++){
+    for(int i=0; i<numOfMaps; i++){
+        cout << "Now player map #" << i << endl;
+        for(int j=0; j<numOfGames; j++){
             cout << "Now playing game #" << j << " on map #" << i << endl;
             setUpPlayers(getNumPlayers(), &tournamentPlayers);
 
             //startup
-            Map map1;
-            MapLoader loader1;
-            Hand hand1;
+
             loader1.loadMapFile("../maps/" + mapList[i]);
             map1=loader1.getMap();
             cout << "Creating map" << endl;
@@ -347,11 +356,8 @@ void Tournament::playTournament(){
             GameStats gs(&game);
             game.playGame(numOfTurns);
 
-            //winner is declared and stored in MainGame.cpp
-
             //cleanup for next game
             tournamentPlayers.clear();
-            game.~MainGame();
             cout << "Game over!" << endl;
         }
     }
@@ -361,13 +367,22 @@ void Tournament::playTournament(){
 }
 
 void Tournament::displayResults() {
-    // converts list of winners into a 2D array for display purposes
-    int winnerCurrentIndex=0;
-    for(int i=0; i<getNumMaps(); i++){
-        for(int j=0; j<getNumGames(); j++) {
-            winnersInTabularForm[i][j]=winnerList[winnerCurrentIndex];
-            winnerCurrentIndex++;
-        }
+
+    //just testing display
+    //winnerList = {"AGGRESSIVE", "CHEATER", "RANDOM", "AGGRESSIVE"};
+
+    cout << std::setw(5) << " ";
+    for(int j=0; j<numOfGames; j++){
+        cout << std::setw(15) << "Game" << j;
     }
-    // work in progress
+    cout << endl;
+    int winnerIndex=0;
+    for(int k=0; k<numOfMaps; k++){
+        cout << std::setw(5) << "Map" << k;
+        for(int l=0; l< numOfGames; l++){
+            cout << std::setw(15) << winnerList[winnerIndex];
+            winnerIndex++;
+        }
+        cout << endl;
+    }
 }
