@@ -34,6 +34,9 @@ public:
     void setAttacker(Player);
     void setPlayerVector(vector<Player>*);
     void setMap(Map&);
+    bool autoAttack(int);
+    bool moveArmies();
+    bool moveArmies(int);
 
 private:
     vector<Player>* pVector;
@@ -47,6 +50,7 @@ private:
     bool wasConquered=false;
     string sourceCountryName="";
     string targetCountryName="";
+    vector<Territory> tempCountryVectorDefender;
 };
 
 
